@@ -17,7 +17,7 @@
 
 // chmod +x tabspace // ./tabspace
 
-public class ProblemSet0 {
+public class Main {
 
    public static void main(String[] args) {
 
@@ -80,7 +80,7 @@ public class ProblemSet0 {
         * Print a square of text to the console.
         */
 
-       System.out.println("\nH E L L O\nE\t A\nL\t P\nL\t C\nO A P C S");
+       System.out.println("\nH E L L O\nE\t    A\nL\t    P\nL\t    C\nO A P C S");
 
        /*
         * Exercise 7.
