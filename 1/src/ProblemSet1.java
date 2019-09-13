@@ -17,7 +17,7 @@ import java.text.DecimalFormat;
 
 public class ProblemSet1 {
     
-    public static DecimalFormat dz = new DecimalFormat("##,###.00");
+    public static DecimalFormat dec = new DecimalFormat("##,###.00");
     public static void main(String[] args) {
         
         /*
@@ -25,18 +25,20 @@ public class ProblemSet1 {
          * 
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
-        final double conv = 25.4; //25.4 mm per in
-        final double length = 11;
-        final double width = 8.5;
-        double area = length * width * Math.pow(conv, 2);
-        System.out.println("\n"+ dz.format(area) + " square millimeters. \n");
+        final double conInMm = 25.4; // in to mm
+        final double len = 11;
+        final double wid = 8.5;
+        double area = len * wid * Math.pow(conInMm, 2);
+        System.out.println("\n"+ dec.format(area) + " square millimeters.\n");
         
         /*
          * Exercise 2.
          * 
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
-        
+        final double conv = 2.54; // in to cm
+        double perimeter = 2 * (len*conv) + 2 * (wid*conv);
+        System.out.println("\n" + dec.format(perimeter) + " centimeters.\n");
         
         
         /*
