@@ -17,7 +17,7 @@
 
 // chmod +x tabspace // ./tabspace
 
-public class Main {
+public class ProblemSet0 {
 
    public static void main(String[] args) {
 
