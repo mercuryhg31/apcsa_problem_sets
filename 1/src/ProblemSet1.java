@@ -76,7 +76,7 @@ public class ProblemSet1 {
 
         double fin = (homework * hw) + (quiz * qz) + (test * tt);
 
-        System.out.println("\n" + dec.format(fin) + "%.\n"); //TODO fix exercise 4
+        System.out.println("\n" + dec.format(fin) + "%.\n"); // TODO check exercise output
         
         /*
          * Exercise 5.
@@ -84,8 +84,9 @@ public class ProblemSet1 {
          * I make $12.50/hour working as a cashier at a local supermarket. How much money
          * will I make this week?
          */
-
-        
+        final double wage = 12.5;
+        double hours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5 + 0; // TODO check if needs to be separated into different days
+        System.out.println("\n$" + dec.format(hours * wage) + ".\n");
         
         /*
          * Exercise 6.
