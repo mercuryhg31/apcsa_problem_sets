@@ -70,13 +70,13 @@ public class ProblemSet1 {
         final double qz = .35;
         final double tt = .5;
         
-        double homework = (homework1 + homework2 + homework3) / 3;
-        double quiz = (quiz1 + quiz2 + quiz3) / 3;
-        double test = (test1 + test2 + test3) / 3;
+        double homework = ((double) (homework1 + homework2 + homework3)) / 3;
+        double quiz = ((double) (quiz1 + quiz2 + quiz3)) / 3;
+        double test = ((double) (test1 + test2 + test3)) / 3;
 
         double fin = (homework * hw) + (quiz * qz) + (test * tt);
 
-        System.out.println("\n" + dec.format(fin) + "%.\n"); // TODO check exercise output
+        System.out.println("\n" + dec.format(fin) + "%.\n");
         
         /*
          * Exercise 5.
@@ -93,8 +93,16 @@ public class ProblemSet1 {
          * 
          * What is my take-home pay each check?
          */
-        
-        
+        final double sal = 117000;
+        final double fedTax = .24;
+        final double stateTax = .0637;
+        final double f01k = .07;
+
+        double pay = sal - (sal*f01k);
+        pay -= (pay*stateTax);
+        pay -= (pay*fedTax);
+
+        System.out.println("\n$" + dec.format(pay) + ".\n"); // TODO to be finished
         
         /*
          * Exercise 7.
