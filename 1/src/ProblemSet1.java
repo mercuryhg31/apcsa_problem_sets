@@ -36,10 +36,9 @@ public class ProblemSet1 {
          * 
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
-        final double conv = 2.54; // in to cm
-        double perimeter = 2 * (len*conv) + 2 * (wid*conv);
+        final double convInCm = 2.54; // in to cm
+        double perimeter = 2 * (len*convInCm) + 2 * (wid*convInCm);
         System.out.println("\n" + dec.format(perimeter) + " centimeters.\n");
-        
         
         /*
          * Exercise 3.
@@ -47,8 +46,8 @@ public class ProblemSet1 {
          * What is the length of the diagonal (in inches) between two corners on an 8.5-
          * by-11-inch sheet of paper?
          */
-        
-        
+        double diag = Math.sqrt(Math.pow(wid, 2) + Math.pow(len, 2));
+        System.out.println("\n" + dec.format(diag) + " inches.\n");
 
         /*
          * Exercise 4.
