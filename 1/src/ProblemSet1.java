@@ -66,7 +66,17 @@ public class ProblemSet1 {
         int test2 = 87;
         int test3 = 82;
         
+        final double hw = .15;
+        final double qz = .35;
+        final double tt = .5;
         
+        double homework = (homework1 + homework2 + homework3) / 3;
+        double quiz = (quiz1 + quiz2 + quiz3) / 3;
+        double test = (test1 + test2 + test3) / 3;
+
+        double fin = (homework * hw) + (quiz * qz) + (test * tt);
+
+        System.out.println("\n" + dec.format(fin) + "%.\n"); //TODO fix exercise 4
         
         /*
          * Exercise 5.
