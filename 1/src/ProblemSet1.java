@@ -138,8 +138,22 @@ public class ProblemSet1 {
          * 
          * Are the years 2020, 2100, and 2400 leap years?
          */
+        int t020 = 2020;
+        int t100 = 2100;
+        int t400 = 2400;
         
+        boolean twtw = t020 % 4 == 0;
+        twtw = t020 % 100 != 0 || t020 % 400 == 0;
+
+        boolean twon = t100 % 4 == 0;
+        twon = t100 % 100 != 0 || t100 % 400 == 0;
+
+        boolean tfor = t400 % 4 == 0;
+        tfor = t400 % 100 != 0 || t400 % 400 == 0;
         
+        System.out.println("\n" + t020 + " is a leap year..." + twtw + ".");
+        System.out.println(t100 + " is a leap year..." + twon + ".");
+        System.out.println(t400 + " is a leap year..." + tfor + "." + "\n");
         
         /*
          * Exercise 10.
