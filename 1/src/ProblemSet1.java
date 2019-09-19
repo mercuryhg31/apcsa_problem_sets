@@ -27,9 +27,9 @@ public class ProblemSet1 {
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
         final double conInMm = 25.4; // in to mm
-        final double len = 11;
-        final double wid = 8.5;
-        double area = len * wid * Math.pow(conInMm, 2);
+        final double paperLen = 11;
+        final double paperWid = 8.5;
+        double area = paperLen * paperWid * Math.pow(conInMm, 2);
         System.out.println("\n"+ dec.format(area) + " square millimeters.\n");
         
         /*
@@ -38,7 +38,7 @@ public class ProblemSet1 {
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
         final double convInCm = 2.54; // in to cm
-        double perimeter = 2 * (len*convInCm) + 2 * (wid*convInCm);
+        double perimeter = 2 * (paperLen*convInCm) + 2 * (paperWid*convInCm);
         System.out.println("\n" + dec.format(perimeter) + " centimeters.\n");
         
         /*
@@ -47,7 +47,7 @@ public class ProblemSet1 {
          * What is the length of the diagonal (in inches) between two corners on an 8.5-
          * by-11-inch sheet of paper?
          */
-        double diag = Math.sqrt(Math.pow(wid, 2) + Math.pow(len, 2));
+        double diag = Math.sqrt(Math.pow(paperWid, 2) + Math.pow(paperLen, 2));
         System.out.println("\n" + dec.format(diag) + " inches.\n");
 
         /*
@@ -125,8 +125,13 @@ public class ProblemSet1 {
          * 
          * What is the surface area of a standard Cornhole board?
          */
-        
-        
+        final double cornLen = 48;
+        final double cornWid = 24;
+        final double cornDM = 6;
+
+        double face = (cornLen * cornWid) - (Math.PI * Math.pow((cornDM/2), 2));
+
+        System.out.println("\n" + dec.format(face) + " square inches.\n");
         
         /*
          * Exercise 9.
