@@ -14,6 +14,7 @@
 
 // import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.lang.Math;
 
 public class ProblemSet1 {
     
@@ -93,7 +94,7 @@ public class ProblemSet1 {
          * 
          * What is my take-home pay each check?
          */
-        final double sal = 117000;
+        final double sal = 117000 / 24;
         final double fedTax = .24;
         final double stateTax = .0637;
         final double f01k = .07;
@@ -102,7 +103,7 @@ public class ProblemSet1 {
         pay -= (pay*stateTax);
         pay -= (pay*fedTax);
 
-        System.out.println("\n$" + dec.format(pay) + ".\n"); // TODO to be finished
+        System.out.println("\n$" + dec.format(pay) + ".\n");
         
         /*
          * Exercise 7.
@@ -110,8 +111,14 @@ public class ProblemSet1 {
          * I am planning a class trip next month. How many buses do I need, and how many
          * people will be on the last bus?
          */
-        
-        
+        final double students = 273;
+        final double teachers = 28;
+        final double buscap = 54;
+
+        int buses = (int) (Math.ceil((students + teachers) / buscap));
+        int leftover = (int) ((students + teachers) % buscap);
+
+        System.out.println("\n" + buses + " buses are needed, with " + leftover + " passengers on the last bus.\n");
         
         /*
          * Exercise 8.
