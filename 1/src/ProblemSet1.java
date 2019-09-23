@@ -18,8 +18,9 @@ import java.lang.Math;
 
 public class ProblemSet1 {
     
-    public static DecimalFormat dec2 = new DecimalFormat("##,###.00");
-    public static DecimalFormat dec1 = new DecimalFormat("##,###.0");
+    public static DecimalFormat dec2 = new DecimalFormat("#,###.00");
+    public static DecimalFormat mon = new DecimalFormat("$#,###.00");
+    public static DecimalFormat dec1 = new DecimalFormat("#,###.0");
     public static void main(String[] args) {
         
         /*
@@ -27,10 +28,10 @@ public class ProblemSet1 {
          * 
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
-        final double conInMm = 25.4; // in to mm
+        final double convInMm = 25.4; // in to mm
         final double paperLen = 11;
         final double paperWid = 8.5;
-        double area = paperLen * paperWid * Math.pow(conInMm, 2);
+        double area = paperLen * paperWid * Math.pow(convInMm, 2);
         System.out.println("\n"+ dec2.format(area) + " square millimeters.\n");
         
         /*
@@ -87,8 +88,8 @@ public class ProblemSet1 {
          * will I make this week?
          */
         final double wage = 12.5;
-        double hours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5 + 0; // TODO check if needs to be separated into different days
-        System.out.println("\n$" + dec2.format(hours * wage) + ".\n");
+        double hours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5 + 0;
+        System.out.println("\n" + mon.format(hours * wage) + ".\n");
         
         /*
          * Exercise 6.
@@ -128,9 +129,9 @@ public class ProblemSet1 {
          */
         final double cornLen = 48;
         final double cornWid = 24;
-        final double cornDM = 6;
+        final double cornDm = 6;
 
-        double face = (cornLen * cornWid) - (Math.PI * Math.pow((cornDM/2), 2));
+        double face = (cornLen * cornWid) - (Math.PI * Math.pow((cornDm/2), 2));
 
         System.out.println("\n" + dec2.format(face) + " square inches.\n");
         
