@@ -18,7 +18,8 @@ import java.lang.Math;
 
 public class ProblemSet1 {
     
-    public static DecimalFormat dec = new DecimalFormat("##,###.00");
+    public static DecimalFormat dec2 = new DecimalFormat("##,###.00");
+    public static DecimalFormat dec1 = new DecimalFormat("##,###.0");
     public static void main(String[] args) {
         
         /*
@@ -30,7 +31,7 @@ public class ProblemSet1 {
         final double paperLen = 11;
         final double paperWid = 8.5;
         double area = paperLen * paperWid * Math.pow(conInMm, 2);
-        System.out.println("\n"+ dec.format(area) + " square millimeters.\n");
+        System.out.println("\n"+ dec2.format(area) + " square millimeters.\n");
         
         /*
          * Exercise 2.
@@ -39,7 +40,7 @@ public class ProblemSet1 {
          */
         final double convInCm = 2.54; // in to cm
         double perimeter = 2 * (paperLen*convInCm) + 2 * (paperWid*convInCm);
-        System.out.println("\n" + dec.format(perimeter) + " centimeters.\n");
+        System.out.println("\n" + dec2.format(perimeter) + " centimeters.\n");
         
         /*
          * Exercise 3.
@@ -48,7 +49,7 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
         double diag = Math.sqrt(Math.pow(paperWid, 2) + Math.pow(paperLen, 2));
-        System.out.println("\n" + dec.format(diag) + " inches.\n");
+        System.out.println("\n" + dec2.format(diag) + " inches.\n");
 
         /*
          * Exercise 4.
@@ -77,7 +78,7 @@ public class ProblemSet1 {
 
         double fin = (homework * hw) + (quiz * qz) + (test * tt);
 
-        System.out.println("\n" + dec.format(fin) + "%.\n");
+        System.out.println("\n" + dec2.format(fin) + "%.\n");
         
         /*
          * Exercise 5.
@@ -87,7 +88,7 @@ public class ProblemSet1 {
          */
         final double wage = 12.5;
         double hours = 7.5 + 8 + 10.5 + 9.5 + 6 + 11.5 + 0; // TODO check if needs to be separated into different days
-        System.out.println("\n$" + dec.format(hours * wage) + ".\n");
+        System.out.println("\n$" + dec2.format(hours * wage) + ".\n");
         
         /*
          * Exercise 6.
@@ -103,7 +104,7 @@ public class ProblemSet1 {
         pay -= (pay*stateTax);
         pay -= (pay*fedTax);
 
-        System.out.println("\n$" + dec.format(pay) + ".\n");
+        System.out.println("\n$" + dec2.format(pay) + ".\n");
         
         /*
          * Exercise 7.
@@ -131,7 +132,7 @@ public class ProblemSet1 {
 
         double face = (cornLen * cornWid) - (Math.PI * Math.pow((cornDM/2), 2));
 
-        System.out.println("\n" + dec.format(face) + " square inches.\n");
+        System.out.println("\n" + dec2.format(face) + " square inches.\n");
         
         /*
          * Exercise 9.
@@ -160,8 +161,10 @@ public class ProblemSet1 {
          * 
          * What is the wind chill?
          */
+        double t = 38;
+        double v = 14;
+        double windChill = 35.74 + 0.6215*(t) + (0.4275*(t) - 35.75)*(Math.pow(v, 0.16));
         
-        
-        
+        System.out.println("\n" + dec1.format(windChill) + " degrees.\n");
     }
 }
