@@ -125,9 +125,12 @@ public class ProblemSet2 {
          * Given a number of inches, print the equivalent number of miles, yards, feet,
          * and inches.
          */
+        final double inMi = 63360; // inches in a mile
+        final double inYd = 36; // inches in a yard
+        final double inFt = 12; // inches in a foot
 
-
-        
+        System.out.print("Enter a number of inches: ");
+        double inchesInput = in.nextDouble;
         /*
          * Exercise 5.
          * 
