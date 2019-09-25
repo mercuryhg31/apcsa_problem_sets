@@ -27,30 +27,27 @@ public class ProblemSet2 {
          * Prompt the user to enter the following information (in order): first name, last
          * name, grade, age, and hometown.
          */
-        Scanner input = new Scanner(System.in);
+        // System.out.print("\nEnter your first name: "); // first name // TODO uncomment ex 1
+        // String firstName = in.nextLine();
 
-        System.out.print("\nEnter your first name: "); // first name
-        String firstName = input.nextLine();
+        // System.out.print("Enter your last name: "); // last name
+        // String lastName = in.nextLine();
 
-        System.out.print("Enter your last name: "); // last name
-        String lastName = input.nextLine();
+        // System.out.print("Enter your grade: "); // grade
+        // int grade = in.nextInt();
+        // in.nextLine();
 
-        System.out.print("Enter your grade: "); // grade
-        int grade = input.nextInt();
-        input.nextLine();
+        // System.out.print("Enter your age: "); // age
+        // int age = in.nextInt();
+        // in.nextLine();
 
-        System.out.print("Enter your age: "); // age
-        int age = input.nextInt();
-        input.nextLine();
+        // System.out.print("Enter your hometown: "); // hometown
+        // String hometown = in.nextLine();
 
-        System.out.print("Enter your hometown: "); // hometown
-        String hometown = input.nextLine();
-        input.close();
-
-        System.out.println("\nNAME\t : " + firstName + " " + lastName);
-        System.out.println("GRADE\t : " + grade);
-        System.out.println("AGE\t : " + age);
-        System.out.println("HOMETOWN : " + hometown);
+        // System.out.println("\nNAME\t : " + firstName + " " + lastName);
+        // System.out.println("GRADE\t : " + grade);
+        // System.out.println("AGE\t : " + age);
+        // System.out.println("HOMETOWN : " + hometown);
 
         /*
          * Exercise 2.
@@ -58,8 +55,30 @@ public class ProblemSet2 {
          * Given a dollar amount in the range [0.00, 1.00], print the number of dollar
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
+        final double dollar = 1.00; // TODO uncomment ex 2 (I GOT THIS CODE TO WORK THE FIRST TIME I TESTED IT, HOLY HELL, WHAT THE HECKKKKK??? I KNOW THIS IS A BAD COMMENT BUT SORRY MR. WILSON, AHHHHHH, I'LL DELETE IT WHEN I SUBMIT, !!!)
+        final double quarter = 0.25;
+        final double dime = 0.10;
+        final double nickel = 0.05;
 
+        System.out.print("\nEnter a dollar amount: ");
+        double moneyInput = in.nextDouble();
+        in.nextLine();
 
+        int dollarAmnt = (int) Math.floor(moneyInput / dollar);
+        double leftover = moneyInput % dollar;
+        int quarterAmnt = (int) Math.floor(leftover / quarter);
+        leftover %= quarter;
+        int dimeAmnt = (int) Math.floor(leftover / dime);
+        leftover %= dime;
+        int nickelAmnt = (int) Math.floor(leftover / nickel);
+        leftover %= nickel;
+        int pennyAmnt = (int) (leftover / 0.01);
+
+        System.out.println("DOLLARS\t: " + dollarAmnt);
+        System.out.println("QUARTERS: " + quarterAmnt);
+        System.out.println("DIMES\t: " + dimeAmnt);
+        System.out.println("NICKELS\t: " + nickelAmnt);
+        System.out.println("PENNIES\t: " + pennyAmnt + "\n");
 
         /*
          * Exercise 3.
