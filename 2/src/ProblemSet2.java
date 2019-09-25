@@ -86,8 +86,38 @@ public class ProblemSet2 {
          * Given a dollar amount in the range [0.00, 20.00], print the smallest number of
          * bills and coins needed to produce this amount.
          */
+        final double tenDollar = 10.00;
+        final double fiveDollar = 5.00;
+        
+        System.out.print("\nEnter a dollar amount: "); // TODO fix
+        moneyInput = in.nextDouble();
+        in.nextLine();
 
+        int tenDollarAmnt = (int) Math.floor(moneyInput / tenDollar);
+        leftover = moneyInput % tenDollar;
 
+        int fiveDollarAmnt = (int) Math.floor(leftover / fiveDollar);
+        leftover %= fiveDollar;
+
+        dollarAmnt = (int) Math.floor(moneyInput / dollar);
+        leftover %= dollar;
+
+        quarterAmnt = (int) Math.floor(leftover / quarter);
+        leftover %= quarter;
+
+        dimeAmnt = (int) Math.floor(leftover / dime);
+        leftover %= dime;
+
+        nickelAmnt = (int) Math.floor(leftover / nickel);
+        leftover %= nickel;
+
+        pennyAmnt = (int) (leftover / 0.01);
+
+        int bills = tenDollarAmnt + fiveDollarAmnt + dollarAmnt;
+        int coins = quarterAmnt + dimeAmnt + nickelAmnt + pennyAmnt;
+
+        System.out.println("BILLS : " + bills);
+        System.out.println("COINS : " + coins + "\n");
 
         /*
          * Exercise 4.
