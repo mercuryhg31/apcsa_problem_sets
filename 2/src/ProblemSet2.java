@@ -55,30 +55,30 @@ public class ProblemSet2 {
          * Given a dollar amount in the range [0.00, 1.00], print the number of dollar
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
-        final double dollar = 1.00; // TODO uncomment ex 2 (I GOT THIS CODE TO WORK THE FIRST TIME I TESTED IT, HOLY HELL, WHAT THE HECKKKKK??? I KNOW THIS IS A BAD COMMENT BUT SORRY MR. WILSON, AHHHHHH, I'LL DELETE IT WHEN I SUBMIT, !!!)
-        final double quarter = 0.25;
-        final double dime = 0.10;
-        final double nickel = 0.05;
+        // final double dollar = 1.00; // TODO uncomment ex 2 (I GOT THIS CODE TO WORK THE FIRST TIME I TESTED IT, HOLY HELL, WHAT THE HECKKKKK??? I KNOW THIS IS A BAD COMMENT BUT SORRY MR. WILSON, AHHHHHH, I'LL DELETE IT WHEN I SUBMIT, !!!)
+        // final double quarter = 0.25;
+        // final double dime = 0.10;
+        // final double nickel = 0.05;
 
-        System.out.print("\nEnter a dollar amount: ");
-        double moneyInput = in.nextDouble();
-        in.nextLine();
+        // System.out.print("\nEnter a dollar amount: ");
+        // double moneyInput = in.nextDouble();
+        // in.nextLine();
 
-        int dollarAmnt = (int) Math.floor(moneyInput / dollar);
-        double leftover = moneyInput % dollar;
-        int quarterAmnt = (int) Math.floor(leftover / quarter);
-        leftover %= quarter;
-        int dimeAmnt = (int) Math.floor(leftover / dime);
-        leftover %= dime;
-        int nickelAmnt = (int) Math.floor(leftover / nickel);
-        leftover %= nickel;
-        int pennyAmnt = (int) (leftover / 0.01);
+        // int dollarAmnt = (int) Math.floor(moneyInput / dollar);
+        // double leftover = moneyInput % dollar;
+        // int quarterAmnt = (int) Math.floor(leftover / quarter);
+        // leftover %= quarter;
+        // int dimeAmnt = (int) Math.floor(leftover / dime);
+        // leftover %= dime;
+        // int nickelAmnt = (int) Math.floor(leftover / nickel);
+        // leftover %= nickel;
+        // int pennyAmnt = (int) (leftover / 0.01);
 
-        System.out.println("DOLLARS\t: " + dollarAmnt);
-        System.out.println("QUARTERS: " + quarterAmnt);
-        System.out.println("DIMES\t: " + dimeAmnt);
-        System.out.println("NICKELS\t: " + nickelAmnt);
-        System.out.println("PENNIES\t: " + pennyAmnt + "\n");
+        // System.out.println("DOLLARS\t: " + dollarAmnt);
+        // System.out.println("QUARTERS: " + quarterAmnt);
+        // System.out.println("DIMES\t: " + dimeAmnt);
+        // System.out.println("NICKELS\t: " + nickelAmnt);
+        // System.out.println("PENNIES\t: " + pennyAmnt + "\n");
 
         /*
          * Exercise 3.
@@ -86,38 +86,38 @@ public class ProblemSet2 {
          * Given a dollar amount in the range [0.00, 20.00], print the smallest number of
          * bills and coins needed to produce this amount.
          */
-        final double tenDollar = 10.00;
-        final double fiveDollar = 5.00;
+        // final double tenDollar = 10.00; // TODO uncomment ex 3
+        // final double fiveDollar = 5.00;
         
-        System.out.print("\nEnter a dollar amount: "); // TODO fix
-        moneyInput = in.nextDouble();
-        in.nextLine();
+        // System.out.print("\nEnter a dollar amount: ");
+        // moneyInput = in.nextDouble();
+        // in.nextLine();
 
-        int tenDollarAmnt = (int) Math.floor(moneyInput / tenDollar);
-        leftover = moneyInput % tenDollar;
+        // int tenDollarAmnt = (int) Math.floor(moneyInput / tenDollar);
+        // leftover = moneyInput % tenDollar;
 
-        int fiveDollarAmnt = (int) Math.floor(leftover / fiveDollar);
-        leftover %= fiveDollar;
+        // int fiveDollarAmnt = (int) Math.floor(leftover / fiveDollar);
+        // leftover %= fiveDollar;
 
-        dollarAmnt = (int) Math.floor(moneyInput / dollar);
-        leftover %= dollar;
+        // dollarAmnt = (int) Math.floor(leftover / dollar);
+        // leftover %= dollar;
 
-        quarterAmnt = (int) Math.floor(leftover / quarter);
-        leftover %= quarter;
+        // quarterAmnt = (int) Math.floor(leftover / quarter);
+        // leftover %= quarter;
 
-        dimeAmnt = (int) Math.floor(leftover / dime);
-        leftover %= dime;
+        // dimeAmnt = (int) Math.floor(leftover / dime);
+        // leftover %= dime;
 
-        nickelAmnt = (int) Math.floor(leftover / nickel);
-        leftover %= nickel;
+        // nickelAmnt = (int) Math.floor(leftover / nickel);
+        // leftover %= nickel;
 
-        pennyAmnt = (int) (leftover / 0.01);
+        // pennyAmnt = (int) (leftover / 0.01);
 
-        int bills = tenDollarAmnt + fiveDollarAmnt + dollarAmnt;
-        int coins = quarterAmnt + dimeAmnt + nickelAmnt + pennyAmnt;
+        // int bills = tenDollarAmnt + fiveDollarAmnt + dollarAmnt;
+        // int coins = quarterAmnt + dimeAmnt + nickelAmnt + pennyAmnt;
 
-        System.out.println("BILLS : " + bills);
-        System.out.println("COINS : " + coins + "\n");
+        // System.out.println("BILLS : " + bills);
+        // System.out.println("COINS : " + coins + "\n");
 
         /*
          * Exercise 4.
