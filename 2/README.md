@@ -2,7 +2,7 @@
 
 It's time to put your skills to the test. This problem set focuses on prompting the user for information, manipulating that information, and printing it in specific formats.
 
-[Skeleton](https://github.com/ap-java-ucvts/pset-2-skeleton)
+[Skeleton Repository](https://github.com/ap-java-ucvts/pset-2-skeleton)
 
 ## Getting Started
 
