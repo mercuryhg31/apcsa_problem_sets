@@ -125,36 +125,51 @@ public class ProblemSet2 {
          * Given a number of inches, print the equivalent number of miles, yards, feet,
          * and inches.
          */
-        final double inMi = 63360; // inches in a mile // TODO uncomment ex 4
-        final double inYd = 36; // inches in a yard
-        final double inFt = 12; // inches in a foot
+        // final double inMi = 63360; // inches in a mile // TODO uncomment ex 4
+        // final double inYd = 36; // inches in a yard
+        // final double inFt = 12; // inches in a foot
 
-        double leftover; // TODO delete
+        // double leftover; // TODO delete
 
-        System.out.print("\nEnter a number of inches: ");
-        double inchesInput = in.nextDouble();
+        // System.out.print("\nEnter a number of inches: ");
+        // double inchesInput = in.nextDouble();
+        // in.nextLine();
         
-        int mileAmnt = (int) Math.floor(inchesInput / inMi);
-        leftover = inchesInput % inMi;
+        // int mileAmnt = (int) Math.floor(inchesInput / inMi);
+        // leftover = inchesInput % inMi;
 
-        int yardAmnt = (int) Math.floor(leftover / inYd);
-        leftover %= inYd;
+        // int yardAmnt = (int) Math.floor(leftover / inYd);
+        // leftover %= inYd;
 
-        int footAmnt = (int) Math.floor(leftover / inFt);
-        leftover %= inFt;
+        // int footAmnt = (int) Math.floor(leftover / inFt);
+        // leftover %= inFt;
 
-        System.out.println("MILES\t : " + mileAmnt);
-        System.out.println("YARDS\t : " + yardAmnt);
-        System.out.println("FEET\t : " + footAmnt);
-        System.out.println("INCHES\t : " + (int) leftover + "\n");
+        // System.out.println("MILES\t : " + mileAmnt);
+        // System.out.println("YARDS\t : " + yardAmnt);
+        // System.out.println("FEET\t : " + footAmnt);
+        // System.out.println("INCHES\t : " + (int) leftover + "\n");
         /*
          * Exercise 5.
          * 
          * Given a number of centimeters, print the equivalent number of kilometers,
          * meters, and centimeters.
          */
-        
+        // final double cmKm = 100000; // centimeters in a kilometer // TODO uncomment ex 5
+        // final double cmM = 100; // centimeters in a meter
 
+        // System.out.print("\nEnter a number of centimeters: ");
+        // double cmInput = in.nextDouble();
+        // in.nextLine();
+        
+        // int kmAmnt = (int) Math.floor(cmInput / cmKm);
+        // leftover = cmInput % cmKm;
+
+        // int mAmnt = (int) Math.floor(leftover / cmM);
+        // leftover %= cmM;
+
+        // System.out.println("KILOMETERS : " + kmAmnt); // TODO fix the formatting man, 'tis wack
+        // System.out.println("METERS\t : " + mAmnt);
+        // System.out.println("CENTIMETERS : " + (int) leftover + "\n");
         
         /*
          * Exercise 6.
