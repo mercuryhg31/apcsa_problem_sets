@@ -125,12 +125,28 @@ public class ProblemSet2 {
          * Given a number of inches, print the equivalent number of miles, yards, feet,
          * and inches.
          */
-        final double inMi = 63360; // inches in a mile
+        final double inMi = 63360; // inches in a mile // TODO uncomment ex 4
         final double inYd = 36; // inches in a yard
         final double inFt = 12; // inches in a foot
 
-        System.out.print("Enter a number of inches: ");
-        double inchesInput = in.nextDouble;
+        double leftover; // TODO delete
+
+        System.out.print("\nEnter a number of inches: ");
+        double inchesInput = in.nextDouble();
+        
+        int mileAmnt = (int) Math.floor(inchesInput / inMi);
+        leftover = inchesInput % inMi;
+
+        int yardAmnt = (int) Math.floor(leftover / inYd);
+        leftover %= inYd;
+
+        int footAmnt = (int) Math.floor(leftover / inFt);
+        leftover %= inFt;
+
+        System.out.println("MILES\t : " + mileAmnt);
+        System.out.println("YARDS\t : " + yardAmnt);
+        System.out.println("FEET\t : " + footAmnt);
+        System.out.println("INCHES\t : " + (int) leftover + "\n");
         /*
          * Exercise 5.
          * 
