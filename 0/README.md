@@ -2,6 +2,8 @@
 
 It's time to put your skills to the test. This problem set focuses on printing text to the console, as well as identifying and correcting compilation and runtime errors in the supplied program code.
 
+[Skeleton Repository] (https://github.com/ap-java-ucvts/pset-0-skeleton "Skeleton Repository")
+
 ## Getting Started
 
 To get started, create a [GitHub](https://github.com/) repository to store your code. When you're finished, clone my skeleton to get all of the starter code and instructions. Setup a remote to push your code to your repository instead of mine.
