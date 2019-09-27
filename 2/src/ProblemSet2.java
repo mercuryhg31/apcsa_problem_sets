@@ -167,8 +167,8 @@ public class ProblemSet2 {
         // int mAmnt = (int) Math.floor(leftover / cmM);
         // leftover %= cmM;
 
-        // System.out.println("KILOMETERS : " + kmAmnt); // TODO fix the formatting man, 'tis wack
-        // System.out.println("METERS\t : " + mAmnt);
+        // System.out.println("KILOMETERS  : " + kmAmnt); // TODO fix the formatting man, 'tis wack
+        // System.out.println("METERS      : " + mAmnt);
         // System.out.println("CENTIMETERS : " + (int) leftover + "\n");
         
         /*
@@ -176,8 +176,12 @@ public class ProblemSet2 {
          * 
          * Given a diameter, print the area and circumference of the corresponding circle.
          */
-        
+        System.out.print("\nEnter a diameter: ");
+        double diameter = in.nextDouble();
+        in.nextLine();
 
+        System.out.println("AREA\t : " + Math.PI * Math.pow((diameter/2), 2));
+        System.out.println("CIRCUMFERENCE : " + Math.PI * diameter);
 
         /*
          * Exercise 7.
