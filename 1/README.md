@@ -2,7 +2,7 @@
 
 It's time to put your skills to the test. This problem set focuses on using primitive data types, variables, and basic operators and functions.
 
-[Skeleton Repository] (https://github.com/ap-java-ucvts/pset-1-skeleton "Skeleton Repository")
+[Skeleton Repository] (https://github.com/ap-java-ucvts/pset-1-skeleton)
 
 ## Getting Started
 
