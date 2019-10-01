@@ -234,7 +234,7 @@ public class ProblemSet2 {
         firstName = in.nextLine();
         System.out.print("Enter your middle name: ");
         String middleName = in.nextLine();
-        System.out.println("Enter your last name: "); // TODO resolve skipping line issue
+        System.out.print("Enter your last name: "); // TODO resolve skipping line issue
         lastName = in.nextLine();
 
         System.out.println("\n" + firstName.charAt(0) + middleName.charAt(0) + lastName.charAt(0));
