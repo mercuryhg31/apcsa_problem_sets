@@ -15,11 +15,13 @@
  */
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class ProblemSet2 {
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        DecimalFormat dec2 = new DecimalFormat("#.00");
 
         /*
          * Exercise 1.
@@ -180,8 +182,8 @@ public class ProblemSet2 {
         double diameter = in.nextDouble();
         in.nextLine();
 
-        System.out.println("AREA\t : " + Math.PI * Math.pow((diameter/2), 2));
-        System.out.println("CIRCUMFERENCE : " + Math.PI * diameter);
+        System.out.println("AREA\t      : " + dec2.format(Math.PI * Math.pow((diameter/2), 2)));
+        System.out.println("CIRCUMFERENCE : " + dec2.format(Math.PI * diameter));
 
         /*
          * Exercise 7.
