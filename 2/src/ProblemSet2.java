@@ -178,12 +178,12 @@ public class ProblemSet2 {
          * 
          * Given a diameter, print the area and circumference of the corresponding circle.
          */
-        System.out.print("\nEnter a diameter: ");
-        double diameter = in.nextDouble();
-        in.nextLine();
+        // System.out.print("\nEnter a diameter: "); // TODO uncomment ex 6
+        // double diameter = in.nextDouble();
+        // in.nextLine();
 
-        System.out.println("AREA\t      : " + dec2.format(Math.PI * Math.pow((diameter/2), 2)));
-        System.out.println("CIRCUMFERENCE : " + dec2.format(Math.PI * diameter));
+        // System.out.println("AREA\t      : " + dec2.format(Math.PI * Math.pow((diameter/2), 2)));
+        // System.out.println("CIRCUMFERENCE : " + dec2.format(Math.PI * diameter) + "\n");
 
         /*
          * Exercise 7.
@@ -191,9 +191,17 @@ public class ProblemSet2 {
          * Given a length and width, print the area, perimeter, and diagonal of the
          * corresponding rectangle.
          */
-        
+        System.out.print("\nEnter a length: "); // TODO uncomment ex 7
+        double length = in.nextDouble();
+        in.nextLine();
+        System.out.print("Enter a width: ");
+        double width = in.nextDouble();
+        in.nextLine();
 
-        
+        System.out.println("\nAREA\t  : " + dec2.format(length * width));
+        System.out.println("PERIMETER : " + dec2.format(length * 2 + width * 2));
+        System.out.println("DIAGONAL  : " + dec2.format(Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2))) + "\n");
+
         /*
          * Exercise 8.
          * 
