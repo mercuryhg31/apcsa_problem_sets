@@ -191,24 +191,28 @@ public class ProblemSet2 {
          * Given a length and width, print the area, perimeter, and diagonal of the
          * corresponding rectangle.
          */
-        System.out.print("\nEnter a length: "); // TODO uncomment ex 7
-        double length = in.nextDouble();
-        in.nextLine();
-        System.out.print("Enter a width: ");
-        double width = in.nextDouble();
-        in.nextLine();
+        // System.out.print("\nEnter a length: "); // TODO uncomment ex 7
+        // double rectLength = in.nextDouble();
+        // in.nextLine();
+        // System.out.print("Enter a width: ");
+        // double rectWidth = in.nextDouble();
+        // in.nextLine();
 
-        System.out.println("\nAREA\t  : " + dec2.format(length * width));
-        System.out.println("PERIMETER : " + dec2.format(length * 2 + width * 2));
-        System.out.println("DIAGONAL  : " + dec2.format(Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2))) + "\n");
+        // System.out.println("\nAREA\t  : " + dec2.format(rectLength * rectWidth));
+        // System.out.println("PERIMETER : " + dec2.format(rectLength * 2 + rectWidth * 2));
+        // System.out.println("DIAGONAL  : " + dec2.format(Math.sqrt(Math.pow(rectLength, 2) + Math.pow(rectWidth, 2))) + "\n");
 
         /*
          * Exercise 8.
          * 
          * Given a side length, print the area and perimeter of the corresponding hexagon.
          */
-        
+        // System.out.print("\nEnter a side length: "); // TODO uncomment ex 8
+        // double sideLength = in.nextDouble();
+        // in.nextLine();
 
+        // System.out.println("AREA\t : " + dec2.format(Math.pow(sideLength, 2) * (3 * Math.sqrt(3) / 2)));
+        // System.out.println("PERIMETER : " + dec2.format(sideLength * 6));
         
         /*
          * Exercise 9.
