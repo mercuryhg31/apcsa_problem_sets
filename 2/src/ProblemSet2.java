@@ -219,8 +219,12 @@ public class ProblemSet2 {
          * 
          * Given a string, reverse and print the first and second halves of that string.
          */
-        
+        // System.out.print("\nEnter a String: "); // TODO uncomment ex 9
+        // String strInput = in.nextLine();
+        // int cutLine = (int) Math.floor(strInput.length() / 2);
 
+        // System.out.print("\n" + strInput.substring(cutLine));
+        // System.out.print(strInput.substring(0, cutLine) + "\n");
         
         /*
          * Exercise 10.
