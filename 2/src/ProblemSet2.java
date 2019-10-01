@@ -76,11 +76,11 @@ public class ProblemSet2 {
         leftover %= nickel;
         int pennyAmnt = (int) (leftover / 0.01);
 
-        System.out.println("DOLLARS\t: " + dollarAmnt);
-        System.out.println("QUARTERS: " + quarterAmnt);
-        System.out.println("DIMES\t: " + dimeAmnt);
-        System.out.println("NICKELS\t: " + nickelAmnt);
-        System.out.println("PENNIES\t: " + pennyAmnt + "\n");
+        System.out.println("\nDOLLARS\t : " + dollarAmnt);
+        System.out.println("QUARTERS : " + quarterAmnt);
+        System.out.println("DIMES\t : " + dimeAmnt);
+        System.out.println("NICKELS\t : " + nickelAmnt);
+        System.out.println("PENNIES\t : " + pennyAmnt);
 
         /*
          * Exercise 3.
@@ -118,8 +118,8 @@ public class ProblemSet2 {
         int bills = tenDollarAmnt + fiveDollarAmnt + dollarAmnt;
         int coins = quarterAmnt + dimeAmnt + nickelAmnt + pennyAmnt;
 
-        System.out.println("BILLS : " + bills);
-        System.out.println("COINS : " + coins + "\n");
+        System.out.println("\nBILLS : " + bills);
+        System.out.println("COINS : " + coins);
 
         /*
          * Exercise 4.
@@ -144,10 +144,10 @@ public class ProblemSet2 {
         int footAmnt = (int) Math.floor(leftover / inFt);
         leftover %= inFt;
 
-        System.out.println("MILES\t : " + mileAmnt);
-        System.out.println("YARDS\t : " + yardAmnt);
-        System.out.println("FEET\t : " + footAmnt);
-        System.out.println("INCHES\t : " + (int) leftover + "\n");
+        System.out.println("\nMILES  : " + mileAmnt);
+        System.out.println("YARDS  : " + yardAmnt);
+        System.out.println("FEET   : " + footAmnt);
+        System.out.println("INCHES : " + (int) leftover);
 
         /*
          * Exercise 5.
@@ -168,9 +168,9 @@ public class ProblemSet2 {
         int mAmnt = (int) Math.floor(leftover / cmM);
         leftover %= cmM;
 
-        System.out.println("KILOMETERS  : " + kmAmnt); // TODO fix the formatting man, 'tis wack
+        System.out.println("\nKILOMETERS  : " + kmAmnt);
         System.out.println("METERS      : " + mAmnt);
-        System.out.println("CENTIMETERS : " + (int) leftover + "\n");
+        System.out.println("CENTIMETERS : " + (int) leftover);
         
         /*
          * Exercise 6.
@@ -181,8 +181,8 @@ public class ProblemSet2 {
         double diameter = in.nextDouble();
         in.nextLine();
 
-        System.out.println("AREA\t      : " + dec2.format(Math.PI * Math.pow((diameter/2), 2)));
-        System.out.println("CIRCUMFERENCE : " + dec2.format(Math.PI * diameter) + "\n");
+        System.out.println("\nAREA\t      : " + dec2.format(Math.PI * Math.pow((diameter/2), 2)));
+        System.out.println("CIRCUMFERENCE : " + dec2.format(Math.PI * diameter));
 
         /*
          * Exercise 7.
@@ -199,7 +199,7 @@ public class ProblemSet2 {
 
         System.out.println("\nAREA\t  : " + dec2.format(rectLength * rectWidth));
         System.out.println("PERIMETER : " + dec2.format(rectLength * 2 + rectWidth * 2));
-        System.out.println("DIAGONAL  : " + dec2.format(Math.sqrt(Math.pow(rectLength, 2) + Math.pow(rectWidth, 2))) + "\n");
+        System.out.println("DIAGONAL  : " + dec2.format(Math.sqrt(Math.pow(rectLength, 2) + Math.pow(rectWidth, 2))));
 
         /*
          * Exercise 8.
@@ -210,7 +210,7 @@ public class ProblemSet2 {
         double sideLength = in.nextDouble();
         in.nextLine();
 
-        System.out.println("AREA\t : " + dec2.format(Math.pow(sideLength, 2) * (3 * Math.sqrt(3) / 2)));
+        System.out.println("\nAREA\t  : " + dec2.format(Math.pow(sideLength, 2) * (3 * Math.sqrt(3) / 2)));
         System.out.println("PERIMETER : " + dec2.format(sideLength * 6));
         
         /*
