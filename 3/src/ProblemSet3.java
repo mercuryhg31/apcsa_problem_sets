@@ -34,7 +34,7 @@ public class ProblemSet3 {
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
         // ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
+        // ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
         ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
@@ -195,7 +195,91 @@ public class ProblemSet3 {
      */
     
     public void cards() {
+        System.out.print("Enter a card: ");
+        String input = in.nextLine().toUpperCase();
+        String output = "\n";
+        boolean suit = false;
+        boolean rank = false;
 
+        switch (input.charAt(0)) {
+            case '2':
+                output += "Two";
+                rank = true;
+                break;
+            case '3':
+                output += "Three";
+                rank = true;
+                break;
+            case '4':
+                output += "Four";
+                rank = true;
+                break;
+            case '5':
+                output += "Five";
+                rank = true;
+                break;
+            case '6':
+                output += "Six";
+                rank = true;
+                break;
+            case '7':
+                output += "Seven";
+                rank = true;
+                break;
+            case '8':
+                output += "Eight";
+                rank = true;
+                break;
+            case '9':
+                output += "Nine";
+                rank = true;
+                break;
+            case 'T':
+                output += "Ten";
+                rank = true;
+                break;
+            case 'J':
+                output += "Jack";
+                rank = true;
+                break;
+            case 'Q':
+                output += "Queen";
+                rank = true;
+                break;
+            case 'K':
+                output += "King";
+                rank = true;
+                break;
+            case 'A':
+                output += "Ace";
+                rank = true;
+                break;
+        }
+        output += " of ";
+        switch (input.charAt(1)) {
+            case 'C':
+                output += "Clubs";
+                suit = true;
+                break;
+            case 'D':
+                output += "Diamonds";
+                suit = true;
+                break;
+            case 'H':
+                output += "Hearts";
+                suit = true;
+                break;
+            case 'S':
+                output += "Spades";
+                suit = true;
+                break;
+        }
+        if (!rank) { // TODO should we display both messages if both are true?
+            output = "\nThat is not a valid suit.";
+        } else if (!suit) {
+            output = "\nThat is not a valid rank.";
+        } // TODO also should we show an error message if the input is longer than 2 chars?
+        System.out.println(output);
     }
     
     /*
