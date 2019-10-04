@@ -34,7 +34,7 @@ public class ProblemSet3 {
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
         ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
+        // ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
         ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
@@ -130,13 +130,21 @@ public class ProblemSet3 {
         System.out.print("\nEnter a letter grade: ");
         String input = in.nextLine().toUpperCase();
 
-        output += (input.contains("+")) ? 0.33 : 0; // Look back to see if you can make this more efficient
-        output += (input.contains("-")) ? -0.33 : 0;
-        output += (input.contains("A")) ? 4 : 0;
-        output += (input.contains("B")) ? 3 : 0;
-        output += (input.contains("C")) ? 2 : 0;
-        output += (input.contains("D")) ? 1 : 0;
-        output = (input.contains("F")) ? 0 : output;
+        final double a = 4;
+        final double b = 3;
+        final double c = 2;
+        final double d = 1;
+        final double f = 0;
+        final double plus = 0.33;
+        final double minus = -0.33;
+
+        output += (input.contains("+")) ? plus : 0; // TODO look back to see if you can make this more efficient
+        output += (input.contains("-")) ? minus : 0;
+        output += (input.contains("A")) ? a : 0;
+        output += (input.contains("B")) ? b : 0;
+        output += (input.contains("C")) ? c : 0;
+        output += (input.contains("D")) ? d : 0;
+        output = (input.contains("F")) ? f : output;
         
         System.out.println("\nYour GPA is " + dec2.format(output) + ".");
     }
