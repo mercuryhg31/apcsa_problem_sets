@@ -26,7 +26,7 @@ public class ProblemSet3 {
     public static void main(String[] args) {
         ProblemSet3 ps = new ProblemSet3();
         
-        // comment out or uncomment as needed
+        // comment out or uncomment as needed // TODO uncomment all exercises
         
         ps.sign();          // executes Exercise 1
         ps.parity();        // executes Exercise 2
@@ -49,7 +49,16 @@ public class ProblemSet3 {
      */
     
     public void sign() {
-
+        System.out.print("\nEnter an integer: ");
+        int num = in.nextInt(); // TODO need to make it a long?
+        in.nextLine();
+        if (num > 0) {
+            System.out.println("\nPositive.");
+        } else if (num < 0) {
+            System.out.println("\nNegative.");
+        } else {
+            System.out.println("\nZero.");
+        }
     }
     
     /*
@@ -59,7 +68,20 @@ public class ProblemSet3 {
      */
     
     public void parity() {
-
+        System.out.print("\nEnter an integer: ");
+        int num = in.nextInt(); // TODO need to make it a long?
+        in.nextLine();
+        int output = num % 2;
+        switch (output) {
+            case 0:
+                System.out.println("\nEven.");
+                break;
+            case 1:
+                System.out.println("\nOdd.");
+                break;
+            default:
+                System.out.println("\nUh, I don't know how this code even got executed."); // TODO probably should delele this
+        }
     }
     
     /*
