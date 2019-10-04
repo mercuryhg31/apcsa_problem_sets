@@ -138,13 +138,13 @@ public class ProblemSet3 {
         final double plus = 0.33;
         final double minus = -0.33;
 
-        output += (input.contains("+")) ? plus : 0; // TODO look back to see if you can make this more efficient
-        output += (input.contains("-")) ? minus : 0;
-        output += (input.contains("A")) ? a : 0;
-        output += (input.contains("B")) ? b : 0;
-        output += (input.contains("C")) ? c : 0;
-        output += (input.contains("D")) ? d : 0;
-        output = (input.contains("F")) ? f : output;
+        output += input.contains("+") ? plus : 0; // TODO look back to see if you can make this more efficient
+        output += input.contains("-") ? minus : 0;
+        output += input.contains("A") ? a : 0;
+        output += input.contains("B") ? b : 0;
+        output += input.contains("C") ? c : 0;
+        output += input.contains("D") ? d : 0;
+        output = input.contains("F") ? f : output;
         
         System.out.println("\nYour GPA is " + dec2.format(output) + ".");
     }
@@ -155,7 +155,7 @@ public class ProblemSet3 {
      * Prompt the user to enter a grade. What's the corresponding letter grade?
      */
     
-    public void grade() {
+    public void grade() { // TODO needs major revison
         final double hiA = 100; // TODO is this what he means by thresholds?
         final double loA = 90;
         final double hiB = 89;
@@ -171,15 +171,20 @@ public class ProblemSet3 {
         double input = in.nextDouble();
         in.nextLine();
         
-        boolean a = loA < input && input < hiA;
-        boolean b = loB < input && input < hiB;
-        boolean c = loC < input && input < hiC;
-        boolean d = loD < input && input < hiD;
-        boolean f = loF < input && input < hiF; // i'm doing this really roundabout ways, whyyyyy
-        char letterGrade = "";
-        
-        if (a) {
+        if (loA <= input && input <= hiA) {
             System.out.println("\nYou received an A.");
+        } else if (loB <= input && input <= hiB) {
+            System.out.println("\nYou received a B.");
+        } else if (loC <= input && input <= hiC) {
+            System.out.println("\nYou received a C.");
+        } else if (loD <= input && input <= hiD) {
+            System.out.println("\nYou received a D.");
+        } else if (loF <= input && input <= hiF) {
+            System.out.println("\nYou received a F.");
+        } else if (input > 100) {
+            System.out.println("\nGrades above 100 are invalid.");
+        } else {
+            System.out.println("\nGrades below 0 are invalid.");
         }
     }
     
