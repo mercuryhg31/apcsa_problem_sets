@@ -36,7 +36,7 @@ public class ProblemSet3 {
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
-        ps.leapYear();      // executes Exercise 7
+        // ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
         ps.months();        // executes Exercise 9
         ps.salary();        // executes Exercise 10
@@ -307,7 +307,38 @@ public class ProblemSet3 {
      */
     
     public void state() {
+        System.out.print("\nEnter a temperature: ");
+        double temp = in.nextDouble();
+        in.nextLine();
+        System.out.print("Enter a scale: ");
+        String scale = in.nextLine().toUpperCase();
+        String output = "\n";
 
+        switch (scale.charAt(0)) {
+            case 'F':
+                if (temp <= 32) {
+                    output += "Solid.";
+                } else if (temp >= 212) {
+                    output += "Gas.";
+                } else {
+                    output += "Liquid.";
+                }
+                break;
+            case 'C':
+                if (temp <= 0) {
+                    output += "Solid.";
+                } else if (temp >= 100) {
+                    output += "Gas.";
+                } else {
+                    output += "Liquid.";
+                }
+            break;
+        }
+
+        if (!scale.equals("F") && !scale.equals("C")) { // TODO should I do this, or should I allow for anything to be typed as long as the first char is F or C? (like farhenheit or celcius?)
+            output = "\nThat's not a valid scale.";
+        }
+        System.out.println(output);
     }
     
     /*
