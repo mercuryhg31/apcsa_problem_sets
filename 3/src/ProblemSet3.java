@@ -18,19 +18,21 @@
  */
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class ProblemSet3 {
     
     private static Scanner in = new Scanner(System.in);
+    private static DecimalFormat dec2 = new DecimalFormat("0.00");
     
     public static void main(String[] args) {
         ProblemSet3 ps = new ProblemSet3();
-        
+                
         // comment out or uncomment as needed // TODO uncomment all exercises
         
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
+        // ps.ordered();       // executes Exercise 3
         ps.gpa();           // executes Exercise 4
         ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
@@ -124,7 +126,19 @@ public class ProblemSet3 {
      */
     
     public void gpa() {
+        double output = 0;
+        System.out.print("\nEnter a letter grade: ");
+        String input = in.nextLine().toUpperCase();
 
+        output += (input.contains("+")) ? 0.33 : 0; // Look back to see if you can make this more efficient
+        output += (input.contains("-")) ? -0.33 : 0;
+        output += (input.contains("A")) ? 4 : 0;
+        output += (input.contains("B")) ? 3 : 0;
+        output += (input.contains("C")) ? 2 : 0;
+        output += (input.contains("D")) ? 1 : 0;
+        output = (input.contains("F")) ? 0 : output;
+        
+        System.out.println("\nYour GPA is " + dec2.format(output) + ".");
     }
     
     /*
