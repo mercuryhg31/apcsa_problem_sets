@@ -33,8 +33,8 @@ public class ProblemSet3 {
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
+        // ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
         ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
@@ -156,7 +156,31 @@ public class ProblemSet3 {
      */
     
     public void grade() {
+        final double hiA = 100; // TODO is this what he means by thresholds?
+        final double loA = 90;
+        final double hiB = 89;
+        final double loB = 80;
+        final double hiC = 79;
+        final double loC = 70;
+        final double hiD = 69;
+        final double loD = 60;
+        final double hiF = 50;
+        final double loF = 0;
 
+        System.out.print("\nEnter a grade: ");
+        double input = in.nextDouble();
+        in.nextLine();
+        
+        boolean a = loA < input && input < hiA;
+        boolean b = loB < input && input < hiB;
+        boolean c = loC < input && input < hiC;
+        boolean d = loD < input && input < hiD;
+        boolean f = loF < input && input < hiF; // i'm doing this really roundabout ways, whyyyyy
+        char letterGrade = "";
+        
+        if (a) {
+            System.out.println("\nYou received an A.");
+        }
     }
     
     /*
