@@ -46,16 +46,16 @@ public class ProblemSet3 {
                 
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        // ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
-        // ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
-        // ps.cards();         // executes Exercise 6
-        // ps.leapYear();      // executes Exercise 7
-        // ps.state();         // executes Exercise 8
+        ps.sign();          // executes Exercise 1
+        ps.parity();        // executes Exercise 2
+        ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
+        ps.cards();         // executes Exercise 6
+        ps.leapYear();      // executes Exercise 7
+        ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
-        ps.salary();        // executes Exercise 10
+        // ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -211,7 +211,7 @@ public class ProblemSet3 {
      */
     
     public void cards() {
-        System.out.print("Enter a card: ");
+        System.out.print("\nEnter a card: ");
         String input = in.nextLine().toUpperCase();
         String output = "\n";
         boolean suit = false;
@@ -306,7 +306,7 @@ public class ProblemSet3 {
     
     public void leapYear() {
         System.out.print("\nEnter a year: ");
-        int year = in.nextInt(); // TODO make it a long?
+        int year = in.nextInt(); // TODO need to make it a long?
 
         if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0) {
             System.out.println("\n" + year + " is a leap year.");
@@ -459,14 +459,14 @@ public class ProblemSet3 {
         System.out.print("\nWage: ");
         double wage = in.nextDouble();
         in.nextLine();
-        System.out.print("\nHours: ");
+        System.out.print("Hours: ");
         double hours = in.nextDouble();
         in.nextLine();
 
         if (wage < 0) {
             System.out.println("\nYour wage must be greater than or equal to $0.00/hour.");
         } else if (hours < 0) {
-            System.out.println("\nYour hours must be greater than or equal to 0.0.");
+            System.out.println("\nYour hours must be greater than or equal to 0.0."); // TODO also do I need to display both messages once again?
         } else {
             System.out.println("\nYou'll make $" + dec2.format(wage * hours) + " this week."); // TODO  oh wait, but I don't understand this excersise at all, so yay
         }
