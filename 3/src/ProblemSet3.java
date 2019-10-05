@@ -19,7 +19,7 @@
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.time.Month;
+// import java.time.Month;
 /*
 enum Months {
     JANUARY,
@@ -39,7 +39,7 @@ enum Months {
 public class ProblemSet3 {
     
     private static Scanner in = new Scanner(System.in);
-    private static DecimalFormat dec2 = new DecimalFormat("0.00");
+    private static DecimalFormat dec2 = new DecimalFormat("#,##0.00");
     
     public static void main(String[] args) {
         ProblemSet3 ps = new ProblemSet3();
@@ -366,7 +366,7 @@ public class ProblemSet3 {
     public void months() {
         System.out.print("\nEnter a month: ");
         String input = in.nextLine().toUpperCase();
-
+        /*
         Months month = Months.APRIL;
 
         if (input.substring(0, 2) == "JAN") {
@@ -434,7 +434,7 @@ public class ProblemSet3 {
                 break;
             default:
                 System.out.println("\nThat's not a valid month.");
-        }
+        }*/
 
         // boolean jan = input == "jan" || input == "january" || input == "janu";
         // boolean feb = input == "feb" || input == "february" || input == "febu";
@@ -456,6 +456,19 @@ public class ProblemSet3 {
      */
     
     public void salary() {
+        System.out.print("\nWage: ");
+        double wage = in.nextDouble();
+        in.nextLine();
+        System.out.print("\nHours: ");
+        double hours = in.nextDouble();
+        in.nextLine();
 
+        if (wage < 0) {
+            System.out.println("\nYour wage must be greater than or equal to $0.00/hour.");
+        } else if (hours < 0) {
+            System.out.println("\nYour hours must be greater than or equal to 0.0.");
+        } else {
+            System.out.println("\nYou'll make $" + dec2.format(wage * hours) + " this week."); // TODO  oh wait, but I don't understand this excersise at all, so yay
+        }
     }
 }
