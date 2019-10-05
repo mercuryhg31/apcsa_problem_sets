@@ -19,6 +19,22 @@
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.time.Month;
+/*
+enum Months {
+    JANUARY,
+    FEBRUARY,
+    MARCH,
+    APRIL,
+    MAY,
+    JUNE,
+    JULY,
+    AUGUST,
+    SEPTEMBER,
+    OCTOBER,
+    NOVEMBER,
+    DECEMBER
+}*/
 
 public class ProblemSet3 {
     
@@ -37,8 +53,8 @@ public class ProblemSet3 {
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
-        ps.state();         // executes Exercise 8
-        ps.months();        // executes Exercise 9
+        // ps.state();         // executes Exercise 8
+        // ps.months();        // executes Exercise 9
         ps.salary();        // executes Exercise 10
         
         in.close();
@@ -347,8 +363,90 @@ public class ProblemSet3 {
      * Prompt the user to enter a month. How many days are in that month?
      */
     
-    public void months() {        
+    public void months() {
+        System.out.print("\nEnter a month: ");
+        String input = in.nextLine().toUpperCase();
 
+        Months month = Months.APRIL;
+
+        if (input.substring(0, 2) == "JAN") {
+            month = Months.JANUARY;
+        } else if (input.substring(0, 2) == "FEB") {
+            month = Months.FEBRUARY;
+        } else if (input.substring(0, 2) == "MAR") {
+            month = Months.MARCH;
+        } else if (input.substring(0, 2) == "APR") {
+            month = Months.APRIL;
+        } else if (input.substring(0, 2) == "MAY") {
+            month = Months.MAY;
+        } else if (input.substring(0, 2) == "JUN") {
+            month = Months.JUNE;
+        } else if (input.substring(0, 2) == "JUL") {
+            month = Months.JULY;
+        } else if (input.substring(0, 2) == "AUG") {
+            month = Months.AUGUST;
+        } else if (input.substring(0, 2) == "SEP") {
+            month = Months.SEPTEMBER;
+        } else if (input.substring(0, 2) == "OCT") {
+            month = Months.OCTOBER;
+        } else if (input.substring(0, 2) == "NOV") {
+            month = Months.NOVEMBER;
+        } else if (input.substring(0, 2) == "DEC") {
+            month = Months.DECEMBER;
+        } // TODO I'm doing it this way in the event that I need to add more restraints on the conditionals, so I got some questions to answer.
+
+        switch (month) {
+            case JANUARY:
+                System.out.println("\n31 days.");
+                break;
+            case FEBRUARY:
+                System.out.println("\n28 or 29 days.");
+                break;
+            case MARCH:
+                System.out.println("\n31 days.");
+                break;
+            case APRIL:
+                System.out.println("\n30 days.");
+                break;
+            case MAY:
+                System.out.println("\n31 days.");
+                break;
+            case JUNE:
+                System.out.println("\n30 days.");
+                break;
+            case JULY:
+                System.out.println("\n31 days.");
+                break;
+            case AUGUST:
+                System.out.println("\n31 days.");
+                break;
+            case SEPTEMBER:
+                System.out.println("\n30 days.");
+                break;
+            case OCTOBER:
+                System.out.println("\n31 days.");
+                break;
+            case NOVEMBER:
+                System.out.println("\n30 days.");
+                break;
+            case DECEMBER:
+                System.out.println("\n31 days.");
+                break;
+            default:
+                System.out.println("\nThat's not a valid month.");
+        }
+
+        // boolean jan = input == "jan" || input == "january" || input == "janu";
+        // boolean feb = input == "feb" || input == "february" || input == "febu";
+        // boolean mar = input == "mar" || input == "march" || input == "marc";
+        // boolean apr = input == "apr" || input == "april" || input == "apri";
+        // boolean may = input == "may";
+        // boolean jun = input == "jun" || input == "june";
+        // boolean jul = input == "jul" || input == "july"; // MISSING AUGUST
+        // boolean sep = input == "sep" || input == "september" || input == "sept";
+        // boolean oct = input == "oct" || input == "october" || input == "octo";
+        // boolean nov = input == "nov" || input == "november" || input == "nove";
+        // boolean dec = input == "dec" || input == "december" || input == "dece"; // TODO you thought of a nicer way to do this, now use it
     }
     
     /*
