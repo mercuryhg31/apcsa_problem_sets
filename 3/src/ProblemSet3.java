@@ -19,22 +19,6 @@
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
-// import java.time.Month;
-/*
-enum Months {
-    JANUARY,
-    FEBRUARY,
-    MARCH,
-    APRIL,
-    MAY,
-    JUNE,
-    JULY,
-    AUGUST,
-    SEPTEMBER,
-    OCTOBER,
-    NOVEMBER,
-    DECEMBER
-}*/
 
 public class ProblemSet3 {
     
@@ -46,16 +30,16 @@ public class ProblemSet3 {
                 
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
-        ps.cards();         // executes Exercise 6
-        ps.leapYear();      // executes Exercise 7
-        ps.state();         // executes Exercise 8
+        // ps.sign();          // executes Exercise 1
+        // ps.parity();        // executes Exercise 2
+        // ps.ordered();       // executes Exercise 3
+        // ps.gpa();           // executes Exercise 4
+        // ps.grade();         // executes Exercise 5
+        // ps.cards();         // executes Exercise 6
+        // ps.leapYear();      // executes Exercise 7
+        // ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
-        // ps.salary();        // executes Exercise 10
+        ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -68,7 +52,7 @@ public class ProblemSet3 {
     
     public void sign() {
         System.out.print("\nEnter an integer: ");
-        int num = in.nextInt(); // TODO need to make it a long?
+        int num = in.nextInt();
         in.nextLine();
         if (num > 0) {
             System.out.println("\nPositive.");
@@ -87,7 +71,7 @@ public class ProblemSet3 {
     
     public void parity() {
         System.out.print("\nEnter an integer: ");
-        int num = in.nextInt(); // TODO need to make it a long?
+        int num = in.nextInt();
         in.nextLine();
         int output = num % 2;
         switch (output) {
@@ -214,7 +198,7 @@ public class ProblemSet3 {
         System.out.print("\nEnter a card: ");
         String input = in.nextLine().toUpperCase();
         String output = "\n";
-        boolean suit = false;
+        boolean suit = false; // TODO make it only a switch statement
         boolean rank = false;
 
         switch (input.charAt(0)) {
@@ -290,11 +274,11 @@ public class ProblemSet3 {
                 suit = true;
                 break;
         }
-        if (!rank) { // TODO should we display both messages if both are true?
+        if (!suit) { // TODO should we display both messages if both are true? // suit first, then rank
             output = "\nThat is not a valid suit.";
-        } else if (!suit) {
+        } else if (!rank) {
             output = "\nThat is not a valid rank.";
-        } // TODO also should we show an error message if the input is longer than 2 chars?
+        } // TODO also should we show an error message if the input is longer than 2 chars? // yes
         System.out.println(output);
     }
     
@@ -306,7 +290,7 @@ public class ProblemSet3 {
     
     public void leapYear() {
         System.out.print("\nEnter a year: ");
-        int year = in.nextInt(); // TODO need to make it a long?
+        int year = in.nextInt();
 
         if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0) {
             System.out.println("\n" + year + " is a leap year.");
@@ -351,7 +335,7 @@ public class ProblemSet3 {
             break;
         }
 
-        if (!scale.equals("F") && !scale.equals("C")) { // TODO should I do this, or should I allow for anything to be typed as long as the first char is F or C? (like farhenheit or celcius?)
+        if (!scale.equals("F") && !scale.equals("C")) { // TODO should I do this, or should I allow for anything to be typed as long as the first char is F or C? (like farhenheit or celcius?) // error message
             output = "\nThat's not a valid scale.";
         }
         System.out.println(output);
@@ -365,88 +349,8 @@ public class ProblemSet3 {
     
     public void months() {
         System.out.print("\nEnter a month: ");
-        String input = in.nextLine().toUpperCase();
-        /*
-        Months month = Months.APRIL;
-
-        if (input.substring(0, 2) == "JAN") {
-            month = Months.JANUARY;
-        } else if (input.substring(0, 2) == "FEB") {
-            month = Months.FEBRUARY;
-        } else if (input.substring(0, 2) == "MAR") {
-            month = Months.MARCH;
-        } else if (input.substring(0, 2) == "APR") {
-            month = Months.APRIL;
-        } else if (input.substring(0, 2) == "MAY") {
-            month = Months.MAY;
-        } else if (input.substring(0, 2) == "JUN") {
-            month = Months.JUNE;
-        } else if (input.substring(0, 2) == "JUL") {
-            month = Months.JULY;
-        } else if (input.substring(0, 2) == "AUG") {
-            month = Months.AUGUST;
-        } else if (input.substring(0, 2) == "SEP") {
-            month = Months.SEPTEMBER;
-        } else if (input.substring(0, 2) == "OCT") {
-            month = Months.OCTOBER;
-        } else if (input.substring(0, 2) == "NOV") {
-            month = Months.NOVEMBER;
-        } else if (input.substring(0, 2) == "DEC") {
-            month = Months.DECEMBER;
-        } // TODO I'm doing it this way in the event that I need to add more restraints on the conditionals, so I got some questions to answer.
-
-        switch (month) {
-            case JANUARY:
-                System.out.println("\n31 days.");
-                break;
-            case FEBRUARY:
-                System.out.println("\n28 or 29 days.");
-                break;
-            case MARCH:
-                System.out.println("\n31 days.");
-                break;
-            case APRIL:
-                System.out.println("\n30 days.");
-                break;
-            case MAY:
-                System.out.println("\n31 days.");
-                break;
-            case JUNE:
-                System.out.println("\n30 days.");
-                break;
-            case JULY:
-                System.out.println("\n31 days.");
-                break;
-            case AUGUST:
-                System.out.println("\n31 days.");
-                break;
-            case SEPTEMBER:
-                System.out.println("\n30 days.");
-                break;
-            case OCTOBER:
-                System.out.println("\n31 days.");
-                break;
-            case NOVEMBER:
-                System.out.println("\n30 days.");
-                break;
-            case DECEMBER:
-                System.out.println("\n31 days.");
-                break;
-            default:
-                System.out.println("\nThat's not a valid month.");
-        }*/
-
-        // boolean jan = input == "jan" || input == "january" || input == "janu";
-        // boolean feb = input == "feb" || input == "february" || input == "febu";
-        // boolean mar = input == "mar" || input == "march" || input == "marc";
-        // boolean apr = input == "apr" || input == "april" || input == "apri";
-        // boolean may = input == "may";
-        // boolean jun = input == "jun" || input == "june";
-        // boolean jul = input == "jul" || input == "july"; // MISSING AUGUST
-        // boolean sep = input == "sep" || input == "september" || input == "sept";
-        // boolean oct = input == "oct" || input == "october" || input == "octo";
-        // boolean nov = input == "nov" || input == "november" || input == "nove";
-        // boolean dec = input == "dec" || input == "december" || input == "dece"; // TODO you thought of a nicer way to do this, now use it
+        String input = in.nextLine().toUpperCase(); // only first 3 letters, first four letters, or the whole word, and nothing else
+        
     }
     
     /*
@@ -455,7 +359,7 @@ public class ProblemSet3 {
      * Prompt the user to enter a wage and hours worked. How much money will be made?
      */
     
-    public void salary() {
+    public void salary() { // (1.5*12*17.75) + 710
         System.out.print("\nWage: ");
         double wage = in.nextDouble();
         in.nextLine();
@@ -463,12 +367,14 @@ public class ProblemSet3 {
         double hours = in.nextDouble();
         in.nextLine();
 
+        double pay = 40 * wage + ((hours - 40) * 1.5 * wage);
+
         if (wage < 0) {
             System.out.println("\nYour wage must be greater than or equal to $0.00/hour.");
         } else if (hours < 0) {
             System.out.println("\nYour hours must be greater than or equal to 0.0."); // TODO also do I need to display both messages once again?
         } else {
-            System.out.println("\nYou'll make $" + dec2.format(wage * hours) + " this week."); // TODO  oh wait, but I don't understand this excersise at all, so yay
+            System.out.println("\nYou'll make $" + dec2.format(pay) + " this week."); // TODO  oh wait, but I don't understand this excersise at all, so yay
         }
     }
 }
