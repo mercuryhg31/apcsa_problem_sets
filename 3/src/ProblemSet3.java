@@ -38,8 +38,8 @@ public class ProblemSet3 {
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
         // ps.state();         // executes Exercise 8
-        // ps.months();        // executes Exercise 9
-        ps.salary();        // executes Exercise 10
+        ps.months();        // executes Exercise 9
+        // ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -349,8 +349,34 @@ public class ProblemSet3 {
     
     public void months() {
         System.out.print("\nEnter a month: ");
-        String input = in.nextLine().toUpperCase(); // only first 3 letters, first four letters, or the whole word, and nothing else
-        
+        String input = in.nextLine().toUpperCase();
+
+        String jan = "JANUARY";
+        String feb = "FEBRUARY";
+        String mar = "MARCH";
+        String apr = "APRIL";
+        String may = "MAY ";
+        String jun = "JUNE";
+        String jul = "JULY";
+        String aug = "AUGUST";
+        String sep = "SEPTEMBER";
+        String oct = "OCTOBER";
+        String nov = "NOVEMBER";
+        String dec = "DECEMBER";
+
+        if (monCheck(input, jan) || monCheck(input, mar) || monCheck(input, may) || monCheck(input, jul) || monCheck(input, aug) || monCheck(input, oct) || monCheck(input, dec)) {
+            System.out.println("\n31 days.");
+        } else if (monCheck(input, feb)) {
+            System.out.println("\n28 or 29 days.");
+        } else if (monCheck(input, apr) || monCheck(input, jun) || monCheck(input, sep) || monCheck(input, nov)) {
+            System.out.println("\n30 days.");
+        } else {
+            System.out.println("\nThat's not a valid month.");
+        }
+    }
+
+    boolean monCheck(String input, String mon) {
+        return input.equals(mon) || input.equals(mon.substring(0, 3)) || input.equals(mon.substring(0, 4));
     }
     
     /*
