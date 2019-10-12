@@ -30,16 +30,16 @@ public class ProblemSet3 {
                 
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        // ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
-        // ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
-        // ps.cards();         // executes Exercise 6
-        // ps.leapYear();      // executes Exercise 7
+        ps.sign();          // executes Exercise 1
+        ps.parity();        // executes Exercise 2
+        ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
+        ps.cards();         // executes Exercise 6
+        ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
-        // ps.months();        // executes Exercise 9
-        // ps.salary();        // executes Exercise 10
+        ps.months();        // executes Exercise 9
+        ps.salary();        // executes Exercise 10
         
         in.close();
     }
@@ -125,42 +125,42 @@ public class ProblemSet3 {
         System.out.print("\nEnter a letter grade: ");
         String input = in.nextLine().toUpperCase();
 
-        final double a = 4;
-        final double b = 3;
-        final double c = 2;
-        final double d = 1;
-        final double f = 0;
-        final double plus = 0.33;
-        final double minus = -0.33;
+        final double A = 4;
+        final double B = 3;
+        final double C = 2;
+        final double D = 1;
+        final double F = 0;
+        final double PLUS_VAL = 0.33;
+        final double MINUS_VAL = -0.33;
 
         switch (input.charAt(0)) {
             case 'A':
-                grade = a;
+                grade = A;
                 valid = true;
                 break;
             case 'B':
-                grade = b;
+                grade = B;
                 valid = true;
                 break;
             case 'C':
-                grade = c;
+                grade = C;
                 valid = true;
                 break;
             case 'D':
-                grade = d;
+                grade = D;
                 valid = true;
                 break;
             case 'F':
-                grade = f;
+                grade = F;
                 valid = true;
         }
         try {
             switch (input.charAt(1)) {
                 case '+':
-                    grade += (grade == 4) ? 0 : plus;
+                    grade += (grade == 4) ? 0 : PLUS_VAL;
                     break;
                 case '-':
-                    grade += minus;
+                    grade += MINUS_VAL;
                     break;
                 default:
                     valid = false;
@@ -183,26 +183,26 @@ public class ProblemSet3 {
      */
     
     public void grade() {
-        final double hiA = 100;
-        final double loA = 90;
-        final double loB = 80;
-        final double loC = 70;
-        final double loD = 60;
-        final double loF = 0;
+        final double A_MAX = 100;
+        final double A_MIN = 90;
+        final double B_MIN = 80;
+        final double C_MIN = 70;
+        final double D_MIN = 60;
+        final double F_MIN = 0;
 
         System.out.print("\nEnter a grade: ");
         double input = in.nextDouble();
         in.nextLine();
 
-        if (loA <= input && input <= hiA) {
+        if (A_MIN <= input && input <= A_MAX) {
             System.out.println("\nYou received an A.");
-        } else if (loB <= input && input < loA) {
+        } else if (B_MIN <= input && input < A_MIN) {
             System.out.println("\nYou received a B.");
-        } else if (loC <= input && input < loB) {
+        } else if (C_MIN <= input && input < B_MIN) {
             System.out.println("\nYou received a C.");
-        } else if (loD <= input && input < loC) {
+        } else if (D_MIN <= input && input < C_MIN) {
             System.out.println("\nYou received a D.");
-        } else if (loF <= input && input < loD) {
+        } else if (F_MIN <= input && input < D_MIN) {
             System.out.println("\nYou received an F.");
         } else if (input > 100) {
             System.out.println("\nGrades above 100 are invalid.");
@@ -321,28 +321,28 @@ public class ProblemSet3 {
         System.out.print("Enter a scale: ");
         String scale = in.nextLine().toUpperCase();
 
-        final double freezingF = 32;
-        final double boilingF = 212;
-        final double freezingC = 0;
-        final double boilingC = 100;
+        final double F_FREEZING = 32;
+        final double F_BOILING = 212;
+        final double C_FREEZING = 0;
+        final double C_BOILING = 100;
 
         if (!scale.equals("F") && !scale.equals("FAHRENHEIT") && !scale.equals("C") && !scale.equals("CELSIUS")) {
             System.out.println("\nThat's not a valid scale.");
         } else {
             switch (scale.charAt(0)) {
                 case 'F':
-                    if (temp <= freezingF) {
+                    if (temp <= F_FREEZING) {
                         System.out.println("\nSolid.");
-                    } else if (temp >= boilingF) {
+                    } else if (temp >= F_BOILING) {
                         System.out.println("\nGas.");
                     } else {
                         System.out.println("\nLiquid.");
                     }
                     break;
                 case 'C':
-                    if (temp <= freezingC) {
+                    if (temp <= C_FREEZING) {
                         System.out.println("\nSolid.");
-                    } else if (temp >= boilingC) {
+                    } else if (temp >= C_BOILING) {
                         System.out.println("\nGas.");
                     } else {
                         System.out.println("\nLiquid.");
@@ -405,22 +405,21 @@ public class ProblemSet3 {
      * Prompt the user to enter a wage and hours worked. How much money will be made?
      */
     
-    public void salary() { // (1.5*12*17.75) + 710
+    public void salary() {
         System.out.print("\nWage: ");
         double wage = in.nextDouble();
         in.nextLine();
         System.out.print("Hours: ");
         double hours = in.nextDouble();
         in.nextLine();
-
         double pay = 40 * wage + ((hours - 40) * 1.5 * wage);
 
         if (wage < 0) {
             System.out.println("\nYour wage must be greater than or equal to $0.00/hour.");
         } else if (hours < 0) {
-            System.out.println("\nYour hours must be greater than or equal to 0.0."); // TODO also do I need to display both messages once again?
+            System.out.println("\nYour hours must be greater than or equal to 0.0.");
         } else {
-            System.out.println("\nYou'll make $" + dec2.format(pay) + " this week."); // TODO  oh wait, but I don't understand this excersise at all, so yay
+            System.out.println("\nYou'll make $" + dec2.format(pay) + " this week.");
         }
     }
 }
