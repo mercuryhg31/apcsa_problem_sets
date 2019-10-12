@@ -33,12 +33,12 @@ public class ProblemSet3 {
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
+        ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
         // ps.state();         // executes Exercise 8
-        ps.months();        // executes Exercise 9
+        // ps.months();        // executes Exercise 9
         // ps.salary();        // executes Exercise 10
         
         in.close();
@@ -126,7 +126,10 @@ public class ProblemSet3 {
      */
     
     public void gpa() {
-        double output = 0;
+        double grade = 0;
+        String output = "";
+        boolean valid = false;
+
         System.out.print("\nEnter a letter grade: ");
         String input = in.nextLine().toUpperCase();
 
@@ -138,15 +141,55 @@ public class ProblemSet3 {
         final double plus = 0.33;
         final double minus = -0.33;
 
-        output += input.contains("+") ? plus : 0; // TODO look back to see if you can make this more efficient
-        output += input.contains("-") ? minus : 0;
-        output += input.contains("A") ? a : 0;
-        output += input.contains("B") ? b : 0;
-        output += input.contains("C") ? c : 0;
-        output += input.contains("D") ? d : 0;
-        output = input.contains("F") ? f : output;
-        
-        System.out.println("\nYour GPA is " + dec2.format(output) + ".");
+        switch (input.charAt(0)) {
+            case 'A':
+                grade = a;
+                valid = true;
+                break;
+            case 'B':
+                grade = b;
+                valid = true;
+                break;
+            case 'C':
+                grade = c;
+                valid = true;
+                break;
+            case 'D':
+                grade = d;
+                valid = true;
+                break;
+        }
+        if (input.charAt(0) == 'F') {
+            grade = f;
+            valid = true;
+        }
+        try {
+            if (input.charAt(0) != 'F') {
+                switch (input.charAt(1)) {
+                    case '+':
+                        grade += plus;
+                        break;
+                    case '-':
+                        grade += minus;
+                        break;
+                    default:
+                        valid = false;
+                }
+            }
+        } catch (Exception e) {}
+
+        if (input.length() > 2) {
+            valid = false;
+        }
+        // valid = (input.length() > 2) ? false : valid;
+
+        if (valid) {
+            output = "\nYour GPA is " + dec2.format(grade) + ".";
+        } else {
+            output = "\nThat's not a valid letter grade.";
+        }
+
+        System.out.println(output);
     }
     
     /*
