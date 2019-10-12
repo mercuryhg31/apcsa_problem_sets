@@ -242,6 +242,8 @@ public class ProblemSet3 {
                 break;
             default:
                 output = "\nThat is not a valid suit.";
+                System.out.println(output);
+                return;
         }
         switch (input.charAt(0)) {
             case '2':
