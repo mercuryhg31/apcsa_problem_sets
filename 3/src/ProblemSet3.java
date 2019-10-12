@@ -28,7 +28,7 @@ public class ProblemSet3 {
     public static void main(String[] args) {
         ProblemSet3 ps = new ProblemSet3();
                 
-        // comment out or uncomment as needed // TODO uncomment all exercises
+        // comment out or uncomment as needed
         
         ps.sign();          // executes Exercise 1
         ps.parity();        // executes Exercise 2
