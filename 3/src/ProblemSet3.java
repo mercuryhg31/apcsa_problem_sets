@@ -31,11 +31,11 @@ public class ProblemSet3 {
         // comment out or uncomment as needed // TODO uncomment all exercises
         
         // ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
+        // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
-        // ps.cards();         // executes Exercise 6
+        ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
         // ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
@@ -104,10 +104,10 @@ public class ProblemSet3 {
             System.out.println("\nStrictly increasing.");
         } else if (a <= b && b <= c) {
             System.out.println("\nIncreasing.");
-        } else if (a >= b && b >= c) {
-            System.out.println("\nDecreasing.");
         } else if (a > b && b > c) {
             System.out.println("\nStrictly decreasing.");
+        } else if (a >= b && b >= c) {
+            System.out.println("\nDecreasing.");
         } else {
             System.out.println("\nUnordered.");
         }
@@ -182,32 +182,28 @@ public class ProblemSet3 {
      * Prompt the user to enter a grade. What's the corresponding letter grade?
      */
     
-    public void grade() { // TODO needs major revison
-        final double hiA = 100; // TODO is this what he means by thresholds?
+    public void grade() {
+        final double hiA = 100;
         final double loA = 90;
-        final double hiB = 89;
         final double loB = 80;
-        final double hiC = 79;
         final double loC = 70;
-        final double hiD = 69;
         final double loD = 60;
-        final double hiF = 50;
         final double loF = 0;
 
         System.out.print("\nEnter a grade: ");
         double input = in.nextDouble();
         in.nextLine();
-        
+
         if (loA <= input && input <= hiA) {
             System.out.println("\nYou received an A.");
-        } else if (loB <= input && input <= hiB) {
+        } else if (loB <= input && input < loA) {
             System.out.println("\nYou received a B.");
-        } else if (loC <= input && input <= hiC) {
+        } else if (loC <= input && input < loB) {
             System.out.println("\nYou received a C.");
-        } else if (loD <= input && input <= hiD) {
+        } else if (loD <= input && input < loC) {
             System.out.println("\nYou received a D.");
-        } else if (loF <= input && input <= hiF) {
-            System.out.println("\nYou received a F.");
+        } else if (loF <= input && input < loD) {
+            System.out.println("\nYou received an F.");
         } else if (input > 100) {
             System.out.println("\nGrades above 100 are invalid.");
         } else {
@@ -224,88 +220,88 @@ public class ProblemSet3 {
     public void cards() {
         System.out.print("\nEnter a card: ");
         String input = in.nextLine().toUpperCase();
-        String output = "\n";
+        String output = "";
         boolean suit = false; // TODO make it only a switch statement
         boolean rank = false;
-
-        switch (input.charAt(0)) {
-            case '2':
-                output += "Two";
-                rank = true;
-                break;
-            case '3':
-                output += "Three";
-                rank = true;
-                break;
-            case '4':
-                output += "Four";
-                rank = true;
-                break;
-            case '5':
-                output += "Five";
-                rank = true;
-                break;
-            case '6':
-                output += "Six";
-                rank = true;
-                break;
-            case '7':
-                output += "Seven";
-                rank = true;
-                break;
-            case '8':
-                output += "Eight";
-                rank = true;
-                break;
-            case '9':
-                output += "Nine";
-                rank = true;
-                break;
-            case 'T':
-                output += "Ten";
-                rank = true;
-                break;
-            case 'J':
-                output += "Jack";
-                rank = true;
-                break;
-            case 'Q':
-                output += "Queen";
-                rank = true;
-                break;
-            case 'K':
-                output += "King";
-                rank = true;
-                break;
-            case 'A':
-                output += "Ace";
-                rank = true;
-                break;
-        }
-        output += " of ";
         switch (input.charAt(1)) {
             case 'C':
-                output += "Clubs";
+                output = "Clubs";
                 suit = true;
                 break;
             case 'D':
-                output += "Diamonds";
+                output = "Diamonds";
                 suit = true;
                 break;
             case 'H':
-                output += "Hearts";
+                output = "Hearts";
                 suit = true;
                 break;
             case 'S':
-                output += "Spades";
+                output = "Spades";
                 suit = true;
                 break;
+            default:
+                output = "\nThat is not a valid suit.";
         }
-        if (!suit) { // TODO should we display both messages if both are true? // suit first, then rank
-            output = "\nThat is not a valid suit.";
-        } else if (!rank) {
-            output = "\nThat is not a valid rank.";
-        } // TODO also should we show an error message if the input is longer than 2 chars? // yes
+        switch (input.charAt(0)) {
+            case '2':
+                output = "\nTwo of " + output;
+                rank = true;
+                break;
+            case '3':
+                output = "\nThree of " + output;
+                rank = true;
+                break;
+            case '4':
+                output = "\nFour of " + output;
+                rank = true;
+                break;
+            case '5':
+                output = "\nFive of " + output;
+                rank = true;
+                break;
+            case '6':
+                output = "\nSix of " + output;
+                rank = true;
+                break;
+            case '7':
+                output = "\nSeven of " + output;
+                rank = true;
+                break;
+            case '8':
+                output = "\nEight of " + output;
+                rank = true;
+                break;
+            case '9':
+                output = "\nNine of " + output;
+                rank = true;
+                break;
+            case 'T':
+                output = "\nTen of " + output;
+                rank = true;
+                break;
+            case 'J':
+                output = "\nJack of " + output;
+                rank = true;
+                break;
+            case 'Q':
+                output = "\nQueen of " + output;
+                rank = true;
+                break;
+            case 'K':
+                output = "\nKing of " + output;
+                rank = true;
+                break;
+            case 'A':
+                output = "\nAce of " + output;
+                rank = true;
+                break;
+            default:
+                output = "\nThat is not a valid rank.";
+        }
+        if (input.length() > 2) {
+            output = "\nError.";
+        }
         System.out.println(output);
     }
     
