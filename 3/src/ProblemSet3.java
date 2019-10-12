@@ -35,9 +35,9 @@ public class ProblemSet3 {
         // ps.ordered();       // executes Exercise 3
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
-        ps.cards();         // executes Exercise 6
+        // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
-        // ps.state();         // executes Exercise 8
+        ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
         // ps.salary();        // executes Exercise 10
         
@@ -300,7 +300,7 @@ public class ProblemSet3 {
         System.out.print("\nEnter a year: ");
         int year = in.nextInt();
 
-        if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println("\n" + year + " is a leap year.");
         } else {
             System.out.println("\n" + year + " is not a leap year.");
@@ -320,33 +320,36 @@ public class ProblemSet3 {
         in.nextLine();
         System.out.print("Enter a scale: ");
         String scale = in.nextLine().toUpperCase();
-        String output = "\n";
 
-        switch (scale.charAt(0)) {
-            case 'F':
-                if (temp <= 32) {
-                    output += "Solid.";
-                } else if (temp >= 212) {
-                    output += "Gas.";
-                } else {
-                    output += "Liquid.";
-                }
-                break;
-            case 'C':
-                if (temp <= 0) {
-                    output += "Solid.";
-                } else if (temp >= 100) {
-                    output += "Gas.";
-                } else {
-                    output += "Liquid.";
-                }
-            break;
-        }
+        final double freezingF = 32;
+        final double boilingF = 212;
+        final double freezingC = 0;
+        final double boilingC = 100;
 
-        if (!scale.equals("F") && !scale.equals("C")) { // TODO should I do this, or should I allow for anything to be typed as long as the first char is F or C? (like farhenheit or celcius?) // error message
-            output = "\nThat's not a valid scale.";
+        if (!scale.equals("F") && !scale.equals("FAHRENHEIT") && !scale.equals("C") && !scale.equals("CELSIUS")) {
+            System.out.println("\nThat's not a valid scale.");
+        } else {
+            switch (scale.charAt(0)) {
+                case 'F':
+                    if (temp <= freezingF) {
+                        System.out.println("\nSolid.");
+                    } else if (temp >= boilingF) {
+                        System.out.println("\nGas.");
+                    } else {
+                        System.out.println("\nLiquid.");
+                    }
+                    break;
+                case 'C':
+                    if (temp <= freezingC) {
+                        System.out.println("\nSolid.");
+                    } else if (temp >= boilingC) {
+                        System.out.println("\nGas.");
+                    } else {
+                        System.out.println("\nLiquid.");
+                    }
+                    break;
+            }
         }
-        System.out.println(output);
     }
     
     /*
