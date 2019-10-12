@@ -127,9 +127,7 @@ public class ProblemSet3 {
     
     public void gpa() {
         double grade = 0;
-        String output = "";
         boolean valid = false;
-
         System.out.print("\nEnter a letter grade: ");
         String input = in.nextLine().toUpperCase();
 
@@ -158,38 +156,30 @@ public class ProblemSet3 {
                 grade = d;
                 valid = true;
                 break;
-        }
-        if (input.charAt(0) == 'F') {
-            grade = f;
-            valid = true;
+            case 'F':
+                grade = f;
+                valid = true;
         }
         try {
-            if (input.charAt(0) != 'F') {
-                switch (input.charAt(1)) {
-                    case '+':
-                        grade += plus;
-                        break;
-                    case '-':
-                        grade += minus;
-                        break;
-                    default:
-                        valid = false;
-                }
+            switch (input.charAt(1)) {
+                case '+':
+                    grade += (grade == 4) ? 0 : plus;
+                    break;
+                case '-':
+                    grade += minus;
+                    break;
+                default:
+                    valid = false;
             }
         } catch (Exception e) {}
-
-        if (input.length() > 2) {
-            valid = false;
-        }
-        // valid = (input.length() > 2) ? false : valid;
+        
+        valid = (input.length() > 2 || (input.charAt(0) == 'F' && input.length() > 1)) ? false : valid;
 
         if (valid) {
-            output = "\nYour GPA is " + dec2.format(grade) + ".";
+            System.out.println("\nYour GPA is " + dec2.format(grade) + ".");
         } else {
-            output = "\nThat's not a valid letter grade.";
+            System.out.println("\nThat's not a valid letter grade.");
         }
-
-        System.out.println(output);
     }
     
     /*
