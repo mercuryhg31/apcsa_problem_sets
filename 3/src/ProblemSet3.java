@@ -220,91 +220,74 @@ public class ProblemSet3 {
     public void cards() {
         System.out.print("\nEnter a card: ");
         String input = in.nextLine().toUpperCase();
-        String output = "";
-        boolean suit = false; // TODO make it only a switch statement
-        boolean rank = false;
-        switch (input.charAt(1)) {
-            case 'C':
-                output = "Clubs";
-                suit = true;
-                break;
-            case 'D':
-                output = "Diamonds";
-                suit = true;
-                break;
-            case 'H':
-                output = "Hearts";
-                suit = true;
-                break;
-            case 'S':
-                output = "Spades";
-                suit = true;
-                break;
-            default:
-                output = "\nThat is not a valid suit.";
-                System.out.println(output);
-                return;
-        }
-        switch (input.charAt(0)) {
-            case '2':
-                output = "\nTwo of " + output;
-                rank = true;
-                break;
-            case '3':
-                output = "\nThree of " + output;
-                rank = true;
-                break;
-            case '4':
-                output = "\nFour of " + output;
-                rank = true;
-                break;
-            case '5':
-                output = "\nFive of " + output;
-                rank = true;
-                break;
-            case '6':
-                output = "\nSix of " + output;
-                rank = true;
-                break;
-            case '7':
-                output = "\nSeven of " + output;
-                rank = true;
-                break;
-            case '8':
-                output = "\nEight of " + output;
-                rank = true;
-                break;
-            case '9':
-                output = "\nNine of " + output;
-                rank = true;
-                break;
-            case 'T':
-                output = "\nTen of " + output;
-                rank = true;
-                break;
-            case 'J':
-                output = "\nJack of " + output;
-                rank = true;
-                break;
-            case 'Q':
-                output = "\nQueen of " + output;
-                rank = true;
-                break;
-            case 'K':
-                output = "\nKing of " + output;
-                rank = true;
-                break;
-            case 'A':
-                output = "\nAce of " + output;
-                rank = true;
-                break;
-            default:
-                output = "\nThat is not a valid rank.";
-        }
+        String suit = "";
+        String rank = "";
         if (input.length() > 2) {
-            output = "\nError.";
+            System.out.println("\nThat's not a valid input.");
+        } else {
+            switch (input.charAt(1)) {
+                case 'C':
+                    suit = "Clubs";
+                    break;
+                case 'D':
+                    suit = "Diamonds";
+                    break;
+                case 'H':
+                    suit = "Hearts";
+                    break;
+                case 'S':
+                    suit = "Spades";
+                    break;
+                default:
+                    System.out.println("\nThat's not a valid suit.");
+                    return;
+            }
+            switch (input.charAt(0)) {
+                case '2':
+                    rank = "Two";
+                    break;
+                case '3':
+                    rank = "Three";
+                    break;
+                case '4':
+                    rank = "Four";
+                    break;
+                case '5':
+                    rank = "Five";
+                    break;
+                case '6':
+                    rank = "Six";
+                    break;
+                case '7':
+                    rank = "Seven";
+                    break;
+                case '8':
+                    rank = "Eight";
+                    break;
+                case '9':
+                    rank = "Nine";
+                    break;
+                case 'T':
+                    rank = "Ten";
+                    break;
+                case 'J':
+                    rank = "Jack";
+                    break;
+                case 'Q':
+                    rank = "Queen";
+                    break;
+                case 'K':
+                    rank = "King";
+                    break;
+                case 'A':
+                    rank = "Ace";
+                    break;
+                default:
+                    System.out.println("\nThat's not a valid rank.");
+                    return;
+            }
+            System.out.println("\n" + rank + " of " + suit + ".");
         }
-        System.out.println(output);
     }
     
     /*
