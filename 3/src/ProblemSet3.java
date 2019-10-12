@@ -355,7 +355,7 @@ public class ProblemSet3 {
         String feb = "FEBRUARY";
         String mar = "MARCH";
         String apr = "APRIL";
-        String may = "MAY ";
+        String may = "MAY";
         String jun = "JUNE";
         String jul = "JULY";
         String aug = "AUGUST";
@@ -376,7 +376,16 @@ public class ProblemSet3 {
     }
 
     boolean monCheck(String input, String mon) {
-        return input.equals(mon) || input.equals(mon.substring(0, 3)) || input.equals(mon.substring(0, 4));
+        boolean a = input.equals(mon);
+        boolean b = false;
+        boolean c = false;
+        try {
+            b = input.equals(mon.substring(0, 3));
+        } catch (Exception e) {}
+        try {
+            c = input.equals(mon.substring(0, 4));
+        } catch (Exception e) {}
+        return a || b || c;
     }
     
     /*
