@@ -31,9 +31,9 @@ public class ProblemSet3 {
         // comment out or uncomment as needed // TODO uncomment all exercises
         
         // ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
+        ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
+        // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
@@ -73,16 +73,10 @@ public class ProblemSet3 {
         System.out.print("\nEnter an integer: ");
         int num = in.nextInt();
         in.nextLine();
-        int output = num % 2;
-        switch (output) {
-            case 0:
-                System.out.println("\nEven.");
-                break;
-            case 1:
-                System.out.println("\nOdd.");
-                break;
-            default:
-                System.out.println("\nUh, I don't know how this code even got executed."); // TODO probably should delele this
+        if (num % 2 == 0) {
+            System.out.println("\nEven.");
+        } else {
+            System.out.println("\nOdd.");
         }
     }
     
