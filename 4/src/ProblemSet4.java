@@ -25,9 +25,9 @@ public class ProblemSet4 {
     public static void main(String[] args) {
         ProblemSet4 ps = new ProblemSet4();
         
-        // comment out or uncomment as needed
+        // comment out or uncomment as needed // TODO uncomment all exercises
         
-        ps.sum();
+        // ps.sum();
         ps.reverse();
         ps.digits();
         ps.average();
@@ -80,7 +80,18 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
-
+        System.out.println();
+        int input;
+        do {
+            System.out.print("Positive integer: ");
+            input = in.nextInt();
+        } while (input < 1);
+        String num = Integer.toString(input);
+        String output = "";
+        for (int i = num.length() - 1; i >= 0; i--) {
+            output += num.charAt(i) + ", ";
+        }
+        System.out.println("\n" + output.substring(0, output.length() - 2) + ".");
     }
     
     /*
