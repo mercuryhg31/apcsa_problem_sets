@@ -53,6 +53,8 @@ public class ProblemSet4 {
     
     public void sum() {
         System.out.println();
+        int lo;
+        int hi;
         do {
             System.out.print("Lower bound: ");
             lo = in.nextInt();
@@ -62,8 +64,10 @@ public class ProblemSet4 {
             in.nextLine();
         } while (lo > hi);
         int sum = 0;
-        for (int i = lo; i < hi; i++) {
-            sum += i;
+        for (int i = lo; i <= hi; i++) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
         }
         System.out.println("\n" + sum + ".");
     }
