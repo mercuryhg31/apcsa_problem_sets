@@ -28,7 +28,7 @@ public class ProblemSet4 {
         // comment out or uncomment as needed // TODO uncomment all exercises
         
         // ps.sum();
-        ps.reverse();
+        // ps.reverse();
         ps.digits();
         ps.average();
         ps.prime();
@@ -85,6 +85,7 @@ public class ProblemSet4 {
         do {
             System.out.print("Positive integer: ");
             input = in.nextInt();
+            in.nextLine();
         } while (input < 1);
         String num = Integer.toString(input);
         String output = "";
@@ -102,7 +103,21 @@ public class ProblemSet4 {
      */
     
     public void digits() {
-
+        System.out.println();
+        int input;
+        do {
+            System.out.print("Positive integer: ");
+            input = in.nextInt();
+            in.nextLine();
+        } while (input < 1);
+        String num = Integer.toString(input);
+        int output = 0;
+        for (int i = 0; i <= num.length() - 1; i++) { // 929409
+            if (Character.getNumericValue(num.charAt(i)) % 2 != 0) { // TODO am uneasy about using .getNumericValue - figure out why (int) doesn't work
+                output += Character.getNumericValue(num.charAt(i));
+            }
+        }
+        System.out.println("\n" + output + ".");
     }
     
     /*
