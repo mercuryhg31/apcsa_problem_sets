@@ -52,7 +52,20 @@ public class ProblemSet4 {
      */
     
     public void sum() {
-
+        System.out.println();
+        do {
+            System.out.print("Lower bound: ");
+            lo = in.nextInt();
+            in.nextLine();
+            System.out.print("Upper bound: ");
+            hi = in.nextInt();
+            in.nextLine();
+        } while (lo > hi);
+        int sum = 0;
+        for (int i = lo; i < hi; i++) {
+            sum += i;
+        }
+        System.out.println("\n" + sum + ".");
     }
     
     /*

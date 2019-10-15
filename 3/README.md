@@ -2,6 +2,8 @@
 
 It's time to put your skills to the test. This problem set focuses on using conditional control structures. It's also your first introduction to methods, so things look a little different. The `main` method is done for you. Lines 31-40 trigger each of the predefined methods, which you can think of as self-contained executable pieces of logic. Write your code for each exercise in the corresponding method.
 
+[Skeleton Repository](https://github.com/ap-java-ucvts/pset-3-skeleton)
+
 ## Getting Started
 
 To get started, create a [GitHub](https://github.com/) repository to store your code. When you're finished, clone my skeleton to get all of the starter code and instructions. Setup a remote to push your code to your repository instead of mine.
