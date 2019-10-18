@@ -17,19 +17,23 @@
  */
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
+
+import javax.print.attribute.standard.NumberOfInterveningJobs;
 
 public class ProblemSet4 {
     
     private static Scanner in = new Scanner(System.in);
+    private static DecimalFormat dec2 = new DecimalFormat("#,##0.##");
     
     public static void main(String[] args) {
         ProblemSet4 ps = new ProblemSet4();
         
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        // ps.sum();
-        // ps.reverse();
-        // ps.digits();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
         ps.average();
         ps.prime();
         ps.fibonacci();
@@ -69,7 +73,7 @@ public class ProblemSet4 {
                 sum += i;
             }
         }
-        System.out.println("\n" + sum + ".");
+        System.out.println("\n" + dec2.format(sum) + ".\n");
     }
     
     /*
@@ -80,7 +84,6 @@ public class ProblemSet4 {
      */
     
     public void reverse() {
-        System.out.println();
         int input;
         do {
             System.out.print("Positive integer: ");
@@ -92,7 +95,7 @@ public class ProblemSet4 {
         for (int i = num.length() - 1; i >= 0; i--) {
             output += num.charAt(i) + ", ";
         }
-        System.out.println("\n" + output.substring(0, output.length() - 2) + ".");
+        System.out.println("\n" + output.substring(0, output.length() - 2) + ".\n");
     }
     
     /*
@@ -103,7 +106,6 @@ public class ProblemSet4 {
      */
     
     public void digits() {
-        System.out.println();
         int input;
         do {
             System.out.print("Positive integer: ");
@@ -117,7 +119,7 @@ public class ProblemSet4 {
                 output += Character.getNumericValue(num.charAt(i));
             }
         }
-        System.out.println("\n" + output + ".");
+        System.out.println("\n" + output + ".\n");
     }
     
     /*
@@ -129,15 +131,33 @@ public class ProblemSet4 {
      */
     
     public void average() {
-        System.out.println();
-        int input;
-        int[] inputs;
-        int index = 0;
+        double num;
+        String input = "";
         do {
             System.out.print("Non-negative integer: ");
-            inputs[index] = in.nextInt();
+            num = in.nextDouble();
+            input += (num > -1) ? num + "," : "";
             in.nextLine();
-        } while (inputs[index] > -1);
+        } while (num > -1);
+        double sum = 0;
+        String[] allInputs = input.split(",");
+        // System.out.println(inputArr);
+        // int comma = 0;
+        // for (int i = 0; i < input.length(); i++) {
+        //     if (input.charAt(i) == ',') {
+        //         comma++;
+        //     }
+        // }
+        // int[] numbers = new int[allInputs.length];
+        for (int i = 0; i < allInputs.length; i++) {
+            // numbers[i] = Integer.parseInt(allInputs[i]);
+            sum += Double.parseDouble(allInputs[i]);
+        }
+        // for (int a: numbers) {
+        //     System.out.println(a);
+        // }
+        // double average = ;
+        System.out.println("\n" + dec2.format(sum / allInputs.length) + ".\n");
     }
     
     /*
