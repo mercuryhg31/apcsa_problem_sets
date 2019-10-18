@@ -31,10 +31,10 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        ps.sum();
-        ps.reverse();
-        ps.digits();
-        ps.average();
+        // ps.sum();
+        // ps.reverse();
+        // ps.digits();
+        // ps.average();
         ps.prime();
         ps.fibonacci();
         ps.factors();
@@ -153,8 +153,28 @@ public class ProblemSet4 {
      * Prompt the user to enter a non-negative integer. Is this number prime?
      */
     
-    public void prime() {
-
+    public void prime() { // TODO gotta fix everything
+        int input;
+        do {
+            System.out.print("Non-negative integer: ");
+            input = in.nextInt();
+            in.nextLine();
+        } while (input < 0);
+        boolean prime = true;
+        for (int i = 1; i < Math.sqrt(input); i++) {
+            System.out.println(input);
+            System.out.println(i);
+            // prime = (input % i == 0) ? false : prime;
+            if (input % i == 0) {
+                prime = false;
+            }
+        }
+        if (prime) {
+            System.out.println("Prime.\n");
+        } else {
+            System.out.println("Not prime.\n");
+        }
+        // System.out.println("\n" + ((prime) ? "Prime.\n" : "Not prime.\n"));
     }
     
     /*
