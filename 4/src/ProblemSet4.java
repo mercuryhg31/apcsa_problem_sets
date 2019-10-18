@@ -131,32 +131,19 @@ public class ProblemSet4 {
      */
     
     public void average() {
-        double num;
+        int num;
         String input = "";
         do {
             System.out.print("Non-negative integer: ");
-            num = in.nextDouble();
+            num = in.nextInt();
             input += (num > -1) ? num + "," : "";
             in.nextLine();
         } while (num > -1);
         double sum = 0;
         String[] allInputs = input.split(",");
-        // System.out.println(inputArr);
-        // int comma = 0;
-        // for (int i = 0; i < input.length(); i++) {
-        //     if (input.charAt(i) == ',') {
-        //         comma++;
-        //     }
-        // }
-        // int[] numbers = new int[allInputs.length];
         for (int i = 0; i < allInputs.length; i++) {
-            // numbers[i] = Integer.parseInt(allInputs[i]);
             sum += Double.parseDouble(allInputs[i]);
         }
-        // for (int a: numbers) {
-        //     System.out.println(a);
-        // }
-        // double average = ;
         System.out.println("\n" + dec2.format(sum / allInputs.length) + ".\n");
     }
     
