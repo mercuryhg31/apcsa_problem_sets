@@ -160,21 +160,28 @@ public class ProblemSet4 {
             input = in.nextInt();
             in.nextLine();
         } while (input < 0);
-        boolean prime = true;
-        for (int i = 1; i < Math.sqrt(input); i++) {
-            System.out.println(input);
-            System.out.println(i);
-            // prime = (input % i == 0) ? false : prime;
-            if (input % i == 0) {
-                prime = false;
+        
+        if (isPrime(input)) {
+            System.out.println("prikme");
+        } else {
+            System.out.println("notprime");
+        }
+
+        //System.out.println("\n" + ((isPrime(input)) ? "Prime.\n" : "Not prime.\n"));
+    }
+
+    boolean isPrime(int num) {
+        if (num <= 1 || num % 2 == 0) {
+            return false;
+        } else if (num == 2) {
+            return true;
+        }
+        for (int i = 2; i < Math.sqrt(num) + 1; i++) {
+            if (num % i == 0) {
+                return false;
             }
         }
-        if (prime) {
-            System.out.println("Prime.\n");
-        } else {
-            System.out.println("Not prime.\n");
-        }
-        // System.out.println("\n" + ((prime) ? "Prime.\n" : "Not prime.\n"));
+        return true;
     }
     
     /*
