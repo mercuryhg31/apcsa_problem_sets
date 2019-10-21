@@ -202,7 +202,14 @@ public class ProblemSet4 {
      */
     
     public void factors() {
+        int input;
+        do {
+            System.out.print("Non-negative integer: ");
+            input = in.nextInt();
+            in.nextLine();
+        } while (input <= 0);
 
+        for (int i = 0; i < Math.sqrt(input); i++)
     }
     
     /*
