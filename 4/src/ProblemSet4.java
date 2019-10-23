@@ -37,8 +37,8 @@ public class ProblemSet4 {
         // ps.average();
         // ps.prime();
         // ps.fibonacci();
-        ps.factors();
-        ps.mario();
+        // ps.factors();
+        // ps.mario();
         ps.luigi();
         ps.credit();
                 
@@ -212,11 +212,11 @@ public class ProblemSet4 {
 
         for (int i = 1; i < Math.sqrt(input) + 0.5; i++) {
             if (input % i == 0) {
-                output += Integer.toString(i) + ", " + Integer.toString(input / i) + ", ";
+                output += Integer.toString(i) + ", "/* + Integer.toString(input / i) + ", "*/;
+                output += (input / i != i) ? Integer.toString(input / i) + ", " : "";
             }
         }
-        output = output.substring(0, output.length() - 2) + ".";
-        System.out.println(output);
+        System.out.println(output.substring(0, output.length() - 2) + ".\n");
     }
     
     /*
@@ -227,7 +227,23 @@ public class ProblemSet4 {
      */
     
     public void mario() {        
-
+        int height;
+        do {
+            System.out.print("Height: ");
+            height = in.nextInt();
+            in.nextLine();
+        } while (!(0 < height && height < 25));
+        System.out.println();
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < height - 1 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i + 2; k++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
     
     /*
@@ -238,7 +254,27 @@ public class ProblemSet4 {
      */
     
     public void luigi() {
-
+        int height;
+        do {
+            System.out.print("Height: ");
+            height = in.nextInt();
+            in.nextLine();
+        } while (!(0 < height && height < 25));
+        System.out.println();
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < height - 1 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i + 2; k++) {
+                System.out.print("#");
+            }
+            System.out.print("  ");
+            for (int k = 0; k < i + 2; k++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
     
     /*
