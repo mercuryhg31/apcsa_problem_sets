@@ -35,8 +35,8 @@ public class ProblemSet4 {
         // ps.reverse();
         // ps.digits();
         // ps.average();
-        ps.prime();
-        ps.fibonacci();
+        // ps.prime();
+        // ps.fibonacci();
         ps.factors();
         ps.mario();
         ps.luigi();
@@ -203,13 +203,20 @@ public class ProblemSet4 {
     
     public void factors() {
         int input;
+        String output = "";
         do {
             System.out.print("Non-negative integer: ");
             input = in.nextInt();
             in.nextLine();
         } while (input <= 0);
 
-        for (int i = 0; i < Math.sqrt(input); i++)
+        for (int i = 1; i < Math.sqrt(input) + 0.5; i++) {
+            if (input % i == 0) {
+                output += Integer.toString(i) + ", " + Integer.toString(input / i) + ", ";
+            }
+        }
+        output = output.substring(0, output.length() - 2) + ".";
+        System.out.println(output);
     }
     
     /*
