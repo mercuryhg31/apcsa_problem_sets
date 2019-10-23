@@ -39,7 +39,7 @@ public class ProblemSet4 {
         // ps.fibonacci();
         // ps.factors();
         // ps.mario();
-        ps.luigi();
+        // ps.luigi();
         ps.credit();
                 
         in.close();
@@ -212,7 +212,7 @@ public class ProblemSet4 {
 
         for (int i = 1; i < Math.sqrt(input) + 0.5; i++) {
             if (input % i == 0) {
-                output += Integer.toString(i) + ", "/* + Integer.toString(input / i) + ", "*/;
+                output += Integer.toString(i) + ", ";
                 output += (input / i != i) ? Integer.toString(input / i) + ", " : "";
             }
         }
@@ -227,15 +227,15 @@ public class ProblemSet4 {
      */
     
     public void mario() {        
-        int height;
+        int input;
         do {
             System.out.print("Height: ");
-            height = in.nextInt();
+            input = in.nextInt();
             in.nextLine();
-        } while (!(0 < height && height < 25));
+        } while (!(0 < input && input < 25));
         System.out.println();
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < height - 1 - i; j++) {
+        for (int i = 0; i < input; i++) {
+            for (int j = 0; j < input - 1 - i; j++) {
                 System.out.print(" ");
             }
             for (int k = 0; k < i + 2; k++) {
@@ -254,15 +254,15 @@ public class ProblemSet4 {
      */
     
     public void luigi() {
-        int height;
+        int input;
         do {
             System.out.print("Height: ");
-            height = in.nextInt();
+            input = in.nextInt();
             in.nextLine();
-        } while (!(0 < height && height < 25));
+        } while (!(0 < input && input < 25));
         System.out.println();
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < height - 1 - i; j++) {
+        for (int i = 0; i < input; i++) {
+            for (int j = 0; j < input - 1 - i; j++) {
                 System.out.print(" ");
             }
             for (int k = 0; k < i + 2; k++) {
@@ -274,7 +274,6 @@ public class ProblemSet4 {
             }
             System.out.println();
         }
-        System.out.println();
     }
     
     /*
@@ -285,6 +284,34 @@ public class ProblemSet4 {
      */
     
     public void credit() {
-        
+        System.out.print("\nNumber: ");
+        String input = in.nextLine();
+        int[] numbers = new int[input.length()];
+        String round2 = "";
+        for (int i = input.length() - 2; i >= 0; i -= 2) {
+            numbers[i] = Character.getNumericValue(input.charAt(i)) * 2;
+            round2 += numbers[i];
+        }
+        int sum = 0;
+        for (int i = 0; i < round2.length(); i++) {
+            sum += Character.getNumericValue(round2.charAt(i));
+        }
+        for (int i = input.length() - 1; i >= 0; i -= 2) {
+            sum += Character.getNumericValue(input.charAt(i));
+        }
+
+        if (sum % 10 == 0) {
+            if (input.length() == 15 && (input.substring(0, 2).equals("34") || input.substring(0, 2).equals("37"))) {
+                System.out.println("\nAmex.\n");
+                return;
+            } else if (input.length() == 16 && 51 <= Integer.parseInt(input.substring(0, 2)) && Integer.parseInt(input.substring(0, 2)) <= 55) {
+                System.out.println("\nMastercard.\n");
+                return;
+            } else if ((input.length() == 13 || input.length() == 16) && input.substring(0, 1).equals("4")) {
+                System.out.println("\nVisa.\n");
+                return;
+            }
+        }
+        System.out.println("\nInvalid.\n");
     }
 }
