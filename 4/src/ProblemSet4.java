@@ -35,12 +35,12 @@ public class ProblemSet4 {
         // ps.reverse();
         // ps.digits();
         // ps.average();
-        // ps.prime();
+        ps.prime();
         // ps.fibonacci();
         // ps.factors();
         // ps.mario();
         // ps.luigi();
-        ps.credit();
+        // ps.credit();
                 
         in.close();
     }
@@ -115,7 +115,7 @@ public class ProblemSet4 {
         String num = Integer.toString(input);
         int output = 0;
         for (int i = 0; i <= num.length() - 1; i++) { // 929409
-            if (Character.getNumericValue(num.charAt(i)) % 2 != 0) { // TODO am uneasy about using .getNumericValue - figure out why (int) doesn't work
+            if (Character.getNumericValue(num.charAt(i)) % 2 != 0) {
                 output += Character.getNumericValue(num.charAt(i));
             }
         }
@@ -153,25 +153,19 @@ public class ProblemSet4 {
      * Prompt the user to enter a non-negative integer. Is this number prime?
      */
     
-    public void prime() { // TODO gotta fix everything
+    public void prime() {
         int input;
         do {
             System.out.print("Non-negative integer: ");
             input = in.nextInt();
             in.nextLine();
         } while (input < 0);
-        
-        if (isPrime(input)) {
-            System.out.println("prikme");
-        } else {
-            System.out.println("notprime");
-        }
-
-        //System.out.println("\n" + ((isPrime(input)) ? "Prime.\n" : "Not prime.\n"));
+        System.out.println("\n" + ((isPrime(input)) ? "Prime.\n" : "Not prime.\n"));
     }
 
-    boolean isPrime(int num) {
-        if (num <= 1 || num % 2 == 0) {
+    boolean isPrime(int input) {
+        double num = (int) input;
+        if (num <= 1) {
             return false;
         } else if (num == 2) {
             return true;
@@ -191,7 +185,7 @@ public class ProblemSet4 {
      * integer the user enters is called n, what is the nth Fibonacci number?
      */
     
-    public void fibonacci() {
+    public void fibonacci() { // TODO
 
     }
     
@@ -209,7 +203,6 @@ public class ProblemSet4 {
             input = in.nextInt();
             in.nextLine();
         } while (input <= 0);
-
         for (int i = 1; i < Math.sqrt(input) + 0.5; i++) {
             if (input % i == 0) {
                 output += Integer.toString(i) + ", ";
@@ -238,7 +231,7 @@ public class ProblemSet4 {
             for (int j = 0; j < input - 1 - i; j++) {
                 System.out.print(" ");
             }
-            for (int k = 0; k < i + 2; k++) {
+            for (int j = 0; j < i + 2; j++) {
                 System.out.print("#");
             }
             System.out.println();
@@ -265,11 +258,11 @@ public class ProblemSet4 {
             for (int j = 0; j < input - 1 - i; j++) {
                 System.out.print(" ");
             }
-            for (int k = 0; k < i + 2; k++) {
+            for (int j = 0; j < i + 2; j++) {
                 System.out.print("#");
             }
             System.out.print("  ");
-            for (int k = 0; k < i + 2; k++) {
+            for (int j = 0; j < i + 2; j++) {
                 System.out.print("#");
             }
             System.out.println();
@@ -299,7 +292,6 @@ public class ProblemSet4 {
         for (int i = input.length() - 1; i >= 0; i -= 2) {
             sum += Character.getNumericValue(input.charAt(i));
         }
-
         if (sum % 10 == 0) {
             if (input.length() == 15 && (input.substring(0, 2).equals("34") || input.substring(0, 2).equals("37"))) {
                 System.out.println("\nAmex.\n");
