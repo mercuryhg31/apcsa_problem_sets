@@ -31,16 +31,16 @@ public class ProblemSet4 {
         
         // comment out or uncomment as needed // TODO uncomment all exercises
         
-        // ps.sum();
-        // ps.reverse();
-        // ps.digits();
-        // ps.average();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
         ps.prime();
-        // ps.fibonacci();
-        // ps.factors();
-        // ps.mario();
-        // ps.luigi();
-        // ps.credit();
+        ps.fibonacci();
+        ps.factors();
+        ps.mario();
+        ps.luigi();
+        ps.credit();
                 
         in.close();
     }
@@ -185,8 +185,27 @@ public class ProblemSet4 {
      * integer the user enters is called n, what is the nth Fibonacci number?
      */
     
-    public void fibonacci() { // TODO
-
+    public void fibonacci() {
+        int one = 0;
+        int two = 1;
+        int fib = -1;
+        int n;
+        do {
+            System.out.print("Positive integer: ");
+            n = in.nextInt(); in.nextLine();
+        } while (n < 1 || n > 92);
+        if (n == 0) {
+            fib = 0;
+        } else if (n == 1) {
+            fib = 1;
+        } else {
+            for (int i = 2; i <= n; i++) {
+                fib = one + two;
+                one = two;
+                two = fib;
+            }
+        }
+        System.out.println("\n" + fib + ".\n");
     }
     
     /*
@@ -209,7 +228,7 @@ public class ProblemSet4 {
                 output += (input / i != i) ? Integer.toString(input / i) + ", " : "";
             }
         }
-        System.out.println(output.substring(0, output.length() - 2) + ".\n");
+        System.out.println("\n" + output.substring(0, output.length() - 2) + ".\n");
     }
     
     /*
