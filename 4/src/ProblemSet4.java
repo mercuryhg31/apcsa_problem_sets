@@ -29,7 +29,7 @@ public class ProblemSet4 {
     public static void main(String[] args) {
         ProblemSet4 ps = new ProblemSet4();
         
-        // comment out or uncomment as needed // TODO uncomment all exercises
+        // comment out or uncomment as needed
         
         ps.sum();
         ps.reverse();
