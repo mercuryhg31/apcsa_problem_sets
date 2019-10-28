@@ -49,7 +49,23 @@ public class ProblemSet5 {
      */
     
     public String endsMeet(String text, int n) {
-        
+        try {
+            if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
+                char first = '0';
+                for (int i = 0; i < n; i++) {
+                    first = text.charAt(i);
+                }
+                char last = '0';
+                for (int i = n; i > 0; i--) {
+                    last = text.charAt(i);
+                }
+                return first + last;
+            } else {
+                return text;
+            }
+        } catch (Exception e) {
+            return text;
+        }
     }
     
     /*
