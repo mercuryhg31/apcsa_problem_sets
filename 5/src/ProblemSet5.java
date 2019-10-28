@@ -75,7 +75,15 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-
+        try {
+            // if (text.length() >= 3) {
+                return text.charAt(text.length() / 2) + text.charAt(text.length() / 2 + 1) + text.charAt(text.length() / 2 + 2);
+            // } else {
+            //     return text;
+            // }
+        } catch (Exception e) {
+            return text;
+        }
     }
     
     /*
