@@ -97,6 +97,8 @@ public class ProblemSet5 {
         try {
             if (target.equals(text.charAt(text.length() / 2) + text.charAt(text.length() / 2 + 1) + text.charAt(text.length() / 2 + 2))) {
                 return true;
+            } else {
+                return false;
             }
         } catch (Exception e) {
             return false;
@@ -110,7 +112,20 @@ public class ProblemSet5 {
      */
     
     public int countMe(String text, char suffix) {
-
+        try {
+            text += " "; // TODO wait, do i need this?, idk how the fk anything works
+            text = text.toUpperCase(); suffix = Character.toUpperCase(suffix);
+            String[] anArrayWhoopDeDoo = text.split(" ");
+            int count = 0;
+            for (int i = 0; i < anArrayWhoopDeDoo.length; i++) {
+                if (anArrayWhoopDeDoo[i].charAt(anArrayWhoopDeDoo[i].length - 1) == suffix /*more like suffering, hahaa, am i rite????*/) {
+                    count++;
+                }
+            }
+            return count;
+        } catch (Exception e) {
+            return -1;
+        }
     }
     
     /*
