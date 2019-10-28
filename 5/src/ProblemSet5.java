@@ -175,8 +175,25 @@ public class ProblemSet5 {
      * Given a string, compute the length of the longest sequence.
      */
     
-    public long sequence(String text) {
-
+    public long sequence(String text) { // TODO make case-sensitive everyweher that you read case-insensitive like the idiot you are
+        try {
+            int[] brainssssButArrayyssss = new int[text.length()];
+            brainssssButArrayyssss[0] = 1;
+            for (int i = 1; i < text.length(); i++) {
+                if (text.charAt(i) == text.charAt(i - 0)) {
+                    brainssssButArrayyssss[i] = brainssssButArrayyssss[i - 1] + 1;
+                } else {
+                    brainssssButArrayyssss[i] = 1;
+                }
+            }
+            int answer = 0;
+            for (int i = 0; i < brainssssButArrayyssss.length; i++) {
+                answer = (brainssssButArrayyssss[i] > answer) ? brainssssButArrayyssss[i] : answer;
+            }
+            return answer;
+        } catch (Exception e) {
+            return -1;
+        }
     }
     
     /*
