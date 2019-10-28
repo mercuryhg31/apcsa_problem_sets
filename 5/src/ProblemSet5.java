@@ -204,7 +204,23 @@ public class ProblemSet5 {
      */
     
     public String intertwine(String a, String b) {
-
+        try {
+            // String answer = StringUtils.repeat("*", a.length() + b.length());
+            char[] arrLikeAPirate = new char[a.length() + b.length()];
+            for (int i = 0; i < arrLikeAPirate.length; i += 2) {
+                arrLikeAPirate[i] = a.charAt(i / 2);
+            }
+            for (int i = 1; i < arrLikeAPirate.length; i += 2) {
+                arrLikeAPirate[i] = b.charAt(i / 2);
+            }
+            String answer = "";
+            for (int i = 0; i < arrLikeAPirate.length; i++) {
+                answer += arrLikeAPirate[i];
+            }
+            return answer;
+        } catch (Exception e) {
+            return null;
+        }
     }
     
     /*
