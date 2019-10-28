@@ -19,7 +19,7 @@
 public class ProblemSet5 {
     
     public static void main(String[] args) {
-        
+        // TODO i haven't tested a single one of these godforsaken functions so gotta do that
     }
     
     /*
@@ -156,7 +156,17 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
-
+        try {
+            int sum = 0;
+            for (int i = 0; i < text.length(); i++) {
+                try {
+                    sum += Character.getNumericValue(text.charAt(i));
+                } catch (Exception e) {}
+            }
+            return sum;
+        } catch (Exception e) {
+            return -1;
+        }
     }
     
     /*
