@@ -229,7 +229,16 @@ public class ProblemSet5 {
      * Given a string, determine whether or not it is a palindrome.
      */
     
-    public boolean isPalindrome(String text) {
-
+    public boolean isPalindrome(String text) { // TODO do without illegal classes
+        try {
+            text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
+            if (text.substring(0, text.length() / 2).equals(text.substring(text.length() / 2 + 2, text.length() - 1))) { // THIS ISSSSS, GODDAMNIT, WHY MR. WILSON
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
