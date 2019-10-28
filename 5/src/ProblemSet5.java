@@ -30,7 +30,15 @@ public class ProblemSet5 {
      */
     
     public String surroundMe(String in, String out) {
-
+        if (out.length() == 4) {
+            try {
+                return out.charAt(0) + in + out.charAt(out.length() - 1);
+            } catch (Exception e) {
+                return in;
+            }
+        } else {
+            return in;
+        }
     }
     
     /*
@@ -41,7 +49,7 @@ public class ProblemSet5 {
      */
     
     public String endsMeet(String text, int n) {
-
+        
     }
     
     /*

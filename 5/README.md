@@ -1,6 +1,8 @@
 # Problem Set 5
 It's time to put your skills to the test. This problem set focuses on using built-in methods, most notable of the String class. It is also your first introduction to methods that accept parameters and return values. The `main` method is declared, but it is up to you to implement. Write your code for each exercise in the corresponding method. Make sure you test your code thoroughly.
 
+[Skeleton Repository](https://github.com/ap-java-ucvts/pset-5-skeleton)
+
 ## Getting Started
 
 To get started, create a [GitHub](https://github.com/) repository to store your code. When you're finished, clone my skeleton to get all of the starter code and instructions. Setup a remote to push your code to your repository instead of mine.
