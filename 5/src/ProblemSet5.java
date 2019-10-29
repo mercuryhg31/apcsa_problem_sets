@@ -18,7 +18,7 @@
 import java.util.Scanner;
 
 public class ProblemSet5 {
-    
+
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -27,15 +27,15 @@ public class ProblemSet5 {
 
         // System.out.println("\nExercise 1");
         // System.out.println(ps.surroundMe(ps.inStr(), ps.inStr()));
-        
+
         // System.out.println("\nExercise 2");
         // System.out.println(ps.endsMeet(ps.inStr(), ps.inInt()));
 
-        System.out.println("\nExercise 3");
-        System.out.println(ps.middleMan(ps.inStr()));
+        // System.out.println("\nExercise 3");
+        // System.out.println(ps.middleMan(ps.inStr()));
 
-        // System.out.println("\nExercise 4");
-        // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
+        System.out.println("\nExercise 4");
+        System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
 
         // System.out.println("\nExercise 5");
         // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
@@ -72,14 +72,14 @@ public class ProblemSet5 {
         in.nextLine();
         return ans;
     }
-    
+
     /*
      * Exercise 1.
      * 
      * Given two strings, return a new string built by surrounding in with the first
      * and last two characters of out.
      */
-    
+
     public String surroundMe(String in, String out) {
         if (out.length() == 4) {
             try {
@@ -91,14 +91,14 @@ public class ProblemSet5 {
             return in;
         }
     }
-    
+
     /*
      * Exercise 2.
      * 
      * Given a string and an integer, return a new string that represents the first
      * and last n characters of text.
      */
-    
+
     public String endsMeet(String text, int n) { // TODO redo correctly
         try {
             if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
@@ -118,7 +118,7 @@ public class ProblemSet5 {
             return text;
         }
     }
-    
+
     /*
      * Exercise 3.
      * 
@@ -136,7 +136,7 @@ public class ProblemSet5 {
             return text;
         }
     }
-    
+
     /*
      * Exercise 4.
      * 
@@ -146,7 +146,7 @@ public class ProblemSet5 {
     
     public boolean isCentered(String text, String target) {
         try {
-            if (target.equals(text.charAt(text.length() / 2) + text.charAt(text.length() / 2 + 1) + text.charAt(text.length() / 2 + 2))) {
+            if (text.length() % 2 != 0 && target.length() == 3 && target.equals(text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2))) {
                 return true;
             } else {
                 return false;
@@ -155,13 +155,13 @@ public class ProblemSet5 {
             return false;
         }
     }
-    
+
     /*
      * Exercise 5.
      * 
      * Given a string and a character, compute the number of words that end in suffix.
      */
-    
+
     public int countMe(String text, char suffix) {
         try {
             text += " "; // TODO wait, do i need this?, idk how the fk anything works
@@ -178,7 +178,7 @@ public class ProblemSet5 {
             return -1;
         }
     }
-    
+
     /*
      * Exercise 6.
      * 
@@ -199,7 +199,7 @@ public class ProblemSet5 {
             return -1;
         }
     }
-    
+
     /*
      * Exercise 7.
      * 
@@ -219,13 +219,13 @@ public class ProblemSet5 {
             return -1;
         }
     }
-    
+
     /*
      * Exercise 8.
      * 
      * Given a string, compute the length of the longest sequence.
      */
-    
+
     public long sequence(String text) { // TODO make case-sensitive everyweher that you read case-insensitive like the idiot you are
         try {
             int[] brainssssButArrayyssss = new int[text.length()];
@@ -246,14 +246,14 @@ public class ProblemSet5 {
             return -1;
         }
     }
-    
+
     /*
      * Exercise 9.
      * 
      * Given two strings, return a new string built by intertwining each of the
      * characters of a and b.
      */
-    
+
     public String intertwine(String a, String b) {
         try {
             // String answer = StringUtils.repeat("*", a.length() + b.length());
@@ -273,13 +273,13 @@ public class ProblemSet5 {
             return null;
         }
     }
-    
+
     /*
      * Exercise 10.
      * 
      * Given a string, determine whether or not it is a palindrome.
      */
-    
+
     public boolean isPalindrome(String text) { // TODO do without illegal classes
         try {
             text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
