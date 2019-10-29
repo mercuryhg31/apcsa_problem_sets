@@ -15,11 +15,62 @@
  * Work through these exercises on your own. Experiment, make mistakes, ask
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
+import java.util.Scanner;
 
 public class ProblemSet5 {
     
+    private static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
         // TODO i haven't tested a single one of these godforsaken functions so gotta do that
+        ProblemSet5 ps = new ProblemSet5();
+
+        // System.out.println("\nExercise 1");
+        // System.out.println(ps.surroundMe(ps.inStr(), ps.inStr()));
+        
+        // System.out.println("\nExercise 2");
+        // System.out.println(ps.endsMeet(ps.inStr(), ps.inInt()));
+
+        System.out.println("\nExercise 3");
+        System.out.println(ps.middleMan(ps.inStr()));
+
+        // System.out.println("\nExercise 4");
+        // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
+
+        // System.out.println("\nExercise 5");
+        // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
+
+        // System.out.println("\nExercise 6");
+        // System.out.println(ps.triplets(ps.inStr()));
+
+        // System.out.println("\nExercise 7");
+        // System.out.println(ps.addMe(ps.inStr()));
+
+        // System.out.println("\nExercise 8");
+        // System.out.println(ps.sequence(ps.inStr()));
+
+        // System.out.println("\nExercise 9");
+        // System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
+
+        // System.out.println("\nExercise 10");
+        // System.out.println(ps.isPalindrome(ps.inStr()));
+    }
+
+    public String inStr() {
+        System.out.print("Enter a string: ");
+        return in.nextLine();
+    }
+    public char inChar() {
+        System.out.print("Enter a character: ");
+        char ans = in.next().charAt(0);
+        in.nextLine();
+        return ans;
+    }
+    public int inInt() {
+        System.out.print("Enter an integer: ");
+        int ans = in.nextInt();
+        in.nextLine();
+        return ans;
     }
     
     /*
@@ -48,7 +99,7 @@ public class ProblemSet5 {
      * and last n characters of text.
      */
     
-    public String endsMeet(String text, int n) {
+    public String endsMeet(String text, int n) { // TODO redo correctly
         try {
             if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
                 char first = '0';
@@ -56,10 +107,10 @@ public class ProblemSet5 {
                     first = text.charAt(i);
                 }
                 char last = '0';
-                for (int i = n; i > 0; i--) {
+                for (int i = text.length() - 1; i > text.length() - n - 1; i--) {
                     last = text.charAt(i);
                 }
-                return first + last;
+                return String.valueOf(first) + String.valueOf(last);
             } else {
                 return text;
             }
@@ -76,11 +127,11 @@ public class ProblemSet5 {
     
     public String middleMan(String text) {
         try {
-            // if (text.length() >= 3) {
-                return text.charAt(text.length() / 2) + text.charAt(text.length() / 2 + 1) + text.charAt(text.length() / 2 + 2);
-            // } else {
-            //     return text;
-            // }
+            if (text.length() >= 3 && text.length() % 2 != 0) {
+                return text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2);
+            } else {
+                return text;
+            }
         } catch (Exception e) {
             return text;
         }
@@ -118,7 +169,7 @@ public class ProblemSet5 {
             String[] anArrayWhoopDeDoo = text.split(" ");
             int count = 0;
             for (int i = 0; i < anArrayWhoopDeDoo.length; i++) {
-                if (anArrayWhoopDeDoo[i].charAt(anArrayWhoopDeDoo[i].length - 1) == suffix /*more like suffering, hahaa, am i rite????*/) {
+                if (anArrayWhoopDeDoo[i].charAt(anArrayWhoopDeDoo[i].length() - 1) == suffix /*more like suffering, hahaa, am i rite????*/) {
                     count++;
                 }
             }
