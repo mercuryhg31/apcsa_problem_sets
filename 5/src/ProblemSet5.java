@@ -34,11 +34,11 @@ public class ProblemSet5 {
         // System.out.println("\nExercise 3");
         // System.out.println(ps.middleMan(ps.inStr()));
 
-        System.out.println("\nExercise 4");
-        System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
+        // System.out.println("\nExercise 4");
+        // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
 
-        // System.out.println("\nExercise 5");
-        // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
+        System.out.println("\nExercise 5");
+        System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
 
         // System.out.println("\nExercise 6");
         // System.out.println(ps.triplets(ps.inStr()));
@@ -164,8 +164,10 @@ public class ProblemSet5 {
 
     public int countMe(String text, char suffix) {
         try {
-            text += " "; // TODO wait, do i need this?, idk how the fk anything works
-            text = text.toUpperCase(); suffix = Character.toUpperCase(suffix);
+            if (!Character.isLetter(suffix)) {
+                return -1;
+            }
+            // text += " "; // TODO wait, do i need this?, idk how the fk anything works
             String[] anArrayWhoopDeDoo = text.split(" ");
             int count = 0;
             for (int i = 0; i < anArrayWhoopDeDoo.length; i++) {
