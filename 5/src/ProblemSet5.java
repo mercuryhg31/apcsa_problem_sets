@@ -37,11 +37,11 @@ public class ProblemSet5 {
         // System.out.println("\nExercise 4");
         // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
 
-        System.out.println("\nExercise 5");
-        System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
+        // System.out.println("\nExercise 5");
+        // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
 
-        // System.out.println("\nExercise 6");
-        // System.out.println(ps.triplets(ps.inStr()));
+        System.out.println("\nExercise 6");
+        System.out.println(ps.triplets(ps.inStr()));
 
         // System.out.println("\nExercise 7");
         // System.out.println(ps.addMe(ps.inStr()));
@@ -187,12 +187,13 @@ public class ProblemSet5 {
      * Given a string, compute the number of triplets in text.
      */
     
-    public int triplets(String text) {
+    public int triplets(String text) { // TODO there's an issue here, and idk what it is
         try {
             int count = 0;
             text = text.toUpperCase();
-            for (int i = 0; i < text.length(); i += 3) {
+            for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == text.charAt(i + 1) && text.charAt(i) == text.charAt(i + 2)) {
+                    i+=3;
                     count++;
                 }
             }
