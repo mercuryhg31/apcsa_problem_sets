@@ -25,35 +25,42 @@ public class ProblemSet5 {
         // TODO i haven't tested a single one of these godforsaken functions so gotta do that
         ProblemSet5 ps = new ProblemSet5();
 
-        // System.out.println("\nExercise 1");
+        // System.out.println("\nEXERCISE 1\n");
         // System.out.println(ps.surroundMe(ps.inStr(), ps.inStr()));
 
-        // System.out.println("\nExercise 2");
+        // System.out.println("\nEXERCISE 2\n");
         // System.out.println(ps.endsMeet(ps.inStr(), ps.inInt()));
 
-        // System.out.println("\nExercise 3");
+        // System.out.println("\nEXERCISE 3\n");
         // System.out.println(ps.middleMan(ps.inStr()));
 
-        // System.out.println("\nExercise 4");
+        // System.out.println("\nEXERCISE 4\n");
         // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
 
-        // System.out.println("\nExercise 5");
+        // System.out.println("\nEXERCISE 5\n");
         // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
 
-        System.out.println("\nExercise 6");
-        System.out.println(ps.triplets(ps.inStr()));
+        // System.out.println("\nEXERCISE 6\n");
+        // System.out.println(ps.triplets(ps.inStr()));
 
-        // System.out.println("\nExercise 7");
+        // System.out.println("\nEXERCISE 7\n");
         // System.out.println(ps.addMe(ps.inStr()));
 
-        // System.out.println("\nExercise 8");
+        // System.out.println("\nEXERCISE 8\n");
         // System.out.println(ps.sequence(ps.inStr()));
 
-        // System.out.println("\nExercise 9");
-        // System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
+        System.out.println("\nEXERCISE 9\n");
+        System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
 
-        // System.out.println("\nExercise 10");
+        // System.out.println("\nEXERCISE 10\n");
         // System.out.println(ps.isPalindrome(ps.inStr()));
+
+
+        // int[] array = new int[5];
+        // for (int i = 0; i < array.length; i++) {
+        //     array[i] = i + 1;
+        // }
+        // System.out.println(array[5/2-1]);
     }
 
     public String inStr() {
@@ -81,6 +88,7 @@ public class ProblemSet5 {
      */
 
     public String surroundMe(String in, String out) {
+        System.out.println();
         if (out.length() == 4) {
             try {
                 return out.charAt(0) + in + out.charAt(out.length() - 1);
@@ -100,6 +108,7 @@ public class ProblemSet5 {
      */
 
     public String endsMeet(String text, int n) { // TODO redo correctly
+        System.out.println();
         try {
             if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
                 char first = '0';
@@ -126,6 +135,7 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
+        System.out.println();
         try {
             if (text.length() >= 3 && text.length() % 2 != 0) {
                 return text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2);
@@ -145,6 +155,7 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
+        System.out.println();
         try {
             if (text.length() % 2 != 0 && target.length() == 3 && target.equals(text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2))) {
                 return true;
@@ -163,6 +174,7 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
+        System.out.println();
         try {
             if (!Character.isLetter(suffix)) {
                 return -1;
@@ -188,9 +200,9 @@ public class ProblemSet5 {
      */
     
     public int triplets(String text) { // TODO there's an issue here, and idk what it is
+        System.out.println();
         try {
             int count = 0;
-            text = text.toUpperCase();
             for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == text.charAt(i + 1) && text.charAt(i) == text.charAt(i + 2)) {
                     i+=3;
@@ -210,12 +222,13 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
+        System.out.println();
         try {
             int sum = 0;
             for (int i = 0; i < text.length(); i++) {
-                try {
+                if (Character.isDigit(text.charAt(i))) {
                     sum += Character.getNumericValue(text.charAt(i));
-                } catch (Exception e) {}
+                }
             }
             return sum;
         } catch (Exception e) {
@@ -229,7 +242,8 @@ public class ProblemSet5 {
      * Given a string, compute the length of the longest sequence.
      */
 
-    public long sequence(String text) { // TODO make case-sensitive everyweher that you read case-insensitive like the idiot you are
+    public long sequence(String text) { // TODO bad codes, fix plz
+        System.out.println();
         try {
             int[] brainssssButArrayyssss = new int[text.length()];
             brainssssButArrayyssss[0] = 1;
@@ -257,16 +271,26 @@ public class ProblemSet5 {
      * characters of a and b.
      */
 
-    public String intertwine(String a, String b) {
+    public String intertwine(String a, String b) { // TODO halppppppppppppppp
+        System.out.println();
         try {
             // String answer = StringUtils.repeat("*", a.length() + b.length());
-            char[] arrLikeAPirate = new char[a.length() + b.length()];
-            for (int i = 0; i < arrLikeAPirate.length; i += 2) {
-                arrLikeAPirate[i] = a.charAt(i / 2);
+            String[] arrLikeAPirate = new String[a.length() + b.length()];
+            if (a.length() == b.length()) {
+                // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
+                //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
+                // }
+                // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
+                //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
+                // }
+                for (int i = 0; i < a.length(); i++) {
+                    arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
+                }
+                for (int i = 0; i < b.length(); i++) {
+                    arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
+                }
             }
-            for (int i = 1; i < arrLikeAPirate.length; i += 2) {
-                arrLikeAPirate[i] = b.charAt(i / 2);
-            }
+
             String answer = "";
             for (int i = 0; i < arrLikeAPirate.length; i++) {
                 answer += arrLikeAPirate[i];
@@ -284,6 +308,7 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) { // TODO do without illegal classes
+        System.out.println();
         try {
             text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
             if (text.substring(0, text.length() / 2).equals(text.substring(text.length() / 2 + 2, text.length() - 1))) { // THIS ISSSSS, GODDAMNIT, WHY MR. WILSON
