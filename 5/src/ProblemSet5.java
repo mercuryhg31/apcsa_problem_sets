@@ -49,8 +49,8 @@ public class ProblemSet5 {
         // System.out.println("\nEXERCISE 8\n");
         // System.out.println(ps.sequence(ps.inStr()));
 
-        System.out.println("\nEXERCISE 9\n");
-        System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
+        // System.out.println("\nEXERCISE 9\n");
+        // System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
 
         // System.out.println("\nEXERCISE 10\n");
         // System.out.println(ps.isPalindrome(ps.inStr()));
@@ -61,6 +61,8 @@ public class ProblemSet5 {
         //     array[i] = i + 1;
         // }
         // System.out.println(array[5/2-1]);
+
+        ps.surroundMe("cde\n", "abfg");
     }
 
     public String inStr() {
