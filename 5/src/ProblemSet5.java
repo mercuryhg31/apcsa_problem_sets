@@ -287,20 +287,20 @@ public class ProblemSet5 {
         try {
             // String answer = StringUtils.repeat("*", a.length() + b.length());
             String[] arrLikeAPirate = new String[a.length() + b.length()];
-            if (a.length() == b.length()) {
-                // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
-                //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
-                // }
-                // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
-                //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
-                // }
-                for (int i = 0; i < a.length(); i++) {
-                    arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
-                }
-                for (int i = 0; i < b.length(); i++) {
-                    arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
-                }
-            }
+            // if (a.length() == b.length()) {
+            //     // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
+            //     //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
+            //     // }
+            //     // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
+            //     //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
+            //     // }
+            //     for (int i = 0; i < a.length(); i++) {
+            //         arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
+            //     }
+            //     for (int i = 0; i < b.length(); i++) {
+            //         arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
+            //     }
+            // }
 
             // int aIdx = 0;
             // int bIdx = 0;
@@ -315,6 +315,27 @@ public class ProblemSet5 {
             //     }
             //     which = !which;
             // }
+
+            int primLeng = (a.length() > b.length()) ? b.length() * 2 : a.length() * 2;
+            int aIdx = 0;
+            int bIdx = 0;
+
+            for (int i = 0; i < primLeng; i++) {
+                if (i % 2 == 0) {
+                    arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
+                    aIdx++;
+                } else {
+                    arrLikeAPirate[i] = Character.toString(b.charAt(bIdx));
+                    bIdx++;
+                }
+            }
+
+            String leftoverStr = (a.length() > b.length()) ? a : b;
+            int leftoverIdx = (a.length() > b.length()) ? aIdx : bIdx;
+            for (int i = primLeng; i < arrLikeAPirate.length; i++) {
+                arrLikeAPirate[i] = Character.toString(leftoverStr.charAt(leftoverIdx));
+                leftoverIdx++;
+            }
 
             String answer = "";
             for (int i = 0; i < arrLikeAPirate.length; i++) {
