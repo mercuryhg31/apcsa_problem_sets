@@ -69,6 +69,9 @@ public class ProblemSet5 {
         // EXERCISE 6
         System.out.println("\nEXERCISE 6\n");
         System.out.println(ps.triplets("aaabbbccc"));
+        System.out.println(ps.triplets("aaabbbccc\n\n\n"));
+        System.out.println(ps.triplets("aaa\nbbb\nccc"));
+        System.out.println(ps.triplets("aaa\n\n\nbbbccc"));
         System.out.println(ps.triplets("aaaa"));
         System.out.println(ps.triplets("abc"));
         System.out.println(ps.triplets(null) + "\n");
@@ -128,7 +131,7 @@ public class ProblemSet5 {
      * and last n characters of text.
      */
 
-    public String endsMeet(String text, int n) { // TODO redo correctly
+    public String endsMeet(String text, int n) {
         try {
             if (text.isEmpty() || text == null || 1 > n || n > text.length()) {return text;}
             String output = "";
@@ -211,19 +214,15 @@ public class ProblemSet5 {
      * Given a string, compute the number of triplets in text.
      */
     
-    public int triplets(String text) { // TODO there's an issue here, and idk what it is
-        try {
-            int count = 0;
-            for (int i = 0; i < text.length(); i++) {
-                if (text.charAt(i) == text.charAt(i + 1) && text.charAt(i) == text.charAt(i + 2)) {
-                    i+=3;
-                    count++;
-                }
+    public int triplets(String text) {
+        if (text == null) {return -1;}
+        int count = 0;
+        for (int i = 0; i < text.length() - 2; i++) {
+            if (Character.toString(text.charAt(i)).equals(Character.toString(text.charAt(i + 1))) && Character.toString(text.charAt(i)).equals(Character.toString(text.charAt(i + 2)))) {
+                count++;
             }
-            return count;
-        } catch (Exception e) {
-            return -1;
         }
+        return count;
     }
 
     /*
