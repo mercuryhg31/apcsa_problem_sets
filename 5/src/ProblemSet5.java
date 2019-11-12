@@ -67,35 +67,37 @@ public class ProblemSet5 {
         // System.out.println(ps.countMe("abc$ def$", '$') + "\n");
 
         // EXERCISE 6
-        System.out.println("\nEXERCISE 6\n");
-        System.out.println(ps.triplets("aaabbbccc"));
-        System.out.println(ps.triplets("aaabbbccc\n\n\n"));
-        System.out.println(ps.triplets("aaa\nbbb\nccc"));
-        System.out.println(ps.triplets("aaa\n\n\nbbbccc"));
-        System.out.println(ps.triplets("aaaa"));
-        System.out.println(ps.triplets("abc"));
-        System.out.println(ps.triplets(null) + "\n");
+        // System.out.println("\nEXERCISE 6\n");
+        // System.out.println(ps.triplets("aaabbbccc"));
+        // System.out.println(ps.triplets("aaabbbccc\n\n\n"));
+        // System.out.println(ps.triplets("aaa\nbbb\nccc"));
+        // System.out.println(ps.triplets("aaa\n\n\nbbbccc"));
+        // System.out.println(ps.triplets("aaaa"));
+        // System.out.println(ps.triplets("abc"));
+        // System.out.println(ps.triplets(null) + "\n");
 
         // EXERCISE 7
         // System.out.println("\nEXERCISE 7\n");
         // System.out.println(ps.addMe("123 abc 123"));
+        // System.out.println(ps.addMe("123 abc 12\n3"));
         // System.out.println(ps.addMe("abcdefghijk"));
         // System.out.println(ps.addMe(null) + "\n");
 
         // EXERCISE 8
         // System.out.println("\nEXERCISE 8\n");
         // System.out.println(ps.sequence("abbcccdddd"));
+        // System.out.println(ps.sequence("abbcccdddd\n\n\n\n\n"));
         // System.out.println(ps.sequence("aAabBbBb"));
         // System.out.println(ps.sequence(""));
         // System.out.println(ps.sequence(null) + "\n");
 
         // EXERCISE 9
-        // System.out.println("\nEXERCISE 9\n");
-        // System.out.println(ps.intertwine("aceg", "bdfh"));
-        // System.out.println(ps.intertwine("abc", "12345"));
-        // System.out.println(ps.intertwine(null, "abcd"));
-        // System.out.println(ps.intertwine("abcd", null));
-        // System.out.println(ps.intertwine(null, null) + "\n");
+        System.out.println("\nEXERCISE 9\n");
+        System.out.println(ps.intertwine("aceg", "bdfh"));
+        System.out.println(ps.intertwine("abc", "12345"));
+        System.out.println(ps.intertwine(null, "abcd"));
+        System.out.println(ps.intertwine("abcd", null));
+        System.out.println(ps.intertwine(null, null) + "\n");
         
         // EXERCISE 10
         // System.out.println("\nEXERCISE 10\n");
@@ -232,7 +234,6 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
-        System.out.println();
         try {
             int sum = 0;
             for (int i = 0; i < text.length(); i++) {
@@ -253,12 +254,12 @@ public class ProblemSet5 {
      */
 
     public long sequence(String text) { // TODO bad codes, fix plz
-        System.out.println();
         try {
+            if (text.isEmpty()) {return 0;}
             int[] brainssssButArrayyssss = new int[text.length()];
             brainssssButArrayyssss[0] = 1;
             for (int i = 1; i < text.length(); i++) {
-                if (text.charAt(i) == text.charAt(i - 0)) {
+                if (Character.toString(text.charAt(i)).equals(Character.toString(text.charAt(i - 1)))) {
                     brainssssButArrayyssss[i] = brainssssButArrayyssss[i - 1] + 1;
                 } else {
                     brainssssButArrayyssss[i] = 1;
@@ -282,23 +283,37 @@ public class ProblemSet5 {
      */
 
     public String intertwine(String a, String b) { // TODO halppppppppppppppp
-        System.out.println();
+        if (a == null || b == null) {return null;}
         try {
             // String answer = StringUtils.repeat("*", a.length() + b.length());
             String[] arrLikeAPirate = new String[a.length() + b.length()];
-            if (a.length() == b.length()) {
-                // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
-                //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
-                // }
-                // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
-                //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
-                // }
-                for (int i = 0; i < a.length(); i++) {
-                    arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
+            // if (a.length() == b.length()) {
+            //     // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
+            //     //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
+            //     // }
+            //     // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
+            //     //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
+            //     // }
+            //     for (int i = 0; i < a.length(); i++) {
+            //         arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
+            //     }
+            //     for (int i = 0; i < b.length(); i++) {
+            //         arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
+            //     }
+            // }
+
+            int aIdx = 0;
+            int bIdx = 0;
+            boolean which = true;
+            for (int i = 0; i < arrLikeAPirate.length; i++) {
+                if (which) {
+                    arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
+                    aIdx++;
+                } else {
+                    arrLikeAPirate[i] = Character.toString(b.charAt(aIdx));
+                    bIdx++;
                 }
-                for (int i = 0; i < b.length(); i++) {
-                    arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
-                }
+                which = !which;
             }
 
             String answer = "";
