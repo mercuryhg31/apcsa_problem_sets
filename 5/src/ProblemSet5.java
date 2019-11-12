@@ -25,61 +25,80 @@ public class ProblemSet5 {
         // TODO i haven't tested a single one of these godforsaken functions so gotta do that
         ProblemSet5 ps = new ProblemSet5();
 
+        // EXERCISE 1
         // System.out.println("\nEXERCISE 1\n");
-        // System.out.println(ps.surroundMe(ps.inStr(), ps.inStr()));
+        // System.out.println(ps.surroundMe("cde", "abfg"));
+        // System.out.println(ps.surroundMe("cd\ne", "abfg"));
+        // System.out.println(ps.surroundMe("", "abfg"));
+        // System.out.println(ps.surroundMe(null, "####"));
+        // System.out.println(ps.surroundMe("abc", null));
+        // System.out.println(ps.surroundMe("abc", "123") + "\n");
 
+        // EXERCISE 2
         // System.out.println("\nEXERCISE 2\n");
-        // System.out.println(ps.endsMeet(ps.inStr(), ps.inInt()));
+        // System.out.println(ps.endsMeet("abcdefg", 2));
+        // System.out.println(ps.endsMeet("a\nbcdefg", 2));
+        // System.out.println(ps.endsMeet(null, 2));
+        // System.out.println(ps.endsMeet("", 2));
+        // System.out.println(ps.endsMeet("abc", -1) + "\n");
 
+        // EXERCISE 3
         // System.out.println("\nEXERCISE 3\n");
-        // System.out.println(ps.middleMan(ps.inStr()));
+        // System.out.println(ps.middleMan("abcdefg"));
+        // System.out.println(ps.middleMan(""));
+        // System.out.println(ps.middleMan(null));
+        // System.out.println(ps.middleMan("12"));
+        // System.out.println(ps.middleMan("a") + "\n");
 
+        // EXERCISE 4
         // System.out.println("\nEXERCISE 4\n");
-        // System.out.println(ps.isCentered(ps.inStr(), ps.inStr()));
+        // System.out.println(ps.isCentered("abcdefg", "cde"));
+        // System.out.println(ps.isCentered("abcd\nfg", "cd\n"));
+        // System.out.println(ps.isCentered("abcdefg", "abc"));
+        // System.out.println(ps.isCentered(null, "abc"));
+        // System.out.println(ps.isCentered("abcd", "abc"));
+        // System.out.println(ps.isCentered("abc", null));
+        // System.out.println(ps.isCentered("abcdefg", "cd") + "\n");
 
+        // EXERCISE 5
         // System.out.println("\nEXERCISE 5\n");
-        // System.out.println(ps.countMe(ps.inStr(), ps.inChar()));
+        // System.out.println(ps.countMe("I am an example sentence", 'e'));
+        // System.out.println(ps.countMe(null, 'a'));
+        // System.out.println(ps.countMe("abc$ def$", '$') + "\n");
 
-        // System.out.println("\nEXERCISE 6\n");
-        // System.out.println(ps.triplets(ps.inStr()));
+        // EXERCISE 6
+        System.out.println("\nEXERCISE 6\n");
+        System.out.println(ps.triplets("aaabbbccc"));
+        System.out.println(ps.triplets("aaaa"));
+        System.out.println(ps.triplets("abc"));
+        System.out.println(ps.triplets(null) + "\n");
 
+        // EXERCISE 7
         // System.out.println("\nEXERCISE 7\n");
-        // System.out.println(ps.addMe(ps.inStr()));
+        // System.out.println(ps.addMe("123 abc 123"));
+        // System.out.println(ps.addMe("abcdefghijk"));
+        // System.out.println(ps.addMe(null) + "\n");
 
+        // EXERCISE 8
         // System.out.println("\nEXERCISE 8\n");
-        // System.out.println(ps.sequence(ps.inStr()));
+        // System.out.println(ps.sequence("abbcccdddd"));
+        // System.out.println(ps.sequence("aAabBbBb"));
+        // System.out.println(ps.sequence(""));
+        // System.out.println(ps.sequence(null) + "\n");
 
+        // EXERCISE 9
         // System.out.println("\nEXERCISE 9\n");
-        // System.out.println(ps.intertwine(ps.inStr(), ps.inStr()));
-
+        // System.out.println(ps.intertwine("aceg", "bdfh"));
+        // System.out.println(ps.intertwine("abc", "12345"));
+        // System.out.println(ps.intertwine(null, "abcd"));
+        // System.out.println(ps.intertwine("abcd", null));
+        // System.out.println(ps.intertwine(null, null) + "\n");
+        
+        // EXERCISE 10
         // System.out.println("\nEXERCISE 10\n");
-        // System.out.println(ps.isPalindrome(ps.inStr()));
-
-
-        // int[] array = new int[5];
-        // for (int i = 0; i < array.length; i++) {
-        //     array[i] = i + 1;
-        // }
-        // System.out.println(array[5/2-1]);
-
-        ps.surroundMe("cde\n", "abfg");
-    }
-
-    public String inStr() {
-        System.out.print("Enter a string: ");
-        return in.nextLine();
-    }
-    public char inChar() {
-        System.out.print("Enter a character: ");
-        char ans = in.next().charAt(0);
-        in.nextLine();
-        return ans;
-    }
-    public int inInt() {
-        System.out.print("Enter an integer: ");
-        int ans = in.nextInt();
-        in.nextLine();
-        return ans;
+        // System.out.println(ps.isPalindrome("racecar"));
+        // System.out.println(ps.isPalindrome("Madam"));
+        // System.out.println(ps.isPalindrome(null));
     }
 
     /*
@@ -90,10 +109,10 @@ public class ProblemSet5 {
      */
 
     public String surroundMe(String in, String out) {
-        System.out.println();
+        if (in == null || out == null) {return in;}
         if (out.length() == 4) {
             try {
-                return out.charAt(0) + in + out.charAt(out.length() - 1);
+                return Character.toString((out.charAt(0))) + Character.toString(out.charAt(1)) + in + Character.toString(out.charAt(out.length() - 2)) + Character.toString(out.charAt(out.length() - 1));
             } catch (Exception e) {
                 return in;
             }
@@ -110,21 +129,16 @@ public class ProblemSet5 {
      */
 
     public String endsMeet(String text, int n) { // TODO redo correctly
-        System.out.println();
         try {
-            if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
-                char first = '0';
-                for (int i = 0; i < n; i++) {
-                    first = text.charAt(i);
-                }
-                char last = '0';
-                for (int i = text.length() - 1; i > text.length() - n - 1; i--) {
-                    last = text.charAt(i);
-                }
-                return String.valueOf(first) + String.valueOf(last);
-            } else {
-                return text;
+            if (text.isEmpty() || text == null || 1 > n || n > text.length()) {return text;}
+            String output = "";
+            for (int i = 0; i < n; i++) {
+                output += Character.toString(text.charAt(i));
             }
+            for (int i = text.length() - n; i < text.length(); i++) {
+                output += Character.toString(text.charAt(i));
+            }
+            return output;
         } catch (Exception e) {
             return text;
         }
@@ -137,7 +151,6 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-        System.out.println();
         try {
             if (text.length() >= 3 && text.length() % 2 != 0) {
                 return text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2);
@@ -157,9 +170,8 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
-        System.out.println();
         try {
-            if (text.length() % 2 != 0 && target.length() == 3 && target.equals(text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2))) {
+            if (text.length() % 2 != 0 && text.length() >= 3 && target.length() == 3 && target.equals(text.substring(((text.length() - 1) / 2) - 1, ((text.length() - 1) / 2) + 2))) {
                 return true;
             } else {
                 return false;
@@ -176,12 +188,10 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
-        System.out.println();
         try {
-            if (!Character.isLetter(suffix)) {
+            if (!('a' <= suffix && suffix <= 'z') && !('A' <= suffix && suffix <= 'Z')) {
                 return -1;
             }
-            // text += " "; // TODO wait, do i need this?, idk how the fk anything works
             String[] anArrayWhoopDeDoo = text.split(" ");
             int count = 0;
             for (int i = 0; i < anArrayWhoopDeDoo.length; i++) {
@@ -202,7 +212,6 @@ public class ProblemSet5 {
      */
     
     public int triplets(String text) { // TODO there's an issue here, and idk what it is
-        System.out.println();
         try {
             int count = 0;
             for (int i = 0; i < text.length(); i++) {
