@@ -92,18 +92,18 @@ public class ProblemSet5 {
         // System.out.println(ps.sequence(null) + "\n");
 
         // EXERCISE 9
-        System.out.println("\nEXERCISE 9\n");
-        System.out.println(ps.intertwine("aceg", "bdfh"));
-        System.out.println(ps.intertwine("abc", "12345"));
-        System.out.println(ps.intertwine(null, "abcd"));
-        System.out.println(ps.intertwine("abcd", null));
-        System.out.println(ps.intertwine(null, null) + "\n");
+        // System.out.println("\nEXERCISE 9\n");
+        // System.out.println(ps.intertwine("aceg", "bdfh"));
+        // System.out.println(ps.intertwine("abc", "12345"));
+        // System.out.println(ps.intertwine(null, "abcd"));
+        // System.out.println(ps.intertwine("abcd", null));
+        // System.out.println(ps.intertwine(null, null) + "\n");
         
         // EXERCISE 10
-        // System.out.println("\nEXERCISE 10\n");
-        // System.out.println(ps.isPalindrome("racecar"));
-        // System.out.println(ps.isPalindrome("Madam"));
-        // System.out.println(ps.isPalindrome(null));
+        System.out.println("\nEXERCISE 10\n");
+        System.out.println(ps.isPalindrome("racecar"));
+        System.out.println(ps.isPalindrome("Madam"));
+        System.out.println(ps.isPalindrome(null));
     }
 
     /*
@@ -333,14 +333,25 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) { // TODO do without illegal classes
-        System.out.println();
+        // System.out.println();
         try {
-            text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
-            if (text.substring(0, text.length() / 2).equals(text.substring(text.length() / 2 + 2, text.length() - 1))) { // THIS ISSSSS, GODDAMNIT, WHY MR. WILSON
+            // text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
+            // System.out.println(text.substring(0, text.length() / 2));
+            // System.out.println(text.substring(text.length() / 2 + 1, text.length()));
+            String endStr = text.substring(text.length() / 2 + 1, text.length());
+            String end = "";
+            for (int i = endStr.length() - 1; i > -1; i--) {
+                end += endStr.charAt(i);
+            }
+            // System.out.println(end);
+            if (text.substring(0, text.length() / 2).equals(end)) {
                 return true;
             } else {
                 return false;
             }
+            // for (int i = 0; i < text.length() / 2 - 1; i++) {
+
+            // }
         } catch (Exception e) {
             return false;
         }
