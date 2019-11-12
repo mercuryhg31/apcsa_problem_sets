@@ -26,84 +26,86 @@ public class ProblemSet5 {
         ProblemSet5 ps = new ProblemSet5();
 
         // EXERCISE 1
-        // System.out.println("\nEXERCISE 1\n");
-        // System.out.println(ps.surroundMe("cde", "abfg"));
-        // System.out.println(ps.surroundMe("cd\ne", "abfg"));
-        // System.out.println(ps.surroundMe("", "abfg"));
-        // System.out.println(ps.surroundMe(null, "####"));
-        // System.out.println(ps.surroundMe("abc", null));
-        // System.out.println(ps.surroundMe("abc", "123") + "\n");
+        System.out.println("\nEXERCISE 1\n");
+        System.out.println(ps.surroundMe("cde", "abfg"));
+        System.out.println(ps.surroundMe("cd\ne", "abfg"));
+        System.out.println(ps.surroundMe("", "abfg"));
+        System.out.println(ps.surroundMe(null, "####"));
+        System.out.println(ps.surroundMe("abc", null));
+        System.out.println(ps.surroundMe("abc", "123") + "\n");
 
         // EXERCISE 2
-        // System.out.println("\nEXERCISE 2\n");
-        // System.out.println(ps.endsMeet("abcdefg", 2));
-        // System.out.println(ps.endsMeet("a\nbcdefg", 2));
-        // System.out.println(ps.endsMeet(null, 2));
-        // System.out.println(ps.endsMeet("", 2));
-        // System.out.println(ps.endsMeet("abc", -1) + "\n");
+        System.out.println("\nEXERCISE 2\n");
+        System.out.println(ps.endsMeet("abcdefg", 2));
+        System.out.println(ps.endsMeet("a\nbcdefg", 2));
+        System.out.println(ps.endsMeet(null, 2));
+        System.out.println(ps.endsMeet("", 2));
+        System.out.println(ps.endsMeet("abc", -1) + "\n");
 
         // EXERCISE 3
-        // System.out.println("\nEXERCISE 3\n");
-        // System.out.println(ps.middleMan("abcdefg"));
-        // System.out.println(ps.middleMan(""));
-        // System.out.println(ps.middleMan(null));
-        // System.out.println(ps.middleMan("12"));
-        // System.out.println(ps.middleMan("a") + "\n");
+        System.out.println("\nEXERCISE 3\n");
+        System.out.println(ps.middleMan("abcdefg"));
+        System.out.println(ps.middleMan(""));
+        System.out.println(ps.middleMan(null));
+        System.out.println(ps.middleMan("12"));
+        System.out.println(ps.middleMan("a") + "\n");
 
         // EXERCISE 4
-        // System.out.println("\nEXERCISE 4\n");
-        // System.out.println(ps.isCentered("abcdefg", "cde"));
-        // System.out.println(ps.isCentered("abcd\nfg", "cd\n"));
-        // System.out.println(ps.isCentered("abcdefg", "abc"));
-        // System.out.println(ps.isCentered(null, "abc"));
-        // System.out.println(ps.isCentered("abcd", "abc"));
-        // System.out.println(ps.isCentered("abc", null));
-        // System.out.println(ps.isCentered("abcdefg", "cd") + "\n");
+        System.out.println("\nEXERCISE 4\n");
+        System.out.println(ps.isCentered("abcdefg", "cde"));
+        System.out.println(ps.isCentered("abcd\nfg", "cd\n"));
+        System.out.println(ps.isCentered("abcdefg", "abc"));
+        System.out.println(ps.isCentered(null, "abc"));
+        System.out.println(ps.isCentered("abcd", "abc"));
+        System.out.println(ps.isCentered("abc", null));
+        System.out.println(ps.isCentered("abcdefg", "cd") + "\n");
 
         // EXERCISE 5
-        // System.out.println("\nEXERCISE 5\n");
-        // System.out.println(ps.countMe("I am an example sentence", 'e'));
-        // System.out.println(ps.countMe(null, 'a'));
-        // System.out.println(ps.countMe("abc$ def$", '$') + "\n");
+        System.out.println("\nEXERCISE 5\n");
+        System.out.println(ps.countMe("I am an example sentence", 'e'));
+        System.out.println(ps.countMe(null, 'a'));
+        System.out.println(ps.countMe("abc$ def$", '$') + "\n");
 
         // EXERCISE 6
-        // System.out.println("\nEXERCISE 6\n");
-        // System.out.println(ps.triplets("aaabbbccc"));
-        // System.out.println(ps.triplets("aaabbbccc\n\n\n"));
-        // System.out.println(ps.triplets("aaa\nbbb\nccc"));
-        // System.out.println(ps.triplets("aaa\n\n\nbbbccc"));
-        // System.out.println(ps.triplets("aaaa"));
-        // System.out.println(ps.triplets("abc"));
-        // System.out.println(ps.triplets(null) + "\n");
+        System.out.println("\nEXERCISE 6\n");
+        System.out.println(ps.triplets("aaabbbccc"));
+        System.out.println(ps.triplets("aaabbbccc\n\n\n"));
+        System.out.println(ps.triplets("aaa\nbbb\nccc"));
+        System.out.println(ps.triplets("aaa\n\n\nbbbccc"));
+        System.out.println(ps.triplets("aaaa"));
+        System.out.println(ps.triplets("abc"));
+        System.out.println(ps.triplets(null) + "\n");
 
         // EXERCISE 7
-        // System.out.println("\nEXERCISE 7\n");
-        // System.out.println(ps.addMe("123 abc 123"));
-        // System.out.println(ps.addMe("123 abc 12\n3"));
-        // System.out.println(ps.addMe("abcdefghijk"));
-        // System.out.println(ps.addMe(null) + "\n");
+        System.out.println("\nEXERCISE 7\n");
+        System.out.println(ps.addMe("123 abc 123"));
+        System.out.println(ps.addMe("123 abc 12\n3"));
+        System.out.println(ps.addMe("abcdefghijk"));
+        System.out.println(ps.addMe(null) + "\n");
 
         // EXERCISE 8
-        // System.out.println("\nEXERCISE 8\n");
-        // System.out.println(ps.sequence("abbcccdddd"));
-        // System.out.println(ps.sequence("abbcccdddd\n\n\n\n\n"));
-        // System.out.println(ps.sequence("aAabBbBb"));
-        // System.out.println(ps.sequence(""));
-        // System.out.println(ps.sequence(null) + "\n");
+        System.out.println("\nEXERCISE 8\n");
+        System.out.println(ps.sequence("abbcccdddd"));
+        System.out.println(ps.sequence("abbcccdddd\n\n\n\n\n"));
+        System.out.println(ps.sequence("aAabBbBb"));
+        System.out.println(ps.sequence(""));
+        System.out.println(ps.sequence(null) + "\n");
 
         // EXERCISE 9
         System.out.println("\nEXERCISE 9\n");
         System.out.println(ps.intertwine("aceg", "bdfh"));
+        System.out.println(ps.intertwine("ace\ng", "bdfh"));
         System.out.println(ps.intertwine("abc", "12345"));
         System.out.println(ps.intertwine(null, "abcd"));
         System.out.println(ps.intertwine("abcd", null));
         System.out.println(ps.intertwine(null, null) + "\n");
         
         // EXERCISE 10
-        // System.out.println("\nEXERCISE 10\n");
-        // System.out.println(ps.isPalindrome("racecar"));
-        // System.out.println(ps.isPalindrome("Madam"));
-        // System.out.println(ps.isPalindrome(null));
+        System.out.println("\nEXERCISE 10\n");
+        System.out.println(ps.isPalindrome("racecar"));
+        System.out.println(ps.isPalindrome("rac\ne\ncar"));
+        System.out.println(ps.isPalindrome("Madam"));
+        System.out.println(ps.isPalindrome(null));
     }
 
     /*
@@ -253,7 +255,7 @@ public class ProblemSet5 {
      * Given a string, compute the length of the longest sequence.
      */
 
-    public long sequence(String text) { // TODO bad codes, fix plz
+    public long sequence(String text) {
         try {
             if (text.isEmpty()) {return 0;}
             int[] brainssssButArrayyssss = new int[text.length()];
@@ -282,44 +284,13 @@ public class ProblemSet5 {
      * characters of a and b.
      */
 
-    public String intertwine(String a, String b) { // TODO halppppppppppppppp
+    public String intertwine(String a, String b) {
         if (a == null || b == null) {return null;}
         try {
-            // String answer = StringUtils.repeat("*", a.length() + b.length());
             String[] arrLikeAPirate = new String[a.length() + b.length()];
-            // if (a.length() == b.length()) {
-            //     // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
-            //     //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
-            //     // }
-            //     // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
-            //     //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
-            //     // }
-            //     for (int i = 0; i < a.length(); i++) {
-            //         arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
-            //     }
-            //     for (int i = 0; i < b.length(); i++) {
-            //         arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
-            //     }
-            // }
-
-            // int aIdx = 0;
-            // int bIdx = 0;
-            // boolean which = true;
-            // for (int i = 0; i < arrLikeAPirate.length; i++) {
-            //     if (which) {
-            //         arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
-            //         aIdx++;
-            //     } else {
-            //         arrLikeAPirate[i] = Character.toString(b.charAt(aIdx));
-            //         bIdx++;
-            //     }
-            //     which = !which;
-            // }
-
             int primLeng = (a.length() > b.length()) ? b.length() * 2 : a.length() * 2;
             int aIdx = 0;
             int bIdx = 0;
-
             for (int i = 0; i < primLeng; i++) {
                 if (i % 2 == 0) {
                     arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
@@ -329,14 +300,12 @@ public class ProblemSet5 {
                     bIdx++;
                 }
             }
-
             String leftoverStr = (a.length() > b.length()) ? a : b;
             int leftoverIdx = (a.length() > b.length()) ? aIdx : bIdx;
             for (int i = primLeng; i < arrLikeAPirate.length; i++) {
                 arrLikeAPirate[i] = Character.toString(leftoverStr.charAt(leftoverIdx));
                 leftoverIdx++;
             }
-
             String answer = "";
             for (int i = 0; i < arrLikeAPirate.length; i++) {
                 answer += arrLikeAPirate[i];
@@ -354,25 +323,17 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) { // TODO do without illegal classes
-        // System.out.println();
         try {
-            // text = text.replaceAll("\\s+", ""); // TODO is this in those prohibited classes? hopefully, prob not?????????????????????
-            // System.out.println(text.substring(0, text.length() / 2));
-            // System.out.println(text.substring(text.length() / 2 + 1, text.length()));
             String endStr = text.substring(text.length() / 2 + 1, text.length());
             String end = "";
             for (int i = endStr.length() - 1; i > -1; i--) {
                 end += endStr.charAt(i);
             }
-            // System.out.println(end);
             if (text.substring(0, text.length() / 2).equals(end)) {
                 return true;
             } else {
                 return false;
             }
-            // for (int i = 0; i < text.length() / 2 - 1; i++) {
-
-            // }
         } catch (Exception e) {
             return false;
         }
