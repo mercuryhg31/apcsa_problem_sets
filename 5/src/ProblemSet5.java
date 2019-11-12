@@ -92,18 +92,18 @@ public class ProblemSet5 {
         // System.out.println(ps.sequence(null) + "\n");
 
         // EXERCISE 9
-        // System.out.println("\nEXERCISE 9\n");
-        // System.out.println(ps.intertwine("aceg", "bdfh"));
-        // System.out.println(ps.intertwine("abc", "12345"));
-        // System.out.println(ps.intertwine(null, "abcd"));
-        // System.out.println(ps.intertwine("abcd", null));
-        // System.out.println(ps.intertwine(null, null) + "\n");
+        System.out.println("\nEXERCISE 9\n");
+        System.out.println(ps.intertwine("aceg", "bdfh"));
+        System.out.println(ps.intertwine("abc", "12345"));
+        System.out.println(ps.intertwine(null, "abcd"));
+        System.out.println(ps.intertwine("abcd", null));
+        System.out.println(ps.intertwine(null, null) + "\n");
         
         // EXERCISE 10
-        System.out.println("\nEXERCISE 10\n");
-        System.out.println(ps.isPalindrome("racecar"));
-        System.out.println(ps.isPalindrome("Madam"));
-        System.out.println(ps.isPalindrome(null));
+        // System.out.println("\nEXERCISE 10\n");
+        // System.out.println(ps.isPalindrome("racecar"));
+        // System.out.println(ps.isPalindrome("Madam"));
+        // System.out.println(ps.isPalindrome(null));
     }
 
     /*
@@ -287,34 +287,34 @@ public class ProblemSet5 {
         try {
             // String answer = StringUtils.repeat("*", a.length() + b.length());
             String[] arrLikeAPirate = new String[a.length() + b.length()];
-            // if (a.length() == b.length()) {
-            //     // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
-            //     //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
-            //     // }
-            //     // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
-            //     //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
-            //     // }
-            //     for (int i = 0; i < a.length(); i++) {
-            //         arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
-            //     }
-            //     for (int i = 0; i < b.length(); i++) {
-            //         arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
-            //     }
-            // }
-
-            int aIdx = 0;
-            int bIdx = 0;
-            boolean which = true;
-            for (int i = 0; i < arrLikeAPirate.length; i++) {
-                if (which) {
-                    arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
-                    aIdx++;
-                } else {
-                    arrLikeAPirate[i] = Character.toString(b.charAt(aIdx));
-                    bIdx++;
+            if (a.length() == b.length()) {
+                // for (int i = 0; i < arrLikeAPirate.length; i += 2) {
+                //     arrLikeAPirate[i] = Character.toString(a.charAt(i / 2));
+                // }
+                // for (int i = 1; i < arrLikeAPirate.length; i += 2) {
+                //     arrLikeAPirate[i] = Character.toString(b.charAt(i / 2));
+                // }
+                for (int i = 0; i < a.length(); i++) {
+                    arrLikeAPirate[i*2] = Character.toString(a.charAt(i));
                 }
-                which = !which;
+                for (int i = 0; i < b.length(); i++) {
+                    arrLikeAPirate[i*2+1] = Character.toString(b.charAt(i));
+                }
             }
+
+            // int aIdx = 0;
+            // int bIdx = 0;
+            // boolean which = true;
+            // for (int i = 0; i < arrLikeAPirate.length; i++) {
+            //     if (which) {
+            //         arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
+            //         aIdx++;
+            //     } else {
+            //         arrLikeAPirate[i] = Character.toString(b.charAt(aIdx));
+            //         bIdx++;
+            //     }
+            //     which = !which;
+            // }
 
             String answer = "";
             for (int i = 0; i < arrLikeAPirate.length; i++) {
