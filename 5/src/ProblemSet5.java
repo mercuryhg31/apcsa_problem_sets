@@ -19,10 +19,7 @@ import java.util.Scanner;
 
 public class ProblemSet5 {
 
-    private static Scanner in = new Scanner(System.in);
-
     public static void main(String[] args) {
-        // TODO i haven't tested a single one of these godforsaken functions so gotta do that
         ProblemSet5 ps = new ProblemSet5();
 
         // EXERCISE 1
@@ -199,10 +196,10 @@ public class ProblemSet5 {
             if (!('a' <= suffix && suffix <= 'z') && !('A' <= suffix && suffix <= 'Z')) {
                 return -1;
             }
-            String[] anArrayWhoopDeDoo = text.split(" ");
+            String[] wordArr = text.split(" ");
             int count = 0;
-            for (int i = 0; i < anArrayWhoopDeDoo.length; i++) {
-                if (anArrayWhoopDeDoo[i].charAt(anArrayWhoopDeDoo[i].length() - 1) == suffix /*more like suffering, hahaa, am i rite????*/) {
+            for (int i = 0; i < wordArr.length; i++) {
+                if (wordArr[i].charAt(wordArr[i].length() - 1) == suffix) {
                     count++;
                 }
             }
@@ -258,18 +255,18 @@ public class ProblemSet5 {
     public long sequence(String text) {
         try {
             if (text.isEmpty()) {return 0;}
-            int[] brainssssButArrayyssss = new int[text.length()];
-            brainssssButArrayyssss[0] = 1;
+            int[] seqArr = new int[text.length()];
+            seqArr[0] = 1;
             for (int i = 1; i < text.length(); i++) {
                 if (Character.toString(text.charAt(i)).equals(Character.toString(text.charAt(i - 1)))) {
-                    brainssssButArrayyssss[i] = brainssssButArrayyssss[i - 1] + 1;
+                    seqArr[i] = seqArr[i - 1] + 1;
                 } else {
-                    brainssssButArrayyssss[i] = 1;
+                    seqArr[i] = 1;
                 }
             }
             int answer = 0;
-            for (int i = 0; i < brainssssButArrayyssss.length; i++) {
-                answer = (brainssssButArrayyssss[i] > answer) ? brainssssButArrayyssss[i] : answer;
+            for (int i = 0; i < seqArr.length; i++) {
+                answer = (seqArr[i] > answer) ? seqArr[i] : answer;
             }
             return answer;
         } catch (Exception e) {
@@ -287,30 +284,30 @@ public class ProblemSet5 {
     public String intertwine(String a, String b) {
         if (a == null || b == null) {return null;}
         try {
-            String[] arrLikeAPirate = new String[a.length() + b.length()];
+            String[] outputArr = new String[a.length() + b.length()];
             int primLeng = (a.length() > b.length()) ? b.length() * 2 : a.length() * 2;
             int aIdx = 0;
             int bIdx = 0;
             for (int i = 0; i < primLeng; i++) {
                 if (i % 2 == 0) {
-                    arrLikeAPirate[i] = Character.toString(a.charAt(aIdx));
+                    outputArr[i] = Character.toString(a.charAt(aIdx));
                     aIdx++;
                 } else {
-                    arrLikeAPirate[i] = Character.toString(b.charAt(bIdx));
+                    outputArr[i] = Character.toString(b.charAt(bIdx));
                     bIdx++;
                 }
             }
             String leftoverStr = (a.length() > b.length()) ? a : b;
             int leftoverIdx = (a.length() > b.length()) ? aIdx : bIdx;
-            for (int i = primLeng; i < arrLikeAPirate.length; i++) {
-                arrLikeAPirate[i] = Character.toString(leftoverStr.charAt(leftoverIdx));
+            for (int i = primLeng; i < outputArr.length; i++) {
+                outputArr[i] = Character.toString(leftoverStr.charAt(leftoverIdx));
                 leftoverIdx++;
             }
-            String answer = "";
-            for (int i = 0; i < arrLikeAPirate.length; i++) {
-                answer += arrLikeAPirate[i];
+            String output = "";
+            for (int i = 0; i < outputArr.length; i++) {
+                output += outputArr[i];
             }
-            return answer;
+            return output;
         } catch (Exception e) {
             return null;
         }
