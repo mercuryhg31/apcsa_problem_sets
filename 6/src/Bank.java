@@ -76,7 +76,7 @@ public class Bank {
         }
     }
     
-    /*
+    /**
      * Retrieves an existing account by account number.
      * 
      * @param accountNo the account number to retrieve
@@ -133,7 +133,7 @@ public class Bank {
         }
     }
     
-    /*
+    /**
      * Initializes the Bank's internal list of accounts. This information is read
      * in from the accounts.dat file.
      * 
@@ -162,7 +162,7 @@ public class Bank {
         return accounts;
     }
     
-    /*
+    /**
      * Generates the next sequential account number.
      * 
      * @return the next account number
