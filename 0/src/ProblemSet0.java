@@ -119,4 +119,5 @@ public class ProblemSet0 {
        System.out.println("+---+\t+---+\n|\t\t\t|\n+---+\t+---+");
        System.out.println("\t|\t|\n\t+---+\n");
     }
+
 }
