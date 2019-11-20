@@ -1,5 +1,7 @@
 import java.text.NumberFormat;
 
+// import ATM.Transaction;
+
 public class BankAccount {
     
     private int pin;
@@ -31,24 +33,26 @@ public class BankAccount {
         return accountHolder;
     }
     
-    public int deposit(double amount) {
+    public ATM.Transaction deposit(double amount) {
         if (amount <= 0) {
-            return ATM.INVALID;
+            return ATM.Transaction.INVALID;
+        } else if (balance + amount > 999999999999.99) {
+            return ATM.Transaction.EXCESSIVE;
         } else {
             balance += amount;
         }
-        return ATM.SUCCESS;
+        return ATM.Transaction.SUCCESS;
     }
     
-    public int withdraw(double amount) {
+    public ATM.Transaction withdraw(double amount) {
         if (amount <= 0) {
-            return ATM.INVALID;
+            return ATM.Transaction.INVALID;
         } else if (amount > balance) {
-            return ATM.INSUFFICIENT;
+            return ATM.Transaction.INSUFFICIENT;
         } else {
             balance -= amount;
         }
-        return ATM.SUCCESS;
+        return ATM.Transaction.SUCCESS;
     }
     
     /**
