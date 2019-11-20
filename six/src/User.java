@@ -27,4 +27,3 @@ public class User {
             String.format("%1$-" + ATM.LAST_NAME_WIDTH + "s", lastName);
     }
 }
-

@@ -26,7 +26,7 @@ public class Bank {
     private final static int LAST_NAME_END = 63;
     private final static int BALANCE_START = 63;
     
-    private final static String DATA = "data/accounts.dat";		// data file path
+    private final static String DATA = "../data/accounts.dat";		// data file path
     
     private List<BankAccount> accounts;							// an in-memory list of BankAccount objects
     
@@ -53,7 +53,7 @@ public class Bank {
      */
     
     public BankAccount createAccount(int pin, User user) {
-    	accounts.add(new BankAccount(pin, generateAccountNo(), user));
+    	accounts.add(new BankAccount(pin, generateAccountNo(), 0, user));
     	
     	return accounts.get(accounts.size() - 1);
     }
