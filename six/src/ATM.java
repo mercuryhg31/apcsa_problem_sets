@@ -57,9 +57,9 @@ public class ATM {
             System.out.print("PIN        : ");
             int pin = in.nextInt();
 
-            if (accountNo == -1 && pin == -1) {
-                shutdown();
-            }
+            // if (accountNo == -1 && pin == -1) {
+            //     shutdown();
+            // }
 
             activeAccount = bank.login(accountNo, pin);
             
@@ -147,21 +147,6 @@ public class ATM {
         } else if (status == ATM.Transaction.SUCCESS) {
             System.out.println("\nWithdrawal accepted.\n");
         }
-    }
-
-    public String createNewFirstName() { // for new account
-        System.out.print("First name: ");
-        return in.nextLine();
-    }
-
-    public String createNewLastName() { // for new account
-        System.out.print("Last name: ");
-        return in.nextLine();
-    }
-
-    public int createNewPIN() { // for new account
-        System.out.print("PIN: ");
-        return in.nextInt();
     }
     
     public void shutdown() {
