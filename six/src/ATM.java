@@ -53,17 +53,19 @@ public class ATM {
             }
             
             long accountNo = Long.parseLong(accountNoStr);
+            System.out.println(accountNo);
             
             System.out.print("PIN        : ");
             int pin = in.nextInt();
+            System.out.println(pin);
 
             // if (accountNo == -1 && pin == -1) {
             //     shutdown();
             // }
 
-            activeAccount = bank.login(accountNo, pin);
-            
             if (isValidLogin(accountNo, pin)) {
+                activeAccount = bank.login(accountNo, pin);
+                System.out.println(activeAccount);
                 System.out.println("\nHello, again, " + activeAccount.getAccountHolder().getFirstName() + "!\n");
                 
                 boolean validLogin = true;
@@ -97,6 +99,7 @@ public class ATM {
                     shutdown();
                 } else {
                     System.out.println("\nInvalid account number and/or PIN.\n");
+                    continue;
                 }
             }
         }
