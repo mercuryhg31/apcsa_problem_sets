@@ -25,8 +25,8 @@ public class ATM {
         INVALID,
         EXCESSIVE,
         INSUFFICIENT,
-        SUCCESS
-    }
+        SUCCESS;
+    };
     
     public void startup() {
         System.out.println("Welcome to the AIT ATM!\n");
