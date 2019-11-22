@@ -33,40 +33,40 @@ public class BankAccount {
         return accountHolder;
     }
     
-    public ATM.Transaction deposit(double amount) {
+    public ATM.TransStatus deposit(double amount) {
         if (amount <= 0) {
-            return ATM.Transaction.INVALID;
+            return ATM.TransStatus.INVALID;
         } else if (balance + amount > 999999999999.99) {
-            return ATM.Transaction.EXCESSIVE;
+            return ATM.TransStatus.EXCESSIVE;
         } else {
             balance += amount;
         }
-        return ATM.Transaction.SUCCESS;
+        return ATM.TransStatus.SUCCESS;
     }
     
-    public ATM.Transaction withdraw(double amount) {
+    public ATM.TransStatus withdraw(double amount) {
         if (amount <= 0) {
-            return ATM.Transaction.INVALID;
+            return ATM.TransStatus.INVALID;
         } else if (amount > balance) {
-            return ATM.Transaction.INSUFFICIENT;
+            return ATM.TransStatus.INSUFFICIENT;
         } else {
             balance -= amount;
         }
-        return ATM.Transaction.SUCCESS;
+        return ATM.TransStatus.SUCCESS;
     }
 
-    public ATM.Transaction transfer(double amount, BankAccount transferAccount) {
+    public ATM.TransStatus transfer(double amount, BankAccount transferAccount) {
         if (amount <= 0) {
-            return ATM.Transaction.INVALID;
+            return ATM.TransStatus.INVALID;
         } else if (amount > balance) {
-            return ATM.Transaction.INSUFFICIENT;
+            return ATM.TransStatus.INSUFFICIENT;
         } else if (transferAccount.balance + amount > 999999999999.99) {
-            return ATM.Transaction.EXCESSIVE;
+            return ATM.TransStatus.EXCESSIVE;
         } else {
             balance -= amount;
             transferAccount.balance += amount;
         }
-        return ATM.Transaction.SUCCESS;
+        return ATM.TransStatus.SUCCESS;
     }
     
     /**
