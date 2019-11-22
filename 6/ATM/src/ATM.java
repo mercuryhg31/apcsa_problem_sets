@@ -92,23 +92,24 @@ public class ATM {
                 boolean validLogin = true;
                 while (validLogin) {
                     switch (getSelection()) {
-                        case ATM.Transaction.VIEW.getOption():
+                        case VIEW:
                             showBalance();
                             break;
-                        case ATM.Transaction.DEPOSIT.getOption():
+                        case DEPOSIT:
                             deposit();
                             bank.update(activeAccount);
                             break;
-                        case ATM.Transaction.WITHDRAW.getOption():
+                        case WITHDRAW:
                             withdraw();
                             bank.update(activeAccount);
                             break;
-                        case ATM.Transaction.TRANSFER.getOption():
+                        case TRANSFER:
                             transfer();
                             break;
-                        case ATM.Transaction.LOGOUT.getOption():
+                        case LOGOUT:
                             bank.save();
                             validLogin = false;
+                            System.out.println();
                             break;
                         default:
                             System.out.println("\nInvalid selection.\n");
@@ -132,18 +133,38 @@ public class ATM {
     }
 
     
-    public int getSelection() {
+    public Transaction getSelection() {
         System.out.println("[1] View balance");
         System.out.println("[2] Deposit money");
         System.out.println("[3] Withdraw money");
         System.out.println("[4] Transfer money");
         System.out.println("[5] Logout");
         
-        return in.nextInt();
+        int selection = in.nextInt();
+
+        switch (selection) {
+            case 1:
+                return ATM.Transaction.VIEW;
+                // break;
+            case 2:
+                return ATM.Transaction.DEPOSIT;
+                // break;
+            case 3:
+                return ATM.Transaction.WITHDRAW;
+                // break;
+            case 4:
+                return ATM.Transaction.TRANSFER;
+                // break;
+            case 5:
+                return ATM.Transaction.LOGOUT;
+                // break;
+            default:
+                return null;
+        } // honestly, this is stupid at this point, but i'm committed i guess
     }
     
     public void showBalance() {
-        System.out.println("\nCurrent balance: " + activeAccount.getBalance());
+        System.out.println("\nCurrent balance: " + activeAccount.getBalance() + "\n");
     }
     
     public void deposit() {
@@ -154,7 +175,7 @@ public class ATM {
         if (status == ATM.TransStatus.INVALID) {
             System.out.println("\nDeposit rejected. Amount must be greater than $0.00.\n");
         } else if (status == ATM.TransStatus.EXCESSIVE) {
-            System.out.println("\nDeposit rejected. Amount would cause balance to exceed $999,999,999,999.99");
+            System.out.println("\nDeposit rejected. Amount would cause balance to exceed $999,999,999,999.99\n");
         } else if (status == ATM.TransStatus.SUCCESS) {
             System.out.println("\nDeposit accepted.\n");
         }
