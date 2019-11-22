@@ -28,7 +28,7 @@ public class BankAccount {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         return currency.format(balance);
     }
-    
+
     public User getAccountHolder() {
         return accountHolder;
     }
@@ -51,6 +51,20 @@ public class BankAccount {
             return ATM.Transaction.INSUFFICIENT;
         } else {
             balance -= amount;
+        }
+        return ATM.Transaction.SUCCESS;
+    }
+
+    public ATM.Transaction transfer(double amount, BankAccount transferAccount) {
+        if (amount <= 0) {
+            return ATM.Transaction.INVALID;
+        } else if (amount > balance) {
+            return ATM.Transaction.INSUFFICIENT;
+        } else if (transferAccount.balance + amount > 999999999999.99) {
+            return ATM.Transaction.EXCESSIVE;
+        } else {
+            balance -= amount;
+            transferAccount.balance += amount;
         }
         return ATM.Transaction.SUCCESS;
     }
