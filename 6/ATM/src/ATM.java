@@ -36,19 +36,30 @@ public class ATM {
             String accountNoStr = in.next();
             
             if (accountNoStr.equals("+")) {
-                System.out.print("First name: ");
+                System.out.print("\nFirst name: ");
                 String firstname = in.next();
+                while (firstname.length() < 1 || firstname.length() > 20) {
+                    System.out.print("Invalid name, try again: ");
+                    firstname= in.next();
+                }
                 System.out.print("Last name: ");
                 String lastname = in.next();
-                int pin;
-                do {
-                    System.out.print("PIN: ");
+                while (lastname.length() < 1 || lastname.length() > 30) {
+                    System.out.print("Invalid name, try again: ");
+                    lastname= in.next();
+                }
+                System.out.print("PIN: ");
+                int pin = in.nextInt();
+                while (pin < 1000 || pin > 9999) {
+                    System.out.print("Invalid PIN, try again: ");
                     pin = in.nextInt();
-                } while (pin < 1000 || pin > 9999);
+                }
                 activeAccount = bank.createAccount(pin, new User(firstname, lastname));
+                bank.update(activeAccount);
+                bank.save();
 
                 System.out.println("\nThank you. Your account number is " + activeAccount.getAccountNo() + ".");
-                System.out.println("Please login to access your newly created account.");
+                System.out.println("Please login to access your newly created account.\n");
                 continue;
             }
             
