@@ -131,6 +131,8 @@ public class ATM {
         Transaction status = activeAccount.deposit(amount);
         if (status == ATM.Transaction.INVALID) {
             System.out.println("\nDeposit rejected. Amount must be greater than $0.00.\n");
+        } else if (status == ATM.Transaction.FAULTY) {
+            System.out.println("\nDeposit rejected. Amount must be in cents and dollars.\n");
         } else if (status == ATM.Transaction.EXCESSIVE) {
             System.out.println("\nDeposit rejected. Amount would cause balance to exceed $999,999,999,999.99\n");
         } else if (status == ATM.Transaction.SUCCESS) {
@@ -145,6 +147,8 @@ public class ATM {
         Transaction status = activeAccount.withdraw(amount);
         if (status == ATM.Transaction.INVALID) {
             System.out.println("\nWithdrawal rejected. Amount must be greater than $0.00.\n");
+        } else if (status == ATM.Transaction.FAULTY) {
+            System.out.println("\nWithdrawal rejected. Amount must be in cents and dollars.\n");
         } else if (status == ATM.Transaction.INSUFFICIENT) {
             System.out.println("\nWithdrawal rejected. Insufficient funds.\n");
         } else if (status == ATM.Transaction.SUCCESS) {
@@ -167,6 +171,8 @@ public class ATM {
             Transaction status = activeAccount.transfer(amount, transferAccount);
             if (status == ATM.Transaction.INVALID) {
                 System.out.println("\nTransfer rejected. Amount must be greater than $0.00.\n");
+            } else if (status == ATM.Transaction.FAULTY) {
+                System.out.println("\nTransfer rejected. Amount must be in cents and dollars.\n");
             } else if (status == ATM.Transaction.INSUFFICIENT) {
                 System.out.println("\nTransfer rejected. Insufficient funds.\n");
             } else if (status == ATM.Transaction.EXCESSIVE) {
