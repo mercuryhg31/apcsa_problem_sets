@@ -36,6 +36,8 @@ public class BankAccount {
     public ATM.Transaction deposit(double amount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
+        } else if (amount / 0.01 < 1) {
+            return ATM.Transaction.FAULTY;
         } else if (balance + amount > 999999999999.99) {
             return ATM.Transaction.EXCESSIVE;
         } else {
@@ -47,6 +49,8 @@ public class BankAccount {
     public ATM.Transaction withdraw(double amount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
+        } else if (amount / 0.01 < 1) {
+            return ATM.Transaction.FAULTY;
         } else if (amount > balance) {
             return ATM.Transaction.INSUFFICIENT;
         } else {
@@ -58,6 +62,8 @@ public class BankAccount {
     public ATM.Transaction transfer(double amount, BankAccount transferAccount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
+        } else if (amount / 0.01 < 1) {
+            return ATM.Transaction.FAULTY;
         } else if (amount > balance) {
             return ATM.Transaction.INSUFFICIENT;
         } else if (transferAccount.balance + amount > 999999999999.99) {
