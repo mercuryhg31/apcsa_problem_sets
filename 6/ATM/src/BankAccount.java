@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.text.DecimalFormat;
 
 // import ATM.Transaction;
 
@@ -8,6 +9,8 @@ public class BankAccount {
     private long accountNo;
     private double balance;
     private User accountHolder;
+
+    private DecimalFormat df = new DecimalFormat("#.00");
     
     public BankAccount(int pin, long accountNo, double balance, User accountHolder) {
         this.pin = pin;
@@ -36,7 +39,7 @@ public class BankAccount {
     public ATM.Transaction deposit(double amount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
-        } else if (amount / 0.01 < 1) {
+        } else if (Double.parseDouble(df.format(amount)) != amount) {
             return ATM.Transaction.FAULTY;
         } else if (balance + amount > 999999999999.99) {
             return ATM.Transaction.EXCESSIVE;
@@ -49,7 +52,7 @@ public class BankAccount {
     public ATM.Transaction withdraw(double amount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
-        } else if (amount / 0.01 < 1) {
+        } else if (Double.parseDouble(df.format(amount)) != amount) {
             return ATM.Transaction.FAULTY;
         } else if (amount > balance) {
             return ATM.Transaction.INSUFFICIENT;
@@ -62,7 +65,7 @@ public class BankAccount {
     public ATM.Transaction transfer(double amount, BankAccount transferAccount) {
         if (amount <= 0) {
             return ATM.Transaction.INVALID;
-        } else if (amount / 0.01 < 1) {
+        } else if (Double.parseDouble(df.format(amount)) != amount) {
             return ATM.Transaction.FAULTY;
         } else if (amount > balance) {
             return ATM.Transaction.INSUFFICIENT;
