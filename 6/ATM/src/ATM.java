@@ -15,7 +15,8 @@ public class ATM {
         DEPOSIT,
         WITHDRAW,
         TRANSFER,
-        LOGOUT;
+        LOGOUT,
+        INVALID;
     }
     
     enum Transaction {
@@ -116,7 +117,7 @@ public class ATM {
                 return ATM.Menu.LOGOUT;
                 // break;
             default:
-                return null;
+                return ATM.Menu.INVALID;
         } // honestly, this is stupid at this point, but i'm committed i guess
     }
     
