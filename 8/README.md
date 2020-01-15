@@ -2,6 +2,8 @@
 
 It's time to put your skills to the test. We're back to a disjointed set of exercises, which is probably a relief after the last problem set. This one should be a piece of cake. We'll be working specifically with arrays.
 
+[Skeleton Repository](https://github.com/ap-java-ucvts/pset-8-skeleton)
+
 ## Getting Started
 
 To get started, create a [GitHub](https://github.com/) repository to store your code. When you're finished, clone my skeleton to get all of the starter code and instructions. Setup a remote to push your code to your repository instead of mine.
