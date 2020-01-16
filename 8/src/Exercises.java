@@ -36,9 +36,14 @@ public class Exercises { // TODO make all methods not static
 	}
 
 	public double biggest(double[] numbers) {
-		// write your code here
+		boolean ohno = false;
+		for (double number : numbers) {
+			if (number < 0) ohno = true;
+		}
+		if (numbers == null || numbers.length % 2 == 0 || ohno) return -1;
 
-		return -1;		// default return value to ensure compilation
+		Arrays.sort(numbers);
+
 	}
 
 	public String[] middle(String[] values) {
