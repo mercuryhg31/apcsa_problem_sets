@@ -3,8 +3,7 @@ import java.util.Arrays;
 public class Exercises { // TODO make all methods not static
 
 	// public static void main (String args[]) {
-	// 	String[] hi = {"hi", "bye", "words", "word", "eleven", "spaghetti"};
-	// 	endsMeet(hi, 4);
+
 	// }
 
 	public boolean commonEnd(int[] a, int[] b) {
@@ -18,28 +17,22 @@ public class Exercises { // TODO make all methods not static
 	}
 
 	public String[] endsMeet(String[] values, int n) {
-		if (values == null || values.length < n || n < 0) {
-			return new String[0];
-		} else {
-			String[] output = new String[n*2];
-			for (int i = 0; i < n; i++) {
-				output[i] = Arrays.copyOfRange(values, 0, n)[i];
-			}
-			int j = 0;
-			for (int i = n; i < output.length; i++) {
-				output[i] = Arrays.copyOfRange(values, values.length-n, values.length)[j]; j++;
-			}
-
-			return output;
+		if (values == null || values.length < n || n < 0) return new String[0];
+		String[] output = new String[n*2];
+		for (int i = 0; i < n; i++) {
+			output[i] = Arrays.copyOfRange(values, 0, n)[i];
 		}
-
-		// return null;	// default return value to ensure compilation
+		int j = 0;
+		for (int i = n; i < output.length; i++) {
+			output[i] = Arrays.copyOfRange(values, values.length-n, values.length)[j]; j++;
+		}
+		return output;
 	}
 
 	public int difference(int[] numbers) {
-		// write your code here
-
-		return -1;		// default return value to ensure compilation
+		if (numbers == null || numbers.length < 1) return -1;
+		Arrays.sort(numbers);
+		return numbers[numbers.length-1] - numbers[0];
 	}
 
 	public double biggest(double[] numbers) {
