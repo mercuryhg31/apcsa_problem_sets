@@ -35,7 +35,6 @@ public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./gr
 		}
 		if (numbers.length % 2 == 0 || numbers.length < 3 || ohno) return -1;
 
-		Arrays.sort(numbers);
 		if (numbers[0] >= numbers[numbers.length - 1]) {
 			if (numbers[0] > numbers[numbers.length - 1]) {
 				return numbers[0];
@@ -62,8 +61,14 @@ public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./gr
 		}
 		if (values.length % 2 == 0 || values.length < 3 || ohno) return new String[0];
 
-		// return new String[] {values[(values.length / 2) - 1], values[values.length / 2], values[(values.length / 2) + 1]};
-		return new String[0]; // TODO the above is making things go weird: figure out why
+		return new String[] {values[(values.length / 2) - 1], values[values.length / 2], values[(values.length / 2) + 1]};
+
+		// String[] output = new String[3]; // TODO the above is making things go weird: figure out why -- wait, but now it's not??
+		// output[0] = values[(values.length / 2) - 1];
+		// output[1] = values[values.length / 2];
+		// output[2] = values[(values.length / 2) + 1];
+
+		// return output;
 	}
 
 	public boolean increasing(int[] numbers) {
