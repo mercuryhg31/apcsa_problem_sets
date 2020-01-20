@@ -1,14 +1,6 @@
 import java.util.Arrays;
 
-public class Exercises { // TODO make all methods not static // cd ../src/; javac Exercises.java; cd ../tests/; ./grademe.sh
-
-	public static void main (String args[]) {
-		Exercises ex = new Exercises();
-
-		System.out.println(ex.balance(new int[] {1, 1}));
-		System.out.println(ex.balance(new int[] {1, 2, 3}));
-		System.out.println(ex.balance(new int[] {1, 3, 4}));
-	}
+public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./grademe.sh
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) return false;
@@ -124,26 +116,6 @@ public class Exercises { // TODO make all methods not static // cd ../src/; java
 		for (String word : values) {
 			if (word == null) return -1;
 		}
-
-		// int x = 0;
-		// for (int i = 1; i < values.length; i++) {
-		// 	if (!values[i].equals(values[i - 1])) x++;
-		// }
-		// return values.length - x;
-
-		// int[] test = new int[values.length];
-		// for (int i = 1; i < values.length; i++) {
-		// 	test[i] = (values[i].equals(values[i - 1])) ? 1 : 0;
-		// }
-
-		// int output = 0; int x;
-		// for (int i = 1; i < values.length; i++) {
-		// 	if (values[i].equals(values[i - 1])) {
-		// 		x = values[i];
-		// 		if ()
-		// 	}
-		// }
-
 		int output = 0; boolean in = false;
 		for (int i = 1; i < values.length; i++) {
 			if (values[i].equals(values[i - 1])) {
@@ -151,10 +123,7 @@ public class Exercises { // TODO make all methods not static // cd ../src/; java
 					in = true;
 					output++;
 				}
-			} else {
-				in = false;
-			}
-		}
-		return output;
+			} else in = false;
+		} return output;
 	}
 }
