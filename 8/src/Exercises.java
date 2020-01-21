@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./grademe.sh
+public class Exercises {
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) return false;
@@ -27,14 +27,13 @@ public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./gr
 		return numbers[numbers.length - 1] - numbers[0];
 	}
 
-	public double biggest(double[] numbers) { // TODO mr. wilson??
+	public double biggest(double[] numbers) {
 		if (numbers == null) return -1;
 		boolean ohno = false;
 		for (double number : numbers) {
 			if (number < 0) ohno = true;
 		}
 		if (numbers.length % 2 == 0 || numbers.length < 3 || ohno) return -1;
-
 		if (numbers[0] >= numbers[numbers.length - 1]) {
 			if (numbers[0] > numbers[numbers.length - 1]) {
 				return numbers[0];
@@ -49,7 +48,6 @@ public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./gr
 			}
 			return numbers[numbers.length / 2];
 		}
-
 		return -1;
 	}
 
@@ -60,14 +58,12 @@ public class Exercises { // cd ../src/; javac Exercises.java; cd ../tests/; ./gr
 			if (word == null) ohno = true;
 		}
 		if (values.length % 2 == 0 || values.length < 3 || ohno) return new String[0];
-
 		return new String[] {values[(values.length / 2) - 1], values[values.length / 2], values[(values.length / 2) + 1]};
 
 		// String[] output = new String[3]; // TODO the above is making things go weird: figure out why -- wait, but now it's not??
 		// output[0] = values[(values.length / 2) - 1];
 		// output[1] = values[values.length / 2];
 		// output[2] = values[(values.length / 2) + 1];
-
 		// return output;
 	}
 
