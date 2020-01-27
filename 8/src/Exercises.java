@@ -58,7 +58,7 @@ public class Exercises {
 			if (word == null) ohno = true;
 		}
 		if (values.length % 2 == 0 || values.length < 3 || ohno) return new String[0];
-		return new String[] {values[(values.length / 2) - 1], values[values.length / 2], values[(values.length / 2) + 1]};
+		return new String[]{values[(values.length / 2) - 1], values[values.length / 2], values[(values.length / 2) + 1]};
 
 		// String[] output = new String[3]; // TODO the above is making things go weird: figure out why -- wait, but now it's not??
 		// output[0] = values[(values.length / 2) - 1];
