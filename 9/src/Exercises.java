@@ -32,9 +32,27 @@ public class Exercises {
 	}
 	
 	public double biggest(ArrayList<Double> numbers) {
-		// write your code here
-		
-		return -1;		// default return value to ensure compilation
+		if (numbers == null) return -1;
+		boolean ohno = false;
+		for (double number : numbers) {
+			if (number < 0) ohno = true;
+		}
+		if (numbers.size() % 2 == 0 || numbers.size() < 3 || ohno) return -1;
+		if (numbers.get(0) >= numbers.get(numbers.size() - 1)) {
+			if (numbers.get(0) > numbers.get(numbers.size() - 1)) {
+				return numbers.get(0);
+			} else if (numbers.get(0) > numbers.get(numbers.size() / 2)) {
+				return numbers.get(0);
+			} else {
+				return numbers.get(numbers.size() / 2);
+			}
+		} else if (numbers.get(numbers.size() - 1) >= numbers.get(numbers.size() / 2)) {
+			if (numbers.get(numbers.size() - 1) > numbers.get(numbers.size() / 2)) {
+				return numbers.get(numbers.size() - 1);
+			}
+			return numbers.get(numbers.size() / 2);
+		}
+		return -1;
 	}
 	
 	public ArrayList<String> middle(ArrayList<String> values) {
