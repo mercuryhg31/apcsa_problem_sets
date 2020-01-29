@@ -17,8 +17,7 @@ public class Exercises {
 		}
 		for (int i = values.size() - n; i < values.size(); i++) {
 			output.add(values.get(i));
-		}
-		return output;
+		} return output;
 	}
 
 	public int difference(ArrayList<Integer> numbers) {
@@ -28,8 +27,7 @@ public class Exercises {
 		for (int i = 0; i < numbers.size(); i++) {
 			if (numbers.get(i) < min) min = numbers.get(i);
 			if (numbers.get(i) > max) max = numbers.get(i);
-		}
-		return max - min;
+		} return max - min;
 	}
 
 	public double biggest(ArrayList<Double> numbers) {
@@ -52,8 +50,7 @@ public class Exercises {
 				return numbers.get(numbers.size() - 1);
 			}
 			return numbers.get(numbers.size() / 2);
-		}
-		return -1;
+		} return -1;
 	}
 
 	public ArrayList<String> middle(ArrayList<String> values) { // TODO mr. wilson?? test case 5: passed in numbers?
@@ -78,15 +75,17 @@ public class Exercises {
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 3) return false;
+		for (int i = 0; i < numbers.size() - 2; i++) {
+			if (numbers.get(i) < numbers.get(i + 1) && numbers.get(i + 1) < numbers.get(i + 2)) return true;
+		} return false;
 	}
 
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 1) return false;
+		for (int i = 1; i < numbers.size() - 1; i++) {
+			if (!(numbers.get(i) == x || numbers.get(i - 1) == x || numbers.get(i + 1) == x)) return false;
+		} return true;
 	}
 
 	public boolean consecutive(ArrayList<Integer> numbers) {
