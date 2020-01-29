@@ -9,9 +9,15 @@ public class Exercises {
 	}
 	
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
-		// write your code here
-		
-		return null;	// default return value to ensure compilation
+		if (values == null || values.size() < n || n < 0) return new ArrayList<String>();
+		ArrayList<String> output = new ArrayList<String>();
+		for (int i = 0; i < n; i++) {
+			output.add(values.get(i));
+		}
+		for (int i = values.size() - n; i < values.size(); i++) {
+			output.add(values.get(i));
+		}
+		return output;
 	}
 	
 	public int difference(ArrayList<Integer> numbers) {
