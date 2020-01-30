@@ -99,14 +99,35 @@ public class Exercises {
 	}
 
 	public boolean balance(ArrayList<Integer> numbers) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 2) return false;
+		for (int i = 1; i < numbers.size(); i++) {
+			int a = 0;
+			int b = 0;
+			for (int j = 0; j < i; j++) {
+				a += numbers.get(j);
+			}
+			for (int j = i; j < numbers.size(); j++) {
+				b += numbers.get(j);
+			}
+			if (a == b) return true;
+		}
+		return false;
 	}
 
 	public int clumps(ArrayList<String> values) {
-		// write your code here
+		if (values == null) return -1;
+		for (String word : values) {
+			if (word == null) return -1;
+		}
+		int output = 0; boolean in = false;
+		for (int i = 1; i < values.size(); i++) {
+			if (values.get(i).equals(values.get(i - 1))) {
+				if (!in) {
+					in = true;
+					output++;
+				}
+			} else in = false;
+		} return output;
 
-		return -1;		// default return value to ensure compilation
 	}
 }
