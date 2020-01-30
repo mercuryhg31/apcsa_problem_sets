@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Exercises {
+public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grademe.sh difference;./grademe.sh biggest;./grademe.sh middle;./grademe.sh increasing;./grademe.sh everywhere;./grademe.sh consecutive;./grademe.sh balance;./grademe.sh clumps
 
 	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
 		if (a == null || a.isEmpty() || b == null || b.isEmpty()) return false;
