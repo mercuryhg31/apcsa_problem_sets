@@ -89,9 +89,13 @@ public class Exercises {
 	}
 
 	public boolean consecutive(ArrayList<Integer> numbers) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 3) return false;
+		for (int i = 1; i < numbers.size() - 1; i++) {
+			if (numbers.get(i - 1) % 2 == 0 && numbers.get(i) % 2 == 0 && numbers.get(i + 1) % 2 == 0) return true;
+		}
+		for (int i = 1; i < numbers.size(); i++) {
+			if (numbers.get(i - 1) % 2 != 0 && numbers.get(i) % 2 != 0 && numbers.get(i + 1) % 2 != 0) return true;
+		} return false;
 	}
 
 	public boolean balance(ArrayList<Integer> numbers) {
