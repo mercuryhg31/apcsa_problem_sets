@@ -53,7 +53,7 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 		} return -1;
 	}
 
-	public ArrayList<String> middle(ArrayList<String> values) { // TODO mr. wilson?? test case 5: passed in numbers?
+	public ArrayList<String> middle(ArrayList<String> values) {
 		if (values == null) return new ArrayList<String>();
 		boolean ohno = false;
 		for (String word : values) {
@@ -61,17 +61,6 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 		}
 		if (values.size() % 2 == 0 || values.size() < 3 || ohno) return new ArrayList<String>();
 		return new ArrayList<String>(Arrays.asList(values.get((values.size() / 2) - 1), values.get(values.size() / 2), values.get((values.size() / 2) + 1)));
-
-		// ArrayList<String> output = new ArrayList<String>();
-		// System.out.println(output.add(values.get((values.size() / 2) - 1)));
-		// System.out.println(output.add(values.get(values.size() / 2)));
-		// System.out.println(output.add(values.get((values.size() / 2) + 1)));
-
-		// for (String out : output) {
-		// 	System.out.println(out);
-		// }
-
-		// return output;
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
