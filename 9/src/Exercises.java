@@ -35,8 +35,7 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 		boolean ohno = false;
 		for (double number : numbers) {
 			if (number < 0) ohno = true;
-		}
-		if (numbers.size() % 2 == 0 || numbers.size() < 3 || ohno) return -1;
+		} if (numbers.size() % 2 == 0 || numbers.size() < 3 || ohno) return -1;
 		if (numbers.get(0) >= numbers.get(numbers.size() - 1)) {
 			if (numbers.get(0) > numbers.get(numbers.size() - 1)) {
 				return numbers.get(0);
@@ -58,8 +57,7 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 		boolean ohno = false;
 		for (String word : values) {
 			if (word == null) ohno = true;
-		}
-		if (values.size() % 2 == 0 || values.size() < 3 || ohno) return new ArrayList<String>();
+		} if (values.size() % 2 == 0 || values.size() < 3 || ohno) return new ArrayList<String>();
 		return new ArrayList<String>(Arrays.asList(values.get((values.size() / 2) - 1), values.get(values.size() / 2), values.get((values.size() / 2) + 1)));
 	}
 
