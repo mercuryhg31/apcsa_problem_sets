@@ -99,8 +99,7 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 				b += numbers.get(j);
 			}
 			if (a == b) return true;
-		}
-		return false;
+		} return false;
 	}
 
 	public int clumps(ArrayList<String> values) {
