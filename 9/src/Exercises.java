@@ -107,8 +107,7 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 		if (values == null) return -1;
 		for (String word : values) {
 			if (word == null) return -1;
-		}
-		int output = 0; boolean in = false;
+		} int output = 0; boolean in = false;
 		for (int i = 1; i < values.size(); i++) {
 			if (values.get(i).equals(values.get(i - 1))) {
 				if (!in) {
@@ -117,6 +116,5 @@ public class Exercises { // ./grademe.sh commonEnd;./grademe.sh endsMeet;./grade
 				}
 			} else in = false;
 		} return output;
-
 	}
 }
