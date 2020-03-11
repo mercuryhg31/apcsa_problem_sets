@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Exercises { // TODO test all with yet to be provided grademe.sh
@@ -24,17 +25,23 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		while (middle != target) {
 			middle = (start + end) / 2;
 			if (middle == 0 || middle == list.size()) return -1;
-			if (middle < target) {
-				end--;
-			} else if (middle > target) {
-				start++;
-			} else {
-				return middle;
-			}
+			else if (list.get(middle) < target) end--;
+			else if (list.get(middle) > target) start++;
+			else return middle;
 		}
 	}
 
 	public int findMeFaster(String[] list, String target) {
+		if (list.length == 0) return -1;
+		Arrays.sort(list);
+		int start = 0; int end = list.length - 1; int middle = 0;
+		while (middle != target) {
+			middle = (start + end) / 2;
+			if (middle == 0 || middle == list.length) return -1;
+			else if (list[middle].compareTo(target) < 0) end--;
+			else if (list[middle].compareTo(target) > 0) start++;
+			else return middle;
+		}
 		return -1;
 	}
 
