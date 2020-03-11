@@ -18,7 +18,20 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	public int findMeFaster(ArrayList<Integer> list, int target) {
-		return -1;
+		if (list.isEmpty()) return -1;
+		Collections.sort(list);
+		int start = 0; int end = list.size() - 1; int middle = 0;
+		while (middle != target) {
+			middle = (start + end) / 2;
+			if (middle == 0 || middle == list.size()) return -1;
+			if (middle < target) {
+				end--;
+			} else if (middle > target) {
+				start++;
+			} else {
+				return middle;
+			}
+		}
 	}
 
 	public int findMeFaster(String[] list, String target) {
