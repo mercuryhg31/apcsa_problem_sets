@@ -22,7 +22,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		if (list.isEmpty()) return -1;
 		Collections.sort(list);
 		int start = 0; int end = list.size() - 1; int middle = 0;
-		while (middle != target) {
+		while (list.get(middle) != target) {
 			middle = (start + end) / 2;
 			if (middle == 0 || middle == list.size()) return -1;
 			else if (list.get(middle) < target) end--;
@@ -31,11 +31,11 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		}
 	}
 
-	public int findMeFaster(String[] list, String target) {
+	public int findMeFaster(String[] list, String target) { // TODO doesn't work
 		if (list.length == 0) return -1;
-		Arrays.sort(list);
+		// Arrays.sort(list);
 		int start = 0; int end = list.length - 1; int middle = 0;
-		while (middle != target) {
+		while (list[middle] != target) {
 			middle = (start + end) / 2;
 			if (middle == 0 || middle == list.length) return -1;
 			else if (list[middle].compareTo(target) < 0) end--;
