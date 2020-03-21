@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class Exercises { // TODO test all with yet to be provided grademe.sh
 	/*
-	 * Functions: 1
+	 * Functions: 1, 5
 	 */
 
 	// 1
