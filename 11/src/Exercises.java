@@ -43,7 +43,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 4
-	public int findMeFaster(String[] list, String target) {
+	public int findMeFaster(String[] list, String target) { // ./grademe.sh findMeFaster String[] "hi"
 		if (list.length == 0) return -1;
 		Arrays.sort(list);
 		int start = 0; int end = list.length - 1; int middle = 0;
@@ -58,8 +58,25 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 5
-	public int[] bubble(int[] list, boolean ascending) {
-		return null;
+	public int[] bubble(int[] list, boolean ascending) { // ./grademe.sh bubble int[] true
+		if (list.length == 0) return null;
+		for (int i = 0; i < list.length - 1; i++) {
+			for (int j = 0; j < list.length - 1; j++) {
+				if (ascending) {
+					if (list[j] > list[j + 1]) {
+						int temp = list[j];
+						list[j] = list[j + 1];
+						list[j + 1] = temp;
+					}
+				} else {
+					if (list[j] < list[j + 1]) {
+						int temp = list[j];
+						list[j] = list[j + 1];
+						list[j + 1] = temp;
+					}
+				}
+			}
+		} return list;
 	}
 
 	// 6
