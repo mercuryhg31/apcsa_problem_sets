@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Exercises { // TODO test all with yet to be provided grademe.sh
+	// TODO nothing actually works for null
+	// TODO case sensitive?? insensitive??
 	/*
 	 * Functions: 1, 2, 5, 6, 7, 8, 9, 10
 	 */
@@ -23,7 +25,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return -1;
 	}
 
-	// 3 TODO 3 i think this works?
+	// 3 TODO 3 i think this works? grademe is not helpful
 	public int findMeFaster(ArrayList<Integer> list, int target) {// ./grademe.sh findMeFaster "ArrayList<Integer>" 7
 		if (list.isEmpty()) return -1;
 		Collections.sort(list);
@@ -36,21 +38,17 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return -1;
 	}
 
-	// 4
+	// 4 TODO ^ tho i didn't check this one
 	public int findMeFaster(String[] list, String target) { // ./grademe.sh findMeFaster String[] "hi"
 		if (list.length == 0) return -1;
 		Arrays.sort(list);
 		int start = 0; int end = list.length - 1; int middle = 0;
 		while (list[middle] != target) {
 			middle = (start + end) / 2;
-			if (list[middle].toLowerCase().compareTo(target.toLowerCase()) < 0) start = middle + 1;
-			else if (list[middle].toLowerCase().compareTo(target.toLowerCase()) > 0) end = middle - 1;
+			if (list[middle].compareTo(target) < 0) start = middle + 1;
+			else if (list[middle].compareTo(target) > 0) end = middle - 1;
 			else return middle;
 		} return -1;
-	}
-
-	public static void main(String[] args) {
-		
 	}
 
 	// 5
@@ -79,13 +77,13 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				if (ascending) {
-					if (list.get(j).toLowerCase().compareTo(list.get(j + 1).toLowerCase()) > 0) {
+					if (list.get(j).compareTo(list.get(j + 1)) > 0) {
 						String temp = list.get(j);
 						list.set(j, list.get(j + 1));
 						list.set(j + 1, temp);
 					}
 				} else {
-					if (list.get(j).toLowerCase().compareTo(list.get(j + 1).toLowerCase()) < 0) {
+					if (list.get(j).compareTo(list.get(j + 1)) < 0) {
 						String temp = list.get(j);
 						list.set(j, list.get(j + 1));
 						list.set(j + 1, temp);
@@ -122,14 +120,14 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		for (int i = 1; i < list.length; i++) {
 			int j = i;
 			if (ascending) {
-				while (j > 0 && list[j - 1].toLowerCase().compareTo(list[j].toLowerCase()) > 0) {
+				while (j > 0 && list[j - 1].compareTo(list[j]) > 0) {
 					String temp = list[j];
 					list[j] = list[j - 1];
 					list[j - 1] = temp;
 					j--;
 				}
 			} else {
-				while (j > 0 && list[j - 1].toLowerCase().compareTo(list[j].toLowerCase()) < 0) {
+				while (j > 0 && list[j - 1].compareTo(list[j]) < 0) {
 					String temp = list[j];
 					list[j] = list[j - 1];
 					list[j - 1] = temp;
@@ -166,11 +164,11 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 			int extIdx = i;
 			for (int j = i + 1; j < list.size(); j++) {
 				if (ascending) {
-					if (list.get(j).toLowerCase().compareTo(list.get(extIdx).toLowerCase()) < 0) {
+					if (list.get(j).compareTo(list.get(extIdx)) < 0) {
 						extIdx = j;
 					}
 				} else {
-					if (list.get(j).toLowerCase().compareTo(list.get(extIdx).toLowerCase()) > 0) {
+					if (list.get(j).compareTo(list.get(extIdx)) > 0) {
 						extIdx = j;
 					}
 				}
