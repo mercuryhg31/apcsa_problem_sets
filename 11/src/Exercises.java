@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class Exercises { // TODO test all with yet to be provided grademe.sh
 	/*
-	 * Functions: 1, 2, 5, 6, 7, 8, 9
+	 * Functions: 1, 2, 5, 6, 7, 8, 9, 10
 	 */
 
 	// 1
@@ -167,8 +167,25 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 10
-	public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-		return null;
+	public ArrayList<String> selection(ArrayList<String> list, boolean ascending) { // ./grademe.sh selection "ArrayList<String>" true
+		if (list.size() == 0) return null;
+		for (int i = 0; i < list.size() - 1; i++){
+			int extIdx = i;
+			for (int j = i + 1; j < list.size(); j++) {
+				if (ascending) {
+					if (list.get(j).compareTo(list.get(extIdx)) < 0) {
+						extIdx = j;
+					}
+				} else {
+					if (list.get(j).compareTo(list.get(extIdx)) > 0) {
+						extIdx = j;
+					}
+				}
+			}
+			String temp = list.get(i);
+			list.set(i, list.get(extIdx));
+			list.set(extIdx, temp);
+		} return list;
 	}
 
 	// 11
