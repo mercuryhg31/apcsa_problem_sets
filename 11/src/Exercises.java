@@ -1,13 +1,10 @@
-import java.lang.reflect.Array;
-import java.lang.Integer;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Exercises { // TODO test all with yet to be provided grademe.sh
 	/*
-	 * Functions: 1, 5
+	 * Functions: 1, 2, 5, 6
 	 */
 
 	// 1
@@ -20,7 +17,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 2
-	public int findMe(ArrayList<String> list, String target) { // ./grademe.sh findMe ArrayList<> "a"
+	public int findMe(ArrayList<String> list, String target) { // ./grademe.sh findMe "ArrayList<String>" "hi"
 		if (target.equals(null)) return -1;
 		for (int i = 0; i < list.size(); i++) {
 			if (target.equals(list.get(i))) return i;
@@ -28,7 +25,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 3
-	public int findMeFaster(ArrayList<Integer> list, int target) {
+	public int findMeFaster(ArrayList<Integer> list, int target) {// ./grademe.sh findMeFaster "ArrayList<Integer>" "hi"
 		if (list.isEmpty()) return -1;
 		Collections.sort(list);
 		int start = 0; int end = list.size() - 1; int middle = 0;
@@ -80,8 +77,25 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 6
-	public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
-		return null;
+	public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) { // ./grademe.sh bubble "ArrayList<String>" true
+		if (list.size() == 0) return null;
+		for (int i = 0; i < list.size() - 1; i++) {
+			for (int j = 0; j < list.size() - 1; j++) {
+				if (ascending) {
+					if (list.get(j).compareTo(list.get(j + 1)) > 0) {
+						String temp = list.get(j);
+						list.set(j, list.get(j + 1));
+						list.set(j + 1, temp);
+					}
+				} else {
+					if (list.get(j).compareTo(list.get(j + 1)) < 0) {
+						String temp = list.get(j);
+						list.set(j, list.get(j + 1));
+						list.set(j + 1, temp);
+					}
+				}
+			}
+		} return list;
 	}
 
 	// 7
