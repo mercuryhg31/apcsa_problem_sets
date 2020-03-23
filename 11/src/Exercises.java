@@ -188,6 +188,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// 11
 	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
 		if (list == null || list.size() == 0) return null;
+		if (list.size() == 1) return list;
 		int mid = list.size() / 2;
 		ArrayList<Integer> one = new ArrayList<Integer>();
 		for (int i = 0; i < mid; i++) {
@@ -200,6 +201,38 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		merge(one, ascending);
 		merge(two, ascending);
 		return null;
+	}
+
+	public ArrayList<Integer> merge(ArrayList<Integer> list) {
+		if (list == null || list.size() == 0) return null;
+		if (list.size() == 1) return list;
+		int mid = list.size() / 2;
+		ArrayList<Integer> l = new ArrayList<Integer>(); // length midpoint
+		for (int i = 0; i < mid; i++) {
+			l.set(i, list.get(i));
+		}
+		ArrayList<Integer> r = new ArrayList<Integer>(); // length length-midpoint
+		for (int i = mid; i < list.size(); i++) {
+			r.set(i - mid, list.get(i));
+		}
+	}
+
+	public ArrayList<Integer> combine(ArrayList<Integer> left, ArrayList<Integer> right) {
+		ArrayList<Integer> output = new ArrayList<Integer>(); // length left + right
+		int l, r, o; l = r = o = 0;
+		while (l < left.size() || r < right.size()) {
+			if (l < left.size() && r < right.size()) {
+				if (left.get(l) < right.get(r)) {
+					output.set(o, left.get(l)); o++; l++;
+				} else {
+					output.set(o, right.get(r)); o++; r++;
+				}
+			} else if (l < left.size()) {
+				output.set(o, left.get(l)); o++; l++;
+			} else if (r < right.size()) {
+				output.set(o, right.get(r)); o++; r++;
+			}
+		} return output;
 	}
 
 	// 12
