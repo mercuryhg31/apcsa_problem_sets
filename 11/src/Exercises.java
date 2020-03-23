@@ -6,7 +6,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// TODO nothing actually works for null
 	// TODO case sensitive?? insensitive??
 	/*
-	 * Functions: 1, 2, 5, 6, 7, 8, 9, 10
+	 * Functions: 1, 2, 3, 5, 6, 7, 8, 9, 10
 	 */
 
 	// 1
@@ -25,13 +25,13 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return -1;
 	}
 
-	// 3 TODO 3 i think this works? grademe is not helpful
+	// 3
 	public int findMeFaster(ArrayList<Integer> list, int target) {// ./grademe.sh findMeFaster "ArrayList<Integer>" 7
-		if (list.isEmpty()) return -1;
-		Collections.sort(list);
+		if (list.isEmpty() || list == null) return -1;
+		// Collections.sort(list);
 		int start = 0; int end = list.size() - 1; int middle = 0;
 		while (start <= end) {
-			middle = (start + end - 1) / 2;
+			middle = (start + end) / 2;
 			if (list.get(middle) < target) start = middle + 1;
 			else if (list.get(middle) > target) end = middle - 1;
 			else return middle;
