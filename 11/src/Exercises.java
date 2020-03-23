@@ -6,7 +6,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// TODO nothing actually works for null
 	// TODO case sensitive?? insensitive??
 	/*
-	 * Functions: 1, 2, 3, 5, 6, 7, 8, 9, 10
+	 * Functions: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 	 */
 
 	// 1
@@ -29,30 +29,31 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	public int findMeFaster(ArrayList<Integer> list, int target) {// ./grademe.sh findMeFaster "ArrayList<Integer>" 7
 		if (list.isEmpty() || list == null) return -1;
 		// Collections.sort(list);
-		int start = 0; int end = list.size() - 1; int middle = 0;
+		int start = 0; int end = list.size() - 1; int mid = 0;
 		while (start <= end) {
-			middle = (start + end) / 2;
-			if (list.get(middle) < target) start = middle + 1;
-			else if (list.get(middle) > target) end = middle - 1;
-			else return middle;
+			mid = (start + end) / 2;
+			if (list.get(mid) < target) start = mid + 1;
+			else if (list.get(mid) > target) end = mid - 1;
+			else return mid;
 		} return -1;
 	}
 
-	// 4 TODO ^ tho i didn't check this one
+	// 4
 	public int findMeFaster(String[] list, String target) { // ./grademe.sh findMeFaster String[] "hi"
 		if (list.length == 0 || list == null) return -1;
 		// Arrays.sort(list);
-		int start = 0; int end = list.length - 1; int middle = 0;
-		while (list[middle] != target) {
-			middle = (start + end) / 2;
-			if (list[middle].compareTo(target) < 0) start = middle + 1;
-			else if (list[middle].compareTo(target) > 0) end = middle - 1;
-			else return middle;	
+		int start = 0; int end = list.length - 1; int mid = 0;
+		while (start <= end) {
+			mid = (start + end) / 2;
+			if (list[mid].compareTo(target) < 0) start = mid + 1;
+			else if (list[mid].compareTo(target) > 0) end = mid - 1;
+			else return mid;
 		} return -1;
 	}
 
 	// 5
 	public int[] bubble(int[] list, boolean ascending) { // ./grademe.sh bubble int[] true
+		if (list == null) return null;
 		for (int i = 0; i < list.length - 1; i++) {
 			for (int j = 0; j < list.length - 1; j++) {
 				if (ascending) {
@@ -74,6 +75,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 6
 	public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) { // ./grademe.sh bubble "ArrayList<String>" true
+		if (list == null) return null;
 		for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				if (ascending) {
@@ -95,6 +97,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 7
 	public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) { // ./grademe.sh insertion "ArrayList<Integer>" true
+		if (list == null) return null;
 		for (int i = 1; i < list.size(); i++) {
 			int j = i;
 			if (ascending) {
@@ -117,6 +120,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 8
 	public String[] insertion(String[] list, boolean ascending) { // ./grademe.sh insertion String[] true
+		if (list == null) return null;
 		for (int i = 1; i < list.length; i++) {
 			int j = i;
 			if (ascending) {
@@ -139,6 +143,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 9
 	public int[] selection(int[] list, boolean ascending) { // ./grademe.sh selection int[] true
+		if (list == null) return null;
 		for (int i = 0; i < list.length - 1; i++){
 			int extIdx = i;
 			for (int j = i + 1; j < list.length; j++) {
@@ -160,6 +165,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 10
 	public ArrayList<String> selection(ArrayList<String> list, boolean ascending) { // ./grademe.sh selection "ArrayList<String>" true
+		if (list == null) return null;
 		for (int i = 0; i < list.size() - 1; i++){
 			int extIdx = i;
 			for (int j = i + 1; j < list.size(); j++) {
@@ -181,11 +187,24 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 11
 	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
+		if (list == null || list.size() == 0) return null;
+		int mid = list.size() / 2;
+		ArrayList<Integer> one = new ArrayList<Integer>();
+		for (int i = 0; i < mid; i++) {
+			one.set(i, list.get(i));
+		}
+		ArrayList<Integer> two = new ArrayList<Integer>();
+		for (int i = mid; i < list.size(); i++) {
+			two.set(i - mid, list.get(i));
+		}
+		merge(one, ascending);
+		merge(two, ascending);
 		return null;
 	}
 
 	// 12
 	public String[] merge(String[] list, boolean ascending) {
+		if (list == null || list.length == 0) return null;
 		return null;
 	}
 }
