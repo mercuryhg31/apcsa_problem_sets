@@ -40,14 +40,14 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	// 4 TODO ^ tho i didn't check this one
 	public int findMeFaster(String[] list, String target) { // ./grademe.sh findMeFaster String[] "hi"
-		if (list.length == 0) return -1;
-		Arrays.sort(list);
+		if (list.length == 0 || list == null) return -1;
+		// Arrays.sort(list);
 		int start = 0; int end = list.length - 1; int middle = 0;
 		while (list[middle] != target) {
 			middle = (start + end) / 2;
 			if (list[middle].compareTo(target) < 0) start = middle + 1;
 			else if (list[middle].compareTo(target) > 0) end = middle - 1;
-			else return middle;
+			else return middle;	
 		} return -1;
 	}
 
