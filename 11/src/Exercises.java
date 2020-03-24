@@ -3,12 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Exercises { // TODO test all with yet to be provided grademe.sh
-	// TODO nothing actually works for null
-	// TODO case sensitive?? insensitive??
-	/*
-	 * Functions: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
-	 */
+public class Exercises {
 
 	// 1
 	public int findMe(int[] list, int target) { // ./grademe.sh findMe int[] 7
@@ -77,6 +72,8 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// 6
 	public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) { // ./grademe.sh bubble "ArrayList<String>" true
 		if (list == null) return null;
+		ArrayList<String> nulls = getNulls(list, true);
+		list = getNullless(list, true);
 		for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				if (ascending) {
@@ -93,12 +90,14 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 					}
 				}
 			}
-		} return list;
+		} return nullSort(nulls, list, true);
 	}
 
 	// 7
 	public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) { // ./grademe.sh insertion "ArrayList<Integer>" true
 		if (list == null) return null;
+		ArrayList<Integer> nulls = getNulls(list, 8);
+		list = getNullless(list, 8);
 		for (int i = 1; i < list.size(); i++) {
 			int j = i;
 			if (ascending) {
@@ -116,12 +115,14 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 					j--;
 				}
 			}
-		} return list;
+		} return nullSort(nulls, list, 9);
 	}
 
 	// 8
 	public String[] insertion(String[] list, boolean ascending) { // ./grademe.sh insertion String[] true
 		if (list == null) return null;
+		String[] nulls = getNulls(list, "str");
+		list = getNullless(list, "str");
 		for (int i = 1; i < list.length; i++) {
 			int j = i;
 			if (ascending) {
@@ -139,7 +140,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 					j--;
 				}
 			}
-		} return list;
+		} return nullSort(nulls, list, "str");
 	}
 
 	// 9
@@ -167,6 +168,8 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// 10
 	public ArrayList<String> selection(ArrayList<String> list, boolean ascending) { // ./grademe.sh selection "ArrayList<String>" true
 		if (list == null) return null;
+		ArrayList<String> nulls = getNulls(list, true);
+		list = getNullless(list, true);
 		for (int i = 0; i < list.size() - 1; i++){
 			int extIdx = i;
 			for (int j = i + 1; j < list.size(); j++) {
@@ -183,13 +186,15 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 			String temp = list.get(i);
 			list.set(i, list.get(extIdx));
 			list.set(extIdx, temp);
-		} return list;
+		} return nullSort(nulls, list, true);
 	}
 
 	// 11
 	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) { // ./grademe.sh merge "ArrayList<Integer>" true
 		if (list == null) return null;
 		if (list.size() == 0 || list.size() == 1) return list;
+		ArrayList<Integer> nulls = getNulls(list, 9);
+		list = getNullless(list, 0);
 		int mid = list.size() / 2;
 		ArrayList<Integer> left = new ArrayList<Integer>();
 		for (int i = 0; i < mid; i++) {
@@ -200,7 +205,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 			right.add(list.get(i));
 		}
 		left = merge(left, ascending); right = merge(right, ascending);
-		return combine(left, right, ascending);
+		return nullSort(nulls, combine(left, right, ascending), 0);
 	}
 
 	public ArrayList<Integer> combine(ArrayList<Integer> left, ArrayList<Integer> right, boolean ascending) {
@@ -233,6 +238,8 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	public String[] merge(String[] list, boolean ascending) { // ./grademe.sh merge String[] true
 		if (list == null) return null;
 		if (list.length == 0 || list.length == 1) return list;
+		String[] nulls = getNulls(list, "str");
+		list = getNullless(list, "str");
 		int mid = list.length / 2;
 		String[] left = new String[mid];
 		for (int i = 0; i < mid; i++) {
@@ -243,7 +250,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 			right[i - mid] = list[i];
 		}
 		left = merge(left, ascending); right = merge(right, ascending);
-		return combine(left, right, ascending);
+		return nullSort(nulls, combine(left, right, ascending), "str");
 	}
 
 	public String[] combine(String[] left, String[] right, boolean ascending) {
@@ -272,10 +279,10 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return output;
 	}
 
-	public String[] nullSort(String[] nulls, String[] total) {
-		String[] output = new int[nulls.length + total.length];
+	public String[] nullSort(String[] nulls, String[] list, String str) {
+		String[] output = new String[nulls.length + list.length];
 		int i = 0;
-		for (String val : total) {
+		for (String val : list) {
 			output[i] = val; i++;
 		}
 		for (String val : nulls) {
@@ -283,7 +290,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return output;
 	}
 
-	public String[] getNullless(String[] list) {
+	public String[] getNullless(String[] list, String str) {
 		ArrayList<String> unnulls = new ArrayList<String>();
 		for (String val : list) {
 			if (!val.equals(null)) {
@@ -296,7 +303,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return output;
 	}
 
-	public String[] getNulls(String[] list) {
+	public String[] getNulls(String[] list, String str) {
 		ArrayList<String> nulls = new ArrayList<String>();
 		for (String val : list) {
 			if (val.equals(null)) {
@@ -309,7 +316,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return output;
 	}
 
-	public ArrayList<String> getNullless(ArrayList<String> list) {
+	public ArrayList<String> getNullless(ArrayList<String> list, boolean bool) {
 		ArrayList<String> unnulls = new ArrayList<String>();
 		for (String val : list) {
 			if (!val.equals(null)) {
@@ -318,7 +325,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return unnulls;
 	}
 
-	public ArrayList<String> getNulls(ArrayList<String> list) {
+	public ArrayList<String> getNulls(ArrayList<String> list, boolean bool) {
 		ArrayList<String> nulls = new ArrayList<String>();
 		for (String val : list) {
 			if (val.equals(null)) {
@@ -327,12 +334,40 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 		} return nulls;
 	}
 
-	public ArrayList<String> nullSort(ArrayList<String> nulls, ArrayList<String> total) {
+	public ArrayList<String> nullSort(ArrayList<String> nulls, ArrayList<String> list, boolean bool) {
 		ArrayList<String> output = new ArrayList<String>();
-		for (String val : total) {
+		for (String val : list) {
 			output.add(val);
 		}
 		for (String val : nulls) {
+			output.add(val);
+		} return output;
+	}
+
+	public ArrayList<Integer> getNullless(ArrayList<Integer> list, int num) {
+		ArrayList<Integer> unnulls = new ArrayList<Integer>();
+		for (Integer val : list) {
+			if (!(val == null)) {
+				unnulls.add(val);
+			}
+		} return unnulls;
+	}
+
+	public ArrayList<Integer> getNulls(ArrayList<Integer> list, int num) {
+		ArrayList<Integer> nulls = new ArrayList<Integer>();
+		for (Integer val : list) {
+			if (val == null) {
+				nulls.add(val);
+			}
+		} return nulls;
+	}
+
+	public ArrayList<Integer> nullSort(ArrayList<Integer> nulls, ArrayList<Integer> list, int num) {
+		ArrayList<Integer> output = new ArrayList<Integer>();
+		for (Integer val : list) {
+			output.add(val);
+		}
+		for (Integer val : nulls) {
 			output.add(val);
 		} return output;
 	}
