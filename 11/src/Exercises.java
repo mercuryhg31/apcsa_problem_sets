@@ -6,7 +6,7 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	// TODO nothing actually works for null
 	// TODO case sensitive?? insensitive??
 	/*
-	 * Functions: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+	 * Functions: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 	 */
 
 	// 1
@@ -204,26 +204,26 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 
 	public ArrayList<Integer> combine(ArrayList<Integer> left, ArrayList<Integer> right, boolean ascending) {
 		ArrayList<Integer> output = new ArrayList<Integer>();
-		int l, r, o; l = r = o = 0;
+		int l, r; l = r = 0;
 		while (l < left.size() || r < right.size()) {
 			if (l < left.size() && r < right.size()) {
 				if (ascending) {
 					if (left.get(l) < right.get(r)) {
-						output.add(left.get(l)); o++; l++;
+						output.add(left.get(l)); l++;
 					} else {
-						output.add(right.get(r)); o++; r++;
+						output.add(right.get(r)); r++;
 					}
 				} else {
 					if (left.get(l) > right.get(r)) {
-						output.add(left.get(l)); o++; l++;
+						output.add(left.get(l)); l++;
 					} else {
-						output.add(right.get(r)); o++; r++;
+						output.add(right.get(r)); r++;
 					}
 				}
 			} else if (l < left.size()) {
-				output.add(left.get(l)); o++; l++;
+				output.add(left.get(l)); l++;
 			} else if (r < right.size()) {
-				output.add(right.get(r)); o++; r++;
+				output.add(right.get(r)); r++;
 			}
 		} return output;
 	}
