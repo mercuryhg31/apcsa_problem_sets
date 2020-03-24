@@ -186,58 +186,88 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 	}
 
 	// 11
-	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-		if (list == null || list.size() == 0) return null;
-		if (list.size() == 1) return list;
+	public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) { // ./grademe.sh merge "ArrayList<Integer>" true
+		if (list == null) return null;
+		if (list.size() == 0 || list.size() == 1) return list;
 		int mid = list.size() / 2;
-		ArrayList<Integer> one = new ArrayList<Integer>();
+		ArrayList<Integer> left = new ArrayList<Integer>();
 		for (int i = 0; i < mid; i++) {
-			one.set(i, list.get(i));
+			left.add(list.get(i));
 		}
-		ArrayList<Integer> two = new ArrayList<Integer>();
+		ArrayList<Integer> right = new ArrayList<Integer>();
 		for (int i = mid; i < list.size(); i++) {
-			two.set(i - mid, list.get(i));
+			right.add(list.get(i));
 		}
-		merge(one, ascending);
-		merge(two, ascending);
-		return null;
+		left = merge(left, ascending); right = merge(right, ascending);
+		return combine(left, right, ascending);
 	}
 
-	public ArrayList<Integer> merge(ArrayList<Integer> list) {
-		if (list == null || list.size() == 0) return null;
-		if (list.size() == 1) return list;
-		int mid = list.size() / 2;
-		ArrayList<Integer> l = new ArrayList<Integer>(); // length midpoint
-		for (int i = 0; i < mid; i++) {
-			l.set(i, list.get(i));
-		}
-		ArrayList<Integer> r = new ArrayList<Integer>(); // length length-midpoint
-		for (int i = mid; i < list.size(); i++) {
-			r.set(i - mid, list.get(i));
-		}
-	}
-
-	public ArrayList<Integer> combine(ArrayList<Integer> left, ArrayList<Integer> right) {
-		ArrayList<Integer> output = new ArrayList<Integer>(); // length left + right
+	public ArrayList<Integer> combine(ArrayList<Integer> left, ArrayList<Integer> right, boolean ascending) {
+		ArrayList<Integer> output = new ArrayList<Integer>();
 		int l, r, o; l = r = o = 0;
 		while (l < left.size() || r < right.size()) {
 			if (l < left.size() && r < right.size()) {
-				if (left.get(l) < right.get(r)) {
-					output.set(o, left.get(l)); o++; l++;
+				if (ascending) {
+					if (left.get(l) < right.get(r)) {
+						output.add(left.get(l)); o++; l++;
+					} else {
+						output.add(right.get(r)); o++; r++;
+					}
 				} else {
-					output.set(o, right.get(r)); o++; r++;
+					if (left.get(l) > right.get(r)) {
+						output.add(left.get(l)); o++; l++;
+					} else {
+						output.add(right.get(r)); o++; r++;
+					}
 				}
 			} else if (l < left.size()) {
-				output.set(o, left.get(l)); o++; l++;
+				output.add(left.get(l)); o++; l++;
 			} else if (r < right.size()) {
-				output.set(o, right.get(r)); o++; r++;
+				output.add(right.get(r)); o++; r++;
 			}
 		} return output;
 	}
 
 	// 12
-	public String[] merge(String[] list, boolean ascending) {
-		if (list == null || list.length == 0) return null;
-		return null;
+	public String[] merge(String[] list, boolean ascending) { // ./grademe.sh merge String[] true
+		if (list == null) return null;
+		if (list.length == 0 || list.length == 1) return list;
+		int mid = list.length / 2;
+		String[] left = new String[mid];
+		for (int i = 0; i < mid; i++) {
+			left[i] = list[i];
+		}
+		String[] right = new String[list.length - mid];
+		for (int i = mid; i < list.length; i++) {
+			right[i - mid] = list[i];
+		}
+		left = merge(left, ascending); right = merge(right, ascending);
+		return combine(left, right, ascending);
+	}
+
+	public String[] combine(String[] left, String[] right, boolean ascending) {
+		String[] output = new String[left.length + right.length];
+		int l, r, o; l = r = o = 0;
+		while (l < left.length || r < right.length) {
+			if (l < left.length && r < right.length) {
+				if (ascending) {
+					if (left[l].compareTo(right[r]) < 0) {
+						output[o] = left[l]; o++; l++;
+					} else {
+						output[o] = right[r]; o++; r++;
+					}
+				} else {
+					if (left[l].compareTo(right[r]) > 0) {
+						output[o] = left[l]; o++; l++;
+					} else {
+						output[o] = right[r]; o++; r++;
+					}
+				}
+			} else if (l < left.length) {
+				output[o] = left[l]; o++; l++;
+			} else if (r < right.length) {
+				output[o] = right[r]; o++; r++;
+			}
+		} return output;
 	}
 }
