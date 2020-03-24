@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -268,6 +269,71 @@ public class Exercises { // TODO test all with yet to be provided grademe.sh
 			} else if (r < right.length) {
 				output[o] = right[r]; o++; r++;
 			}
+		} return output;
+	}
+
+	public String[] nullSort(String[] nulls, String[] total) {
+		String[] output = new int[nulls.length + total.length];
+		int i = 0;
+		for (String val : total) {
+			output[i] = val; i++;
+		}
+		for (String val : nulls) {
+			output[i] = val; i++;
+		} return output;
+	}
+
+	public String[] getNullless(String[] list) {
+		ArrayList<String> unnulls = new ArrayList<String>();
+		for (String val : list) {
+			if (!val.equals(null)) {
+				unnulls.add(val);
+			}
+		}
+		String[] output = new String[unnulls.size()];
+		for (int i = 0; i < unnulls.size(); i++) {
+			output[i] = unnulls.get(i);
+		} return output;
+	}
+
+	public String[] getNulls(String[] list) {
+		ArrayList<String> nulls = new ArrayList<String>();
+		for (String val : list) {
+			if (val.equals(null)) {
+				nulls.add(val);
+			}
+		}
+		String[] output = new String[nulls.size()];
+		for (int i = 0; i < nulls.size(); i++) {
+			output[i] = nulls.get(i);
+		} return output;
+	}
+
+	public ArrayList<String> getNullless(ArrayList<String> list) {
+		ArrayList<String> unnulls = new ArrayList<String>();
+		for (String val : list) {
+			if (!val.equals(null)) {
+				unnulls.add(val);
+			}
+		} return unnulls;
+	}
+
+	public ArrayList<String> getNulls(ArrayList<String> list) {
+		ArrayList<String> nulls = new ArrayList<String>();
+		for (String val : list) {
+			if (val.equals(null)) {
+				nulls.add(val);
+			}
+		} return nulls;
+	}
+
+	public ArrayList<String> nullSort(ArrayList<String> nulls, ArrayList<String> total) {
+		ArrayList<String> output = new ArrayList<String>();
+		for (String val : total) {
+			output.add(val);
+		}
+		for (String val : nulls) {
+			output.add(val);
 		} return output;
 	}
 }
